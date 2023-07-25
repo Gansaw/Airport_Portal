@@ -1,0 +1,15 @@
+package com.airport.service;
+
+import java.util.List;
+
+import com.airport.domain.Board;
+
+public interface NoticeService {
+	
+	List<Board> getNoticeList();
+	Board getNotice(Board notice);
+	void insertNotice(Board notice);
+	void updateNotice(Board notice);
+	void deleteNotice(Board notice);
+
+}

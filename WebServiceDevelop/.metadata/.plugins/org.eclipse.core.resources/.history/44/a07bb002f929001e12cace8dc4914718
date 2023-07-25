@@ -1,0 +1,9 @@
+package com.airport.domain;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.TemporalType;
+
+public class Board {
+
+}

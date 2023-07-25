@@ -1,0 +1,70 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.airport.domain.Board;
+import com.airport.domain.User;
+import com.airport.service.BoardService;
+
+@Controller
+public class NoticeController {
+	
+	@Autowired
+	public BoardService boardService;
+	
+	@GetMapping("/getBoardList")
+	public String getBoardList(@ModelAttribute("user") User user, Model model, Board board) {
+		if (user.getId()==null)
+			return "redirect:login";
+		
+		model.addAttribute("boardList", boardService.getBoardList());
+		return "getBoardList";
+	}
+	
+	@GetMapping("/getBoard")
+	public String getBoard	(@ModelAttribute("user") User user, Model model, Long num) {
+		if (user.getId()==null)
+			return "redirect:login";
+		
+		Board board = boardService.getBoard(Board.builder().num(num).build());
+		model.addAttribute("board", board);
+		return "getBoard";
+
+	}
+	
+	@PostMapping("/insertBoard")
+	public String insertBoard(@ModelAttribute("user") User user, Board board) {
+		if (user.getId()==null)
+			return "redirect:login";
+		
+		return "insertBoard";
+	}
+	
+	@PutMapping("/updateBoard")
+	public String updateBoard(@ModelAttribute("user") User user, Board board) {
+		if (user.getId()==null)
+			return "redirect:login";
+		
+		boardService.updateBoard(board);
+		return "redirect:getBoardList";
+		
+	}
+	
+	@DeleteMapping("/deleteBoard")
+	public String deleteBoard(@ModelAttribute("user") User user, Board board) {
+		if (user.getId()==null)
+			return "redirect:login";
+		
+		boardService.deleteBoard(board);
+		return "redirect:getBoardList";
+		
+	}
+
+}

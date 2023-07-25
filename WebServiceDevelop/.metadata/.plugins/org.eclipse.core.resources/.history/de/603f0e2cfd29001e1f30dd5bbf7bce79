@@ -1,0 +1,19 @@
+package com.airport.service;
+
+import java.util.List;
+
+import com.airport.domain.Board;
+
+public class BoardService {
+
+	List<Board> getBoardList();
+
+	void insertBoard(Board board);
+
+	Board getBoard(Board board);
+
+	void updateBoard(Board board);
+
+	void deleteBoard(Board board);
+	
+}

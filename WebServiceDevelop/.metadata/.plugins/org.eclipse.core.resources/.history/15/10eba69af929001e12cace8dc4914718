@@ -1,0 +1,13 @@
+package com.airport.domain;
+
+public class Member {
+	
+	private String code;
+	private String engport;
+	private String korport;
+	private String region;
+	private String engnation;
+	private String kornation;
+	private String engcity;
+
+}

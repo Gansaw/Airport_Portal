@@ -1,0 +1,24 @@
+package com.airport.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.airport.domain.Notice;
+import com.airport.persistence.NoticeRepo;
+
+public class NoticeServiceImpl {
+	
+	@Autowired
+	public NoticeRepo noticeRepo;
+	
+	@Override
+	public void getNoticeList(Notice notice) {
+		noticeRepo.findAll();
+	}
+	
+	@Override
+	public void insertNotice(Notice notice) {
+		noticeRepo.save(notice);
+	}
+
+
+}

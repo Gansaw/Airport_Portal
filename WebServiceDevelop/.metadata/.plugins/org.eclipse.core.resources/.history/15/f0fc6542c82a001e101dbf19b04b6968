@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+<title>갤러리</title>
+</head>
+<body>
+	<h2>Upload Airport Images who have ever visited</h2>
+</body>
+</html>

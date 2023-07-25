@@ -1,0 +1,30 @@
+package com.airport.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+public class Airport {
+	@Id
+	private Long id;
+	private String code;
+	private String engport;
+	private String korport;
+	private String region;
+	private String engnation;
+	private String kornation;
+	private String engcity;
+	
+
+}

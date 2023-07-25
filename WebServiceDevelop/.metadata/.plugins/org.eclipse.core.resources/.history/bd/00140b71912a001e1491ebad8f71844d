@@ -1,0 +1,51 @@
+package com.airport.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.airport.domain.Notice;
+import com.airport.service.NoticeService;
+
+@Controller
+@RequestMapping("/notice")
+public class NoticeController {
+	
+	public NoticeService noticeService;
+	
+	@GetMapping("/getlist")
+	public String getNoticeList(Model model) {
+		model.addAttribute("noticeList", noticeService.getNoticeList());
+		return "getNoticeList";
+	}
+	
+	@GetMapping("/get")
+	public String getNotice	(Long num, Model model) {
+		Notice notice = noticeService.getNoticeList()
+
+	}
+	
+	@PostMapping("/insert")
+	public String insertNotice(Notice notice) {
+		return "insertNotice";
+	}
+	
+	@PutMapping("/update")
+	public String updateNotice(Notice notice) {
+		NoticeService.updateNotice(notice);
+		return "redirect:getNoticeList";
+		
+	}
+	
+	@DeleteMapping("/delete")
+	public String deleteNotice(Notice notice) {
+		NoticeService.deleteNotice(notice);
+		return "redirect:getNoticeList";
+		
+	}
+
+}

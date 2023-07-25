@@ -1,0 +1,19 @@
+package com.airport.service;
+
+import java.util.List;
+
+import com.airport.domain.Airport;
+
+public class AirportService {
+
+	List<Airport> getAirportList();
+
+	void insertAirport(Airport airport);
+
+	Airport getAirport(Airport airport);
+
+	void updateAirport(Airport airport);
+
+	void deleteAirport(Airport airport);
+	
+}

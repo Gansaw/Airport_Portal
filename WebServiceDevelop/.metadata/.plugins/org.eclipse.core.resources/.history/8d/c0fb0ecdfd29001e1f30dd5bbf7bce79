@@ -1,0 +1,11 @@
+package com.airport.domain;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Airport {
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)	
+	private Long id;
+	
+
+}
