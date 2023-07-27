@@ -1,8 +1,9 @@
+import style from './Airport.module.css';
 const Picture = () =>{
 
     return(
         <>
-            <div>
+            <div className={style.pb}>
                 공항사진
             </div>
         </>

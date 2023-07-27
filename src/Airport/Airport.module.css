@@ -1,0 +1,25 @@
+.nb{
+    width : 30%;
+    /* height : 1000px; */
+    background-color: white;
+}
+.pb{
+    width : 40%;
+    /* height : 1000px; */
+    background-color: white;
+}
+.tb{
+    width : 30%;
+    /* height : 500px; */
+    background-color: white;
+}
+.rb{
+    width : 30%;
+    /* height : 1000px; */
+    background-color: white;
+}
+.airportlogo{
+    width: 100px;
+    height: 100px;
+    position: sticky;
+}
