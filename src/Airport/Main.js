@@ -25,14 +25,12 @@ const Main = () =>{
                             <li><Link to='/gallery' role="button"><Gallery /></Link></li>
                         </ul>
                     </nav>
+                    <nav>
+                        <ul>
+                            <li><input type="text" value='국가 또는 대륙 또는 공항코드를 입력하세요'/><Searchtool /></li>
+                        </ul>
+                    </nav>
                 </div>
-           
-                        <nav>
-                            <ul>
-                                <li><input type="text" value='국가 또는 대륙 또는 공항코드를 입력하세요'/><Searchtool /></li>
-                            </ul>
-                        </nav>
-                    
                     <section>
                     <div className='grid'>
                         <div><Notice /></div>
