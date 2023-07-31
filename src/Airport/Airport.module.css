@@ -1,0 +1,36 @@
+.nb{
+    width : 30%;
+    /* height : 1000px; */
+    background-color: white;
+}
+.pb{
+    width : 40%;
+    /* height : 1000px; */
+    background-color: white;
+}
+.tb{
+    width : 30%;
+    /* height : 500px; */
+    background-color: white;
+}
+.rb{
+    width : 30%;
+    /* height : 1000px; */
+    background-color: white;
+}
+.airportlogo{
+    width: 100px;
+    height: 100px;
+    position: sticky;
+}
+.carousel-container {
+    width: 400px; /* Set the width of the container */
+    height: 100%; /* Set the height to 100% to fill the container vertically */
+    /* Add any other styling you need for the container */
+  }
+  
+  .carousel-image {
+    width: 100%; /* Make the images fit the width of the container */
+    height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+    /* Add any other styling you need for the images */
+  }
