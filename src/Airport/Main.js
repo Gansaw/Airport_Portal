@@ -1,3 +1,4 @@
+import React,{useState} from 'react';
 import {Link} from 'react-router-dom';
 import Notice from './Notice';
 import Picture from './Picture';
@@ -10,7 +11,17 @@ import AirportInfo from './AirportInfo';
 import Gallery from './Gallery';
 import Searchtool from './Searchtool';
 
+
 const Main = () =>{
+    const [searchValue, setSearchValue] = useState('');
+    const handleSearchChange = (e) => {
+        setSearchValue(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        window.location.href = `/airportinfo?search=${encodeURIComponent(searchValue)}`;
+    };
 
     return(
         <>
@@ -25,22 +36,27 @@ const Main = () =>{
                             <li><Link to='/gallery' role="button"><Gallery /></Link></li>
                         </ul>
                     </nav>
-                    <nav>
-                        <ul>
-                            <li><input type="text" value='국가 또는 대륙 또는 공항코드를 입력하세요'/><Searchtool /></li>
-                        </ul>
-                    </nav>
+                    
+                    <form onSubmit={handleSubmit} method='get'>
+                        <fieldset>
+                            <label for='search'>공항 검색하기</label>
+                            <input type="search" id='search' placeholder='국가 또는 대륙 또는 공항코드를 입력하세요' value={searchValue} onChange={handleSearchChange}/><Searchtool />
+                            <button type="submit" value='검색'>검색</button>
+                            <button type="reset" value='초기화'>초기화</button>
+                        </fieldset>
+                    </form>     
+                    
                 </div>
-                    <section>
+                    
                     <div className='grid'>
-                        <div><Notice /></div>
-                        <div><Picture /></div>
+                        <article><div><Notice /></div></article>
+                        <article><div><Picture /></div></article>
                         <div className='flex'>
-                            <div><Top10Airport /></div>
-                            <div><RateCal /></div>
+                            <article><div><Top10Airport /></div></article>
+                            <article><div><RateCal /></div></article>
                         </div>
                     </div>
-                    </section>
+                    
                 </main>
            
         </>
