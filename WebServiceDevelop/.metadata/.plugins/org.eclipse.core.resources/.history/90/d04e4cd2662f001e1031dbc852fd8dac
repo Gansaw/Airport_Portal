@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원님 환영합니다.</title>
+</head>
+<body>
+	<h2>회원님 환영합니다.</h2>
+	<a th:href="@{/loginSuccess}">뒤로가기</a>
+	<a th:href="@{/logout}">로그아웃</a>
+</body>
+</html>

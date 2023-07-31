@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>아이디를 입력해주세요.</h1>
+	<a th:href="@{/home}">메인 화면으로</a>
+	<hr>
+</body>
+</html>

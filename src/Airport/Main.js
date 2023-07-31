@@ -14,8 +14,7 @@ const Main = () =>{
 
     return(
         <>
-        <main>
-            
+        <main>            
                 <div className='rt'>
                     <nav>
                         <ul>

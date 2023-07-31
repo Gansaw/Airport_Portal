@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>지도 API</title>
+</head>
+<body>
+	<h2>지도 API를 넣어서 위치에 따른 공항 정보를 확인할 수 있습니다.</h2>
+</body>
+</html>

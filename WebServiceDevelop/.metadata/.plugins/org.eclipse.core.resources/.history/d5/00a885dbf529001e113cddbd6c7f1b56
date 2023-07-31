@@ -1,0 +1,44 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.airport.domain.Board;
+import com.airport.service.BoardService;
+
+@Controller
+public class BoardController {
+	
+	@Autowired
+	public BoardService boardService;
+	
+	@GetMapping("/datalist")
+	public String getBoardList(Board board) {
+		return getBoardList;
+	}
+	
+	@GetMapping("/data")
+	public void getBoard(Board board) {
+		return getBoard;
+	}
+		
+	@GetMapping("insertdata")
+	public void insertBoard() {
+		
+	}
+	
+	@PostMapping("updatedata")
+	public void updateBoard(Board board) {
+		boardService.updateBoard(board);
+		return 
+	}
+	
+	@DeleteMapping("deletedata")
+	public void deleteBoard(Board board) {
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.airport.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class noticeServiceImpl {
+	
+	@Autowired
+	public noticeRepo noticeRepo;
+
+}

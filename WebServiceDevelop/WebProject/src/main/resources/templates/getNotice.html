@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>공지사항 상세</title>
+</head>
+<body align="center">
+    <h1>공지사항 상세</h1>
+    <form action="@{updateNotice}" method="post">
+        <input name="id" type="hidden">
+        <table align="center" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="80">제목</td>
+                <td><input name="title" type="text"></td>
+            </tr>
+            <tr>
+                <td>글쓴이</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td><textarea name="content" cols="40" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td>날짜</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>조회수</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="공지사항 수정">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <a href="@{/insertBoard}">공지사항 등록</a>&nbsp;&nbsp;&nbsp;
+    <a href="@{/deleteBoard(seq=${board.seq})}">공지사항 삭제</a>&nbsp;&nbsp;&nbsp;
+    <a href="@{/getBoardList}">공지사항 목록</a>
+</body>
+</html>

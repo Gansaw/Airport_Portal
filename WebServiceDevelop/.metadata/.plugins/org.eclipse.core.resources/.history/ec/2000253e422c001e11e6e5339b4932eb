@@ -1,0 +1,14 @@
+package com.airport.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.airport.persistence.GalleryRepo;
+
+@Service
+public class GalleryServiceImpl implements GalleryService {
+	
+	@Autowired
+	public GalleryRepo galleryRepo;
+
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+</head>
+<body>
+    <h2>공지사항</h2>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">글쓴이</th>
+                <th scope="col">날짜</th>
+                <th scope="col">조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#">번호1</a></td>
+                <td><a href="#">제목1</a></td>
+                <td><a href="#">글쓴이1</a></td>
+                <td><a href="#">날짜1</a></td>
+                <td><a href="#">조회수1</a></td>
+            </tr>
+        </tbody>
+    </table>
+     <a th:if="${session['member'].role == '관리자'}" href="/insertNotice">글쓰기</a>
+</body>
+</html>

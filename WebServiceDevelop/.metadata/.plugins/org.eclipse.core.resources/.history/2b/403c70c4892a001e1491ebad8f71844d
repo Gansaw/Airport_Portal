@@ -1,0 +1,33 @@
+package com.airport.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/notice")
+public class NoticeController {
+	
+	@GetMapping("/list")
+	public String showNoticeList() {
+		return "getNoticeList";
+	}
+	
+	@PostMapping("/insert")
+	public String insertNotice() {
+		return "insertNotice";
+	}
+	
+	@PutMapping("/update")
+	public String updateNotice() {
+		
+	}
+	
+	@DeleteMapping("/delete")
+	public String deleteNotice() {
+		
+	}
+
+}

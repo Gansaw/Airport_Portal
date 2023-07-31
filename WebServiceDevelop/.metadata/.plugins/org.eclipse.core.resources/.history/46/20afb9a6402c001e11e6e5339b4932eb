@@ -1,0 +1,50 @@
+package com.airport.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.airport.domain.Notice;
+import com.airport.persistence.NoticeRepo;
+
+@Service
+public class NoticeServiceImpl implements NoticeService {
+	
+	@Autowired
+	public NoticeRepo noticeRepo;
+
+	@Override
+	public List<Notice> getNoticeList() {
+		return noticeRepo.findAll();
+	}
+	
+	@Override
+	public Notice getNotice(Notice notice) {
+		return noticeRepo.findById(notice.getNum()).get();
+	}
+
+	@Override
+	public void insertNotice(Notice notice) {
+		noticeRepo.save(notice);
+		
+	}
+
+	@Override
+	public void updateNotice(Notice notice) {
+		Notice findnotice = noticeRepo.findById(notice.getNum()).get();
+		findnotice.setTitle(notice.getTitle());
+		findnotice.setContent(notice.getContent());
+		noticeRepo.save(findnotice);
+		
+	}
+
+	@Override
+	public void deleteNotice(Notice notice) {
+		
+	}
+
+
+	
+	
+}

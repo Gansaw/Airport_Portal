@@ -1,0 +1,71 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.airport.domain.Gallery;
+import com.airport.domain.Notice;
+import com.airport.domain.User;
+import com.airport.service.GalleryService;
+
+@Controller
+public class GalleryController {
+	
+	@Autowired
+	public GalleryService galleryService;
+	
+	@GetMapping("/getGalleryList")
+	public String getGalleryList(@ModelAttribute("user") User user, Model model, Gallery gallery) {
+//		if (user.getId()==null)
+//			return "redirect:login";
+//		
+//		model.addAttribute("noticeList", noticeService.getNoticeList());
+		return "getGalleryList";
+	}
+	
+	@GetMapping("/getGallery")
+	public String getGallery(@ModelAttribute("user") User user, Model model, Long id) {
+//		if (user.getUsername()==null)
+//			return "redirect:login";
+		
+		Gallery gallery = galleryService.getGallery(Gallery.builder().id(id).build());
+		model.addAttribute("gallery", gallery);
+		return "getGallery";
+
+	}
+	
+	@PostMapping("/insertGallery")
+	public String insertGallery(@ModelAttribute("user") User user, Gallery gallery) {
+//		if (user.getUsername()==null)
+//			return "redirect:login";
+		
+		return "insertGallery";
+	}
+	
+	@PutMapping("/updateGallery")
+	public String updateGallery(@ModelAttribute("user") User user, Gallery gallery) {
+//		if (user.getUsername()==null)
+//			return "redirect:login";
+		
+		galleryService.updateGallery(gallery);
+		return "redirect:getGalleryList";
+		
+	}
+	
+	@DeleteMapping("/deleteNotice")
+	public String deleteNotice(@ModelAttribute("user") User user, Notice notice) {
+		if (user.getUsername()==null)
+			return "redirect:login";
+		
+		noticeService.deleteNotice(notice);
+		return "redirect:getNoticeList";
+		
+	}
+
+}

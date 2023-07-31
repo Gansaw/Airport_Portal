@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Welcome</title>
+</head>
+<body>
+	<br>
+	<h3 align = "center">세계 공항 포털에 오신 것을 환영합니다..</h3>
+	<div class = "header">
+		<a href="logins/login">로그인</a>
+		<a href="logins/signup">회원가입</a>
+	</div>
+	<hr>	
+		<div class="links-container">
+			<a href="getNoticeList">공지사항</a>
+			<a href="siteInfo">사이트정보</a>	
+			<a href="airportInfo">공항정보</a>
+			<a href="getGalleryList">갤러리</a>
+		</div>
+	<hr>
+</body>
+</html>

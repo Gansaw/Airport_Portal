@@ -1,0 +1,14 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.airport.service.GalleryService;
+
+@Controller
+public class GalleryController {
+	
+	@Autowired
+	public GalleryService galleryService;
+
+}

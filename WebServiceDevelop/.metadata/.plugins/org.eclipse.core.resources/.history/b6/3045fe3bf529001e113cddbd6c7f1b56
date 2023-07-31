@@ -1,0 +1,34 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.airport.service.BoardService;
+
+@Controller
+public class BoardController {
+	
+	@Autowired
+	public BoardService boardService;
+	
+	public void getBoardList() {
+		
+	}
+	
+	public void getBoard() {
+		
+	}
+	
+	public void insertBoard() {
+		
+	}
+	
+	public void updateBoard() {
+		
+	}
+	
+	public void deleteBoard() {
+		
+	}
+
+}

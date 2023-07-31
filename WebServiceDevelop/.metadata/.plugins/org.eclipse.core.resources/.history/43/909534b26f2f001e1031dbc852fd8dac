@@ -1,0 +1,23 @@
+package com.airport.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class ProxyController {
+    @GetMapping("/api/proxy")
+    public ResponseEntity<String> proxyToOpenAPI() {
+        // 프록시를 통해 접근할 오픈 API의 URL
+        String openAPIUrl = "https://example.com/openapi/data";
+
+        // 오픈 API에 접근하여 데이터를 가져오는 코드
+        // HttpClient 또는 HttpURLConnection 등을 사용하여 요청 및 응답 처리
+
+        // 가져온 데이터를 클라이언트에게 반환 (JSON 형식의 데이터를 예로 들어보겠습니다.)
+        String responseData = "{ \"key\": \"value\" }";
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity<>(responseData, responseHeaders, HttpStatus.OK);
+    }
+
+}

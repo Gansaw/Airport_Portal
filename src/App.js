@@ -8,7 +8,7 @@ import Siteinfo from './Airport/Siteinfo';
 import Mapsearch from './Airport/Mapsearch';
 import AirportInfo from './Airport/AirportInfo';
 import Gallery from './Airport/Gallery';
-import Ratecal from './Airport/RateCal';
+// import Ratecal from './Airport/RateCal';
 
 function App() {
   return (    //라턴안에는 태그 한개만 존재 자식은 상관없음

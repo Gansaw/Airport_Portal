@@ -1,0 +1,8 @@
+package com.airport.service;
+
+import com.airport.domain.Member;
+
+public interface UserDetailService {
+	Member getUser(Member user);
+
+}

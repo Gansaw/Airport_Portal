@@ -1,0 +1,47 @@
+package com.airport.service;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.airport.domain.Gallery;
+import com.airport.persistence.GalleryRepo;
+
+@Service
+public class GalleryServiceImpl implements GalleryService {
+	
+	@Autowired
+	public GalleryRepo galleryRepo;
+	
+	@Override
+	public Map<Long, String> getGalleryImage() {
+		return galleryRepo.findAll();
+	}
+	
+	@Override
+	public Gallery getGalleryImage(Gallery gallery) {
+		Gallery clicktime = galleryRepo.findById(gallery.getId()).get()
+		return galleryRepo.findById(id);
+	}	
+	
+	@Override
+	public Gallery getGallery(Gallery gallery) {
+		
+	}
+
+	@Override
+	public void insertGalleryImage(Long id, String imageloc) {
+		galleryRepo.save(filename, image);
+	}
+	
+	@Override
+	public void updateGalleryImage(Long id, String imageloc) {	
+		galleryRepo.update(filename, updatedImage);
+	}
+
+	@Override
+	public void deleteGalleryImage(Long id) {
+		galleryRepo.deleteByFilename(filename);
+	}
+}
