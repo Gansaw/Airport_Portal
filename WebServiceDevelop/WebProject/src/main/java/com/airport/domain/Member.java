@@ -5,6 +5,8 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -23,6 +25,7 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name="member")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Member {	
 	@Id
 	private String username;	

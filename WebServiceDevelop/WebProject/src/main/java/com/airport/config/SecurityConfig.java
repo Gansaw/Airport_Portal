@@ -1,5 +1,4 @@
 package com.airport.config;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,32 +10,21 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {	
 	
-    @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+	    return new BCryptPasswordEncoder();
+	}
 
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{		
 		http.csrf(csrf -> csrf.disable());
-		http.cors(cors -> cors.disable());		
-		
-		http.formLogin(frmLogin -> {
-			frmLogin.loginPage("/login")
-			.defaultSuccessUrl("/loginSuccess", true);
-		});	
-		
-		http.exceptionHandling(ex -> ex.accessDeniedPage("/errors/accessDeny"));
-		
-		http.logout(logt -> {
-			logt.invalidateHttpSession(true)
-			.deleteCookies("JSESSIONID")
-			.logoutSuccessUrl("/login");
-		});
-		
+		http.cors(cors -> cors.disable());			
+		http.authorizeHttpRequests(auth->{
+			auth.anyRequest().permitAll();
+		});		
 				
 		return http.build();
-	}	
+	}
 	
 
 }

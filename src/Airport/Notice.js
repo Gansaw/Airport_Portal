@@ -1,8 +1,25 @@
+import React, { useState, useEffect } from 'react';
 import style from './Airport.module.css';
 const Notice = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const url = "http://localhost:8080/notices";
+
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Response Error');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setData(data);
+            })
+            .catch((error) => console.error("Fetch Error", error));
+    }, []);
 
     return (
-
         <div className={style.nb}>
             <body>
                 <table>
@@ -16,16 +33,17 @@ const Notice = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>번호1</td>
-                            <td>제목1</td>
-                            <td>글쓴이1</td>
-                            <td>날짜1</td>
-                            <td>조회수1</td>
-                        </tr>
+                        {data.map((item) => (
+                            <tr key={item.id}>
+                                <td>{item.id}</td>
+                                <td>{item.title}</td>
+                                <td>{item.writer}</td>
+                                <td>{item.date}</td>
+                                <td>{item.view}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
-                <h5>글쓰기</h5> 
             </body>
         </div>
 

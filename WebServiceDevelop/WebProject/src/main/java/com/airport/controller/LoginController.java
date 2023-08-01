@@ -10,18 +10,17 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.airport.domain.Member;
-import com.airport.service.MemberService;
+import com.airport.service.LoginService;
 
 @RestController
 @SessionAttributes("회원")
 public class LoginController {
 	
 	@Autowired
-	private MemberService memberService;
+	private LoginService memberService;
 	
 	@Autowired
 	BCryptPasswordEncoder encoder;
-	
 	
 	@GetMapping("/login")
 	public void login() {
@@ -32,10 +31,9 @@ public class LoginController {
 	public String login(Member member, Model model) {
 		Member findMember = memberService.getMember(member);
 		if(findMember != null && findMember.getPassword().equals(member.getPassword())) {
-			model.addAttribute("회원", findMember);
-		return "forward:home.html";
-		} else
-			return "/errors/loginError.html";
+			model.addAttribute("회원", findMember);		
+		}
+		return "home";
 	}
 	
 	@GetMapping("/signup")
@@ -57,7 +55,7 @@ public class LoginController {
 	@GetMapping("/logout")
 	public String logout(SessionStatus status) {
 		status.setComplete();
-		return "redirect:/login";
+		return "login";
 	}
 	
 	@GetMapping("/loginSuccess")

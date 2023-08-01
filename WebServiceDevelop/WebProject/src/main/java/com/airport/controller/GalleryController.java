@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.airport.domain.Gallery;
 import com.airport.domain.Member;
+import com.airport.persistence.GalleryRepo;
 import com.airport.service.GalleryService;
 
 @RestController
@@ -18,6 +20,9 @@ public class GalleryController {
 	
 	@Autowired
 	public GalleryService galleryService;
+	
+	@Autowired
+	private GalleryRepo galleryRepo;
 	
 	@GetMapping("/getGalleryList")
 	public String getGalleryList(@ModelAttribute("회원") Member member, Model model, Gallery gallery) {		
@@ -34,31 +39,28 @@ public class GalleryController {
 	}
 	
 	@PostMapping("/insertGallery")
-	public String insertGallery(@ModelAttribute("회원") Member member, Gallery gallery) {
-		if (member.getUsername()==null)
-			return "redirect:login";
-		
+	public String insertGallery(@ModelAttribute("회원") Member member, Gallery gallery) {		
 		return "insertGallery";
 	}
 	
 	@PutMapping("/updateGallery")
 	public String updateGallery(@ModelAttribute("회원") Member member, Gallery gallery) {
-		if (member.getUsername()==null)
-			return "redirect:login";
 		
 		galleryService.updateGallery(gallery);
-		return "redirect:getGalleryList";
+		return "getGalleryList";
 		
 	}
 	
 	@DeleteMapping("/deleteGallery")
-	public String deleteGallery(@ModelAttribute("회원") Member member, Gallery gallery) {
-		if (member.getUsername()==null)
-			return "redirect:login";
-		
+	public String deleteGallery(@ModelAttribute("회원") Member member, Gallery gallery) {		
 		galleryService.deleteGallery(gallery);
-		return "redirect:getGalleryList";
+		return "getGalleryList";
 		
+	}
+	
+	@RequestMapping("/gallerys")
+	public Iterable<Gallery> getGallerys(){
+		return galleryRepo.findAll();
 	}
 
 }

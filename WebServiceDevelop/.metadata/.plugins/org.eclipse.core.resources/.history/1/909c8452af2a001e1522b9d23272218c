@@ -1,6 +1,0 @@
-package com.airport.service;
-
-@Service
-public class LoginServiceImpl {
-
-}

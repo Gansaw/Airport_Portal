@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.airport.domain.Member;
 import com.airport.domain.Notice;
+import com.airport.persistence.NoticeRepo;
 import com.airport.service.NoticeService;
 
 @RestController
@@ -18,6 +20,9 @@ public class NoticeController {
 	
 	@Autowired
 	public NoticeService noticeService;
+	
+	@Autowired
+	private NoticeRepo noticeRepo;
 	
 	@GetMapping("/getNoticeList")
 	public String getNoticeList(@ModelAttribute("회원") Member member, Model model, Notice notice) {				
@@ -47,7 +52,7 @@ public class NoticeController {
 			return "관리자만 사용할 수 있는 기능입니다.";	
 		
 		noticeService.updateNotice(notice);
-		return "redirect:getNoticeList";
+		return "getNoticeList";
 		
 	}
 	
@@ -57,8 +62,13 @@ public class NoticeController {
 			return "관리자만 사용할 수 있는 기능입니다.";
 		
 		noticeService.deleteNotice(notice);
-		return "redirect:getNoticeList";
+		return "getNoticeList";
 		
+	}
+	
+	@RequestMapping("/notices")
+	public Iterable<Notice> getNotices(){
+		return noticeRepo.findAll();
 	}
 
 }

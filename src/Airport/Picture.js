@@ -1,32 +1,32 @@
-import style from './Airport.module.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import ImgSlideData from "./ImgSlideData";
+import { useState } from 'react';
 const Picture = () =>{
+    const renderSlides = ImgSlideData.map(image => (
+        <div key={image.alt}>
+          <img src={image.url} alt={image.alt} />
+      </div>
+    ));
 
+    const [currentIndex, setCurrentIndex] = useState();
+    function handleChange(index) {
+      setCurrentIndex(index);
+    }
     return(
         <>
-            <div className={style.pb}>
-            <body>
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">번호</th>
-                            <th scope="col">제목</th>
-                            <th scope="col">글쓴이</th>
-                            <th scope="col">날짜</th>
-                            <th scope="col">조회수</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>번호1</td>
-                            <td>제목1</td>
-                            <td>글쓴이1</td>
-                            <td>날짜1</td>
-                            <td>조회수1</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h5>글쓰기</h5> 
-            </body>
+            <div className="carousel-container w-[400px] lg:hidden">
+                공항사진
+                <Carousel
+                    showArrows={false}
+                    autoPlay={true}
+                    infiniteLoop={true}
+                    showThumbs={true}
+                    selectedItem={ImgSlideData[currentIndex]}
+                    onChange={handleChange}
+                    className="w-full h-full">
+                    {renderSlides}
+                </Carousel>
             </div>
         </>
     );

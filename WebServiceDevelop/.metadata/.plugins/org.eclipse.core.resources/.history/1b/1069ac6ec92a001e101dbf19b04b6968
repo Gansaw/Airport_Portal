@@ -1,9 +1,0 @@
-//package com.airport.persistence;
-//
-//import org.springframework.data.jpa.repository.JpaRepository;
-//
-//import com.airport.domain.User;
-//
-//public interface UserRepo extends JpaRepository<User, String> {
-//
-//}

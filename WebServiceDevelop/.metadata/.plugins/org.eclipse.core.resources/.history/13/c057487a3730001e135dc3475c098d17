@@ -1,0 +1,9 @@
+package com.airport.persistence;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.airport.domain.Airport;
+
+public interface RateRepo extends JpaRepository<Airport, String> {
+
+}
