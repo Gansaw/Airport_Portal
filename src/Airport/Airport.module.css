@@ -36,17 +36,59 @@
 }
 
 .bt1{
-    background-color: seagreen;
+    color: black;
+    border-color: black;
+    background-color: sandybrown;   
     border-radius: 20%;
-    color:yellow
 }
 
 .bt2{
-    background-color: royalblue;
+    color: black;
+    border-color: black;
+    background-color: sandybrown;   
     border-radius: 30%;
-    color:darkorange;
 }
 
-.form{
-    position: right;
+
+.rt {
+    display: flex;
+    justify-content: space-between; /* Distribute items along the main axis, pushing them to the left and right ends */
+    align-items: center; /* Center items vertically */
+}
+
+nav {
+    flex: 1; /* Let the nav element take up the remaining space */
+    margin-right: 10px; /* Add some spacing between nav and form */
+}
+
+.fieldset {
+    display: flex; /* Set the display property to flex */
+    align-items: center; /* Center items vertically */
+}
+
+.searchtool {
+    background-color: white;
+    width: 1000px;
+}
+
+.searchbt {
+    color: black;
+    border-color: black;
+    background-color: sandybrown;   
+    width: 150px; 
+}
+.searchdiv2{
+    display: flex; /* Set the display property to flex */
+    gap: 10px; /* Add some spacing between buttons */
+}
+.searchdiv1{
+    display: flex; /* Set the display property to flex */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Add some spacing between input and Searchtool */
+}
+
+header nav ul li h1{
+    font-size:100px;
+    font-style: italic;
+    color:sandybrown
 }

@@ -27,7 +27,7 @@ const Main = () =>{
         <>
         <main>
             
-                <div className='rt'>
+                <div className={style.rt}>
                     <nav>
                         <ul>
                             <li><Link to='/siteinfo' className={style.bt2} role="button"><Siteinfo /></Link></li>
@@ -38,11 +38,13 @@ const Main = () =>{
                     </nav>
                     
                     <form className={style.form} onSubmit={handleSubmit} method='get'>
-                        <fieldset>
-                            <label for='search'>공항 검색하기</label>
-                            <input type="search" id='search' placeholder='국가 또는 대륙 또는 공항코드를 입력하세요' value={searchValue} onChange={handleSearchChange}/><Searchtool />
-                            <button type="submit" value='검색'>검색</button>
-                            <button type="reset" value='초기화'>초기화</button>
+                        <fieldset className={style.fieldset}>
+                            <div className={style.searchdiv1}>
+                                <input type="search" className={style.searchtool} id='search' placeholder='국가 또는 대륙 또는 공항코드를 입력하세요' value={searchValue} onChange={handleSearchChange}/><Searchtool />
+                            </div>
+                            <div className={style.searchdiv2}>
+                                <button type="submit" className={style.searchbt} value='검색'>검색</button>
+                            </div>
                         </fieldset>
                     </form>     
                     

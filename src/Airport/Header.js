@@ -3,7 +3,7 @@ import style from './Airport.module.css';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-
+    
     return(
         <header className="flex">
         <nav>
@@ -20,5 +20,6 @@ const Header = () => {
         </nav>
     </header>
     );
+    
 }
-export default Header
+export default Header;
