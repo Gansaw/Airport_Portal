@@ -27,10 +27,26 @@
     width: 400px; /* Set the width of the container */
     height: 100%; /* Set the height to 100% to fill the container vertically */
     /* Add any other styling you need for the container */
-  }
+}
   
-  .carousel-image {
+.carousel-image {
     width: 100%; /* Make the images fit the width of the container */
     height: auto; /* Automatically adjust the height to maintain the aspect ratio */
     /* Add any other styling you need for the images */
-  }
+}
+
+.bt1{
+    background-color: seagreen;
+    border-radius: 20%;
+    color:yellow
+}
+
+.bt2{
+    background-color: royalblue;
+    border-radius: 30%;
+    color:darkorange;
+}
+
+.form{
+    position: right;
+}

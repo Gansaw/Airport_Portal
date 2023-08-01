@@ -14,8 +14,8 @@ const Header = () => {
                 <li><h1><strong>세계 공항 포털</strong></h1></li>
             </ul>
             <ul>
-                <li><Link to='/login' role="button">로그인</Link></li>
-                <li><Link to='/signup' role="button">회원가입</Link></li>
+                <li><Link to='/login' className={style.bt1} role="button">로그인</Link></li>
+                <li><Link to='/signup' className={style.bt1} role="button">회원가입</Link></li>
             </ul>
         </nav>
     </header>

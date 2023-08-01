@@ -4,7 +4,7 @@ import Notice from './Notice';
 import Picture from './Picture';
 import Top10Airport from './Top10Airport';
 import RateCal from './RateCal';
-
+import style from './Airport.module.css';
 import Siteinfo from './Siteinfo';
 import Mapsearch from './Mapsearch';
 import AirportInfo from './AirportInfo';
@@ -30,14 +30,14 @@ const Main = () =>{
                 <div className='rt'>
                     <nav>
                         <ul>
-                            <li><Link to='/siteinfo' role="button"><Siteinfo /></Link></li>
-                            <li><Link to='/mapsearch' role="button"><Mapsearch /></Link></li>
-                            <li><Link to='/airportinfo' role="button"><AirportInfo /></Link></li>
-                            <li><Link to='/gallery' role="button"><Gallery /></Link></li>
+                            <li><Link to='/siteinfo' className={style.bt2} role="button"><Siteinfo /></Link></li>
+                            <li><Link to='/mapsearch' className={style.bt2} role="button"><Mapsearch /></Link></li>
+                            <li><Link to='/airportinfo' className={style.bt2} role="button"><AirportInfo /></Link></li>
+                            <li><Link to='/gallery' className={style.bt2} role="button"><Gallery /></Link></li>
                         </ul>
                     </nav>
                     
-                    <form onSubmit={handleSubmit} method='get'>
+                    <form className={style.form} onSubmit={handleSubmit} method='get'>
                         <fieldset>
                             <label for='search'>공항 검색하기</label>
                             <input type="search" id='search' placeholder='국가 또는 대륙 또는 공항코드를 입력하세요' value={searchValue} onChange={handleSearchChange}/><Searchtool />
