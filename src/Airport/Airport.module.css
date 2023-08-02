@@ -68,7 +68,7 @@ nav {
 
 .searchtool {
     background-color: white;
-    width: 1000px;
+    
 }
 
 .searchbt {
@@ -85,6 +85,7 @@ nav {
     display: flex; /* Set the display property to flex */
     align-items: center; /* Center items vertically */
     gap: 10px; /* Add some spacing between input and Searchtool */
+    width: 500px;
 }
 
 header nav ul li h1{
@@ -93,6 +94,3 @@ header nav ul li h1{
     color:sandybrown
 }
 
-.rate{
-    display: 
-}

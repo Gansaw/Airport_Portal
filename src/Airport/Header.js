@@ -1,6 +1,7 @@
 import airportlogo from '../img/airportlogo.png'
 import style from './Airport.module.css';
 import { Link } from 'react-router-dom';
+import DarkModeToggle from './DarkModeToggle';
 
 const Header = () => {
     
@@ -16,6 +17,7 @@ const Header = () => {
             <ul>
                 <li><Link to='/login' className={style.bt1} role="button">로그인</Link></li>
                 <li><Link to='/signup' className={style.bt1} role="button">회원가입</Link></li>
+                <li><DarkModeToggle /></li>
             </ul>
         </nav>
     </header>

@@ -1,0 +1,11 @@
+:root[data-theme='light'] {
+    --text-color: black;
+}
+  
+:root[data-theme='dark'] {
+    --text-color: white;
+}
+  
+body {
+    color: var(--text-color);
+}

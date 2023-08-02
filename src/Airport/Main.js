@@ -5,10 +5,8 @@ import Picture from './Picture';
 import Top10Airport from './Top10Airport';
 import RateCal from './RateCal';
 import style from './Airport.module.css';
-import Siteinfo from './Siteinfo';
-import Mapsearch from './Mapsearch';
-import AirportInfo from './AirportInfo';
-import Gallery from './Gallery';
+
+
 import Searchtool from './Searchtool';
 
 
@@ -30,10 +28,10 @@ const Main = () =>{
                 <div className={style.rt}>
                     <nav>
                         <ul>
-                            <li><Link to='/siteinfo' className={style.bt2} role="button"><Siteinfo /></Link></li>
-                            <li><Link to='/mapsearch' className={style.bt2} role="button"><Mapsearch /></Link></li>
-                            <li><Link to='/airportinfo' className={style.bt2} role="button"><AirportInfo /></Link></li>
-                            <li><Link to='/gallery' className={style.bt2} role="button"><Gallery /></Link></li>
+                            <li><Link to='/siteinfo' className={style.bt2} role="button">사이트정보</Link></li>
+                            <li><Link to='/mapsearch' className={style.bt2} role="button">지도정보</Link></li>
+                            <li><Link to='/airportinfo' className={style.bt2} role="button">공항정보</Link></li>
+                            <li><Link to='/gallery' className={style.bt2} role="button">갤러리</Link></li>
                         </ul>
                     </nav>
                     
@@ -55,7 +53,7 @@ const Main = () =>{
                         <article><div><Picture /></div></article>
                         <div className='flex'>
                             <article><div><Top10Airport /></div></article>
-                            <article><div><RateCal /></div></article>
+                            <article><div className={style.rate}><RateCal /></div></article>
                         </div>
                     </div>
                     

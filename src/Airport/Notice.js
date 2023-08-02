@@ -3,8 +3,8 @@ const Notice = () => {
 
     return (
 
-        <div className={style.nb}>
-            <body>
+        
+            <div className={style.nb}>
                 <table>
                     <thead>
                         <tr>
@@ -26,8 +26,8 @@ const Notice = () => {
                     </tbody>
                 </table>
                 <h5>글쓰기</h5> 
-            </body>
-        </div>
+            </div>
+        
 
     );
 }

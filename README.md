@@ -5,3 +5,4 @@ frontend
   + 0728 간단한 재설정
   + 0731 front 이미지슬라이드 생성, 검색창, 로그인,회원가입 수정
   + 0801 css수정, darkmode 구현실패, 검색창 위치이동
+  + 0802 검색창 늘리기, siteinfo 만들기, darkmode완성

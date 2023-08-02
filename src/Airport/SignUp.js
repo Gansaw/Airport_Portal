@@ -54,7 +54,7 @@ const SignUp = () => {
           </label>
 
           <button type="submit">회원가입</button>
-          <button type="button" onClick={() => window.location.href = '/home'}>메인화면</button>
+          <button type="button" onClick={() => window.location.href = '/'}>메인화면</button>
         </div>
       </form>
     </div>
