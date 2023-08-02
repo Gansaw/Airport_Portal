@@ -1,6 +1,5 @@
 import Header from './Header';
 import Main from './Main';
-import './Footer.css';
 
 const Airport = () => {
    
@@ -9,10 +8,8 @@ const Airport = () => {
                 <Header />
                 <Main />
                 <footer>
-                    <div className='info'>
-                    K-digital 3기 Mini Project<br/>
-                    copyright 2023, 최호진, 손병희
-                    </div>
+                    주소/이메일
+                    copyright 2023, K-digital 3기 최호진, 손병희
                 </footer>
         </>
     );

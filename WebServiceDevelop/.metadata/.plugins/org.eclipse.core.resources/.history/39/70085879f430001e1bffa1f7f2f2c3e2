@@ -33,7 +33,7 @@ public class LoginController {
 		if(findMember != null && findMember.getPassword().equals(member.getPassword())) {
 			model.addAttribute("회원", findMember);		
 		}
-		return "main";
+		return "home";
 	}
 	
 	@GetMapping("/signup")
