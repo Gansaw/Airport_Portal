@@ -1,0 +1,11 @@
+package com.airport.service;
+
+import com.airport.domain.Member;
+
+public interface MemberService {
+	
+	Member getMember(Member member);
+
+//	void save(Member member);
+
+}

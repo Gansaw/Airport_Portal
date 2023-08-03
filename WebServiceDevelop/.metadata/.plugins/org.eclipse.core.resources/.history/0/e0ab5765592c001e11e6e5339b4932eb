@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <br>
+    <h3 align="center">세계 공항 포털</h3>
+    <div class="header">
+        <!-- 로그인 상태에 따라 헤더 링크 변경 -->
+        <span th:if="${not loggedIn}">
+            <a href="/logins/login">로그인</a>
+            <a href="/logins/signup">회원가입</a>
+        </span>
+        <span th:if="${loggedIn}">
+            <a href="/logins/logout">로그아웃</a>
+        </span>
+    </div>
+    <hr>
+    <div class="links-container">
+        <a th:href="@{/getNoticeList}">공지사항</a>
+        <a th:href="@{/siteInfo}">사이트 정보</a>
+        <a th:href="@{/mapApi}">지도 Api</a>
+        <a th:href="@{/airportInfo}">공항 정보</a>
+        <a th:href="@{/getGalleryList}">갤러리</a>
+    </div>
+    <hr>
+</body>
+
+</html>

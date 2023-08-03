@@ -1,0 +1,27 @@
+package com.airport.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
+
+import com.airport.domain.User;
+import com.airport.persistence.UserRepo;
+
+@Service
+public class UserDetailServiceImpl implements UserDetailsService {
+	
+	@Autowired
+	public UserRepo userRepo;
+	
+	public User getUser(User user) {
+		Optional<User> findUser = userRepo.findById(user.getUsername());
+		if(findUser.isPresent())
+			return findUser.get();
+		else
+			return null;
+		
+	}
+
+}

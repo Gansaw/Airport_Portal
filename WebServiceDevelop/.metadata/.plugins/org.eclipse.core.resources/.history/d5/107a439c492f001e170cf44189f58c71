@@ -1,0 +1,5 @@
+package com.airport.login;
+
+public class LoginValidation {
+
+}

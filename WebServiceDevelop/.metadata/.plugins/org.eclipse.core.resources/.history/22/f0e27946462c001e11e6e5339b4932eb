@@ -1,0 +1,13 @@
+package com.airport.service;
+
+import java.util.Map;
+
+public interface GalleryService {
+
+	List<Gallery> getGalleryList();
+	Gallery getGallery(Gallery gallery);
+	void insertGallery(Gallery gallery);
+	void updateGallery(Gallery gallery);
+	void deleteGallery(Gallery gallery);
+	
+}

@@ -1,0 +1,5 @@
+package com.airport.config;
+
+public class LoginSuccessHandler {
+
+}

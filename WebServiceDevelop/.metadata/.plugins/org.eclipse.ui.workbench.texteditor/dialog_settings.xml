@@ -9,6 +9,10 @@
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
 			<item value="sql"/>
+			<item value="security"/>
+			<item value="writer"/>
+			<item value="nickname"/>
+			<item value="num"/>
 		</list>
 		<list key="replacehistory">
 		</list>

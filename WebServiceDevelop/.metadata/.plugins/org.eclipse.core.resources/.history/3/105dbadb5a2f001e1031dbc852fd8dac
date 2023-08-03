@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>로그인 성공</title>
+</head>
+
+<body>
+	<h3>${member.nickname}님, 환영합니다.</h3>
+	<h5><a th:href="@{/home}">홈페이지로 이동</a></h5></body>
+
+</html>
