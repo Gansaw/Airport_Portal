@@ -94,3 +94,7 @@ header nav ul li h1{
     color:sandybrown
 }
 
+.map {
+    width: 70%;
+    height: 100vh;
+}
