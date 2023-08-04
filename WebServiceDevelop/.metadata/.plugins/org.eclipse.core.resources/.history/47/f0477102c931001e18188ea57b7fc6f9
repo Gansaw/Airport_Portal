@@ -1,0 +1,109 @@
+package com.airport.jwt;
+
+import java.io.IOException;
+import java.util.Date;
+import java.util.Optional;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+import com.airport.domain.Member;
+import com.airport.persistence.MemberRepo;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter{
+	
+	private final AuthenticationManager authenticationManager;
+	
+	@Override
+	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse resp,
+			FilterChain chain, Authentication authResult) throws IOException, ServletException {
+		User user = (User)authResult.getPrincipal();
+		log.info("successfulAuthentication:" + user.toString());
+		String jwtToken = JWT.create()
+							.withClaim("username", user.getUsername())
+							.withExpiresAt(new Date(System.currentTimeMillis()+1000*60*10))
+							.sign(Algorithm.HMAC256("com.airport.jwtkey"));
+		resp.addHeader("Authorization", "Bearer " + jwtToken);
+		chain.doFilter(req, resp);
+	}	
+	
+	public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
+	
+		public JWTAuthorizationFilter(AuthenticationManager authenticationManager) {
+			super(authenticationManager);
+		}
+	
+		@Override
+		protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+										throws IOException, ServletException {
+			String srcToken = request.getHeader("Authorization");
+			if (srcToken == null || !srcToken.startsWith("Bearer ")) {
+				chain.doFilter(request, response);
+				return;
+			}
+			String jwtToken = srcToken.replace("Bearer ", "");
+			String username = JWT.require(Algorithm.HMAC256("edu.pnu.jwtkey")).build().verify(jwtToken).getClaim("username").asString();
+			Optional<Member> opt = memRepo.findById(username);
+			if (!opt.isPresent()) {
+				chain.doFilter(request, response);
+				return;
+			}
+
+			Member findmember = opt.get();
+			// DB에서 읽은 사용자 정보를 이용해서 UserDetails 타입의 객체를 만들어서
+			User user = new User(findmember.getUsername(), findmember.getPassword(), findmember.getAuthority());
+			// Authentication 객체를 생성 : 사용자명과 권한 관리를 위한 정보를 입력(암호는 필요없음)
+			Authentication auth = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
+			// 시큐리티 세션에 등록한다.
+			SecurityContextHolder.getContext().setAuthentication(auth); 
+			chain.doFilter(request, response);
+		}
+
+		
+		@Getter
+		@Setter
+		private MemberRepo memRepo;
+		
+		public JWTAuthorizationFilter(AuthenticationManager authenticationManager,
+				MemberRepo memRepo) {
+			super(authenticationManager);			
+			}
+
+
+
+	}
+	
+	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+			throws AuthenticationException{ 
+		ObjectMapper om = new ObjectMapper();
+		try {
+			Member member = om.readValue(request.getInputStream(), Member.class);
+			Authentication authToken = new UsernamePasswordAuthenticationToken(member.getUsername(), member.getPassword());
+			Authentication auth = authenticationManager.authenticate(authToken);
+			log.info("Authenticated : [" + member.getUsername() + "]");
+			return auth;
+		} catch (Exception e) {
+			log.info("Not Authenticated : " + e.getMessage());
+		}
+		return null;
+
+
+	}
+	
+}

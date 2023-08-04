@@ -1,0 +1,52 @@
+package com.airport.jwt;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.io.IOException;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.airport.domain.Member;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+	
+
+	@Override
+	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse resp,
+			FilterChain chain, Authentication authResult) throws IOException, ServletException {		
+		chain.doFilter(req, resp);
+	}
+	
+
+private final AuthenticationManager authenticationManager;
+
+public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse resp) throws AuthenticationException {
+
+	ObjectMapper om = new ObjectMapper();
+	try {
+		Member member = om.readValue(req.getInputStream(), Member.class);
+		Authentication authToken = new UsernamePasswordAuthenticationToken(member.getUsername(), member.getPassword());
+		Authentication auth = authenticationManager.authenticate(authToken);
+		log.info("Authenticated : [" + member.getUsername() + "]");
+		return auth;
+	} catch (Exception e) {
+		log.info("Not Authenticated : " + e.getMessage());
+	}
+	return null;
+}
+
+
+
+
+
+}

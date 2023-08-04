@@ -1,0 +1,46 @@
+package com.airport.jwt;
+
+import java.io.IOException;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.airport.domain.Member;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+	
+	private final AuthenticationManager authenticationManager;
+
+	@Override
+	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse resp, FilterChain chain, Authentication authResult) throws IOException, ServletException {
+		chain.doFilter(req, resp);
+	}	
+	
+	public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse resp) throws AuthenticationException{
+		// req의 Body에 JSON으로 담겨오는 username/password를 읽어서 Member 객체로 받아온다.
+		ObjectMapper om = new ObjectMapper();
+		try {
+			// req.getInputStream()에서 직접 읽어서 객체를 만들어도 된다. 자신감을 가지고 해보자.
+			Member member = om.readValue(req.getInputStream(), Member.class);
+
+			// 읽어 들인 정보가 정확한지 콘솔에 출력해본다.
+			log.info("attemptAuthentication :[" + member + "]");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+	
+}

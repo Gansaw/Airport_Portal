@@ -1,0 +1,18 @@
+package com.airport.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SecurityController {
+	
+	@GetMapping("/member")
+	public String mmember() {
+		return "member";
+	}	
+	
+	@GetMapping("/admin")
+	public void admin() {		
+	}
+
+}

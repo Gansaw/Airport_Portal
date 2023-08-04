@@ -1,0 +1,10 @@
+package com.airport.jwt;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class JwtService {
+	@Value("spring.jwt.secret")
+	private String secretkey;
+	
+
+}

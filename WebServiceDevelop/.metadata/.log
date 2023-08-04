@@ -10330,3 +10330,1532 @@ java.lang.Exception: Resolve classpath: unable to resolve a Java project from : 
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-02 19:24:39.283
 !MESSAGE Classpath changed for project: WebProject
+!SESSION 2023-08-03 09:37:59.896 -----------------------------------------------
+eclipse.buildId=4.19.0.202306150758
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2023-08-03 09:38:01.223
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.jface 2 0 2023-08-03 09:38:18.436
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-03 09:38:18.436
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-03 09:38:18.436
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.rap.tools.launch.RAPLaunchShortcut.run"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.wst.server.launchShortcut.run"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-03 09:38:18.436
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.wst.server.launchShortcut.debug"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-03 09:38:21.889
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\01DevelopKits\sts-4.18.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\javaw.exe
+-cp
+C:\01DevelopKits\sts-4.18.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes;C:\01DevelopKits\sts-4.18.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\01DevelopKits\sts-4.18.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/Users/user/Desktop/풀스텍/WebServiceDevelop/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1691023101888
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:38:21.889
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-03 09:38:21.922
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 11392
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-08-03 09:38:22.035
+!MESSAGE org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+!STACK 0
+java.lang.ClassNotFoundException: org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:541)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:536)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:416)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:622)
+	at org.eclipse.lsp4e.LanguageServersRegistry$ExtensionLanguageServerDefinition.getServerInterface(LanguageServersRegistry.java:196)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$1(LanguageServerWrapper.java:291)
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-08-03 09:38:23.295
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:38:23.437
+!MESSAGE Boot project ADDED: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:38:23.438
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:38:23.442
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:44:30.390
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:44:51.596
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:45:43.988
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:46:26.371
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:46:35.649
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:52:35.970
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 09:53:22.856
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:15:12.528
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:15:49.425
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:17:29.275
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:17:36.084
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 10:21:57.901
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 10:21:57.901
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 10:21:57.901
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 10:21:57.901
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 10:21:57.917
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 10:21:57.917
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.jface 2 0 2023-08-03 10:21:58.135
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-03 10:21:58.135
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:22:16.866
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:22:18.270
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:23:21.159
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:23:23.234
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:24:26.326
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:26:11.613
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:28:49.419
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:29:40.426
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:29:45.163
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:29:59.087
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:30:02.821
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:32:11.953
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:33:38.677
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:34:23.554
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:37:49.177
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:38:55.002
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:58:51.277
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 10:59:00.824
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 11:01:51.700
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 11:02:43.909
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 11:12:46.058
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:49:12.481
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:49:37.785
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:49:47.045
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.jdt.core 4 0 2023-08-03 12:49:51.622
+!MESSAGE Lombok annotation handler class lombok.eclipse.handlers.HandleValue failed
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.compiler.ast.FieldDeclaration cannot be cast to class org.eclipse.jdt.internal.compiler.ast.TypeDeclaration (org.eclipse.jdt.internal.compiler.ast.FieldDeclaration and org.eclipse.jdt.internal.compiler.ast.TypeDeclaration are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @8b814b)
+	at lombok.eclipse.handlers.HandleValue.handle(HandleValue.java:66)
+	at lombok.eclipse.HandlerLibrary$AnnotationHandlerContainer.handle(HandlerLibrary.java:106)
+	at lombok.eclipse.HandlerLibrary.handleAnnotation(HandlerLibrary.java:237)
+	at lombok.eclipse.TransformEclipseAST$AnnotationVisitor.visitAnnotationOnField(TransformEclipseAST.java:245)
+	at lombok.eclipse.EclipseNode.traverse(EclipseNode.java:110)
+	at lombok.eclipse.EclipseAST.traverseChildren(EclipseAST.java:231)
+	at lombok.eclipse.EclipseNode.traverse(EclipseNode.java:79)
+	at lombok.eclipse.EclipseAST.traverseChildren(EclipseAST.java:231)
+	at lombok.eclipse.EclipseNode.traverse(EclipseNode.java:74)
+	at lombok.eclipse.EclipseAST.traverseChildren(EclipseAST.java:231)
+	at lombok.eclipse.EclipseNode.traverse(EclipseNode.java:69)
+	at lombok.eclipse.EclipseAST.traverse(EclipseAST.java:224)
+	at lombok.eclipse.TransformEclipseAST.go(TransformEclipseAST.java:222)
+	at lombok.eclipse.TransformEclipseAST.transform(TransformEclipseAST.java:183)
+	at lombok.eclipse.TransformEclipseAST.transform_swapped(TransformEclipseAST.java:107)
+	at jdk.internal.reflect.GeneratedMethodAccessor44.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at lombok.launch.PatchFixesHider$Util.invokeMethod(PatchFixesHider.java:133)
+	at lombok.launch.PatchFixesHider$Transform.transform_swapped(PatchFixesHider.java:256)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.endParse(Parser.java:12007)
+	at org.eclipse.jdt.internal.core.util.CommentRecorderParser.endParse(CommentRecorderParser.java:135)
+	at org.eclipse.jdt.internal.compiler.SourceElementParser.endParse(SourceElementParser.java:830)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:13208)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:13435)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:13392)
+	at org.eclipse.jdt.internal.compiler.SourceElementParser.parseCompilationUnit(SourceElementParser.java:1122)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:273)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:193)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1148)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1325)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:158)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:49:56.316
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:50:25.137
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:50:33.775
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:52:26.050
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 12:52:26.107
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 12:52:26.108
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 12:52:26.108
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 12:52:26.109
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 12:52:26.113
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 12:52:26.115
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:53:09.669
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:53:45.478
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:54:16.901
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:54:20.320
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:56:00.569
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:56:06.000
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:56:07.056
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:56:09.195
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:56:29.588
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:56:39.659
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:56:47.090
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:56:53.082
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:57:03.190
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:57:11.872
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:57:33.431
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:58:29.111
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:58:56.445
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 12:59:03.359
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 12:59:05.195
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:00:05.858
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:00:05.871
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:00:05.872
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:00:05.872
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:00:05.873
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:00:05.877
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:00:05.879
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:00:13.564
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:00:48.885
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:01:42.403
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:01:52.999
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:02:05.193
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:02:32.227
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:02:55.781
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:02:55.793
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:02:55.794
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:02:55.794
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:02:55.794
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:02:55.799
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:02:55.802
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:03:51.447
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:03:51.460
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:03:51.461
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:03:51.462
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:03:51.462
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:03:51.466
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:03:51.468
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:03:53.545
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:04:13.551
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:05:48.491
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:06:03.607
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:06:16.890
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:06:19.004
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:06:47.315
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:06:47.328
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:06:47.328
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:06:47.328
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:06:47.329
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:06:47.333
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:06:47.335
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:07:27.076
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:07:36.603
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:07:42.147
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:07:58.089
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:08:06.193
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:08:15.320
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:09:52.502
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:11:18.409
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:11:19.610
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:12:26.286
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:12:29.543
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:12:49.884
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:13:20.701
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:13:21.776
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:14:06.949
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:14:28.443
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:14:41.447
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:19:50.765
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:20:05.583
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:20:05.596
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:20:05.596
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:20:05.597
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:20:05.597
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:20:05.602
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:20:05.604
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.jdt.core 4 4 2023-08-03 13:20:55.291
+!MESSAGE Could not retrieve superclass
+!STACK 0
+org.eclipse.jdt.internal.compiler.problem.AbortCompilation: Pb(347) The type org.springframework.cache.jcache.config.AbstractJCacheConfiguration cannot be resolved. It is indirectly referenced from required type org.springframework.cache.aspectj.AspectJJCacheConfiguration
+	at org.eclipse.jdt.internal.compiler.problem.ProblemHandler.handle(ProblemHandler.java:162)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemHandler.handle(ProblemHandler.java:229)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemReporter.handle(ProblemReporter.java:2682)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemReporter.isClassPathCorrect(ProblemReporter.java:5170)
+	at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.resolve(UnresolvedReferenceBinding.java:125)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:251)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.superclass(BinaryTypeBinding.java:2372)
+	at org.eclipse.jdt.core.dom.TypeBinding.getSuperclass(TypeBinding.java:857)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsSubProcessor.isInherited(UnresolvedElementsSubProcessor.java:944)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsSubProcessor.addSimilarTypeProposals(UnresolvedElementsSubProcessor.java:912)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsSubProcessor.getTypeProposals(UnresolvedElementsSubProcessor.java:683)
+	at org.eclipse.jdt.internal.ui.text.correction.QuickFixProcessor.process(QuickFixProcessor.java:424)
+	at org.eclipse.jdt.internal.ui.text.correction.QuickFixProcessor.getCorrections(QuickFixProcessor.java:361)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionCollector.safeRun(JavaCorrectionProcessor.java:381)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.run(JavaCorrectionProcessor.java:341)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.process(JavaCorrectionProcessor.java:336)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectCorrections(JavaCorrectionProcessor.java:465)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.getJavaAnnotationFixes(ProblemHover.java:115)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.computeCompletionProposals(ProblemHover.java:89)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.<init>(ProblemHover.java:74)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover.createAnnotationInfo(ProblemHover.java:178)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover.getHoverInfo2(AbstractAnnotationHover.java:755)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:31:03.038
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:31:05.112
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:32:21.248
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:34:00.392
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:34:22.073
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:35:31.518
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:37:57.428
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:39:27.656
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:39:27.669
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:39:27.669
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:39:27.670
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:39:27.670
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:39:27.674
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 13:39:27.676
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:39:37.839
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:40:34.318
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:41:27.397
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:42:11.147
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:42:28.532
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:42:35.754
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:42:37.948
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:42:56.937
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:43:10.188
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:43:17.508
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:46:12.900
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:46:20.117
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:46:24.590
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:46:35.219
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:46:38.249
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:47:37.162
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:48:03.292
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:48:07.880
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:48:12.767
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:51:28.631
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:52:14.610
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:52:17.875
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:52:26.048
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:54:06.213
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:54:07.285
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:54:30.880
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:55:20.881
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:55:34.829
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:56:56.581
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:57:01.389
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:57:02.447
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:57:13.753
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:57:16.749
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:57:33.018
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:57:39.247
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:58:05.612
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 13:58:06.020
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:58:06.682
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:58:20.830
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:58:59.764
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:59:09.714
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:59:14.108
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 13:59:44.488
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:00:57.147
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:01:40.219
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:01:49.157
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:01:49.170
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:01:49.170
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:01:49.171
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:01:49.171
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:01:49.176
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:01:49.178
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:01:59.933
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:02:16.703
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:02:16.724
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:02:16.725
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:02:16.726
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:02:16.726
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:02:16.732
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:02:16.734
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:12:02.705
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:16:13.556
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:16:34.224
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:16:36.352
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:16:55.163
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:17:08.241
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:18:35.620
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:18:50.172
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:19:08.981
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:19:12.529
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:19:20.551
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:19:23.031
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:19:36.553
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:19:59.551
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:20:00.618
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:20:04.943
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:20:12.574
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:20:12.593
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:20:12.594
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:20:12.595
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:20:12.596
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:20:12.601
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:20:12.603
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:20:15.996
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:21:54.702
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:22:03.280
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:22:03.293
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:22:03.293
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:22:03.294
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:22:03.294
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:22:03.299
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:22:03.301
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:22:09.745
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:23:35.853
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:23:46.217
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:24:09.406
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:24:12.024
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:25:31.967
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:25:36.124
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:26:02.017
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:26:26.647
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:27:18.339
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:27:25.535
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:27:47.679
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:27:48.816
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:28:04.666
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:28:14.373
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:28:16.441
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:28:18.613
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:29:05.456
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:29:09.808
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:29:14.243
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:29:57.831
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:30:15.550
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:30:37.894
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:30:41.307
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:30:48.042
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:31:11.746
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:31:13.933
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:31:56.410
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:32:02.686
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:33:18.813
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:33:18.826
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:33:18.826
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:33:18.827
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:33:18.827
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:33:18.831
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2023-08-03 14:33:18.833
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:35:48.555
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:35:59.052
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:36:28.176
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:36:40.193
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:36:44.809
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:36:49.499
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:36:51.702
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:37:18.468
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:37:29.784
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:37:36.248
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:37:37.311
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:38:30.058
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:41:39.300
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:41:42.463
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 14:41:42.506
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:41:46.191
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:42:04.082
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 14:42:23.989
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:44:53.442
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:45:27.651
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 14:45:27.932
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:45:31.304
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:45:34.431
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:45:38.943
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:45:41.077
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:45:51.064
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-08-03 14:46:07.722
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): JWTAuthorizationFilter [in [Working copy] JWTAuthenticationFilter.java [in com.airport.jwt [in src/main/java [in WebProject]]]] does not exist
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:574)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:617)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:328)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:314)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:233)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:301)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:645)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:521)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:753)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:671)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:663)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.lambda$0(LSJavaHoverProvider.java:63)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2023-08-03 14:46:07.723
+!MESSAGE JWTAuthorizationFilter [in [Working copy] JWTAuthenticationFilter.java [in com.airport.jwt [in src/main/java [in WebProject]]]] does not exist
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 14:46:07.723
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-08-03 14:46:07.726
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): JWTAuthorizationFilter [in [Working copy] JWTAuthenticationFilter.java [in com.airport.jwt [in src/main/java [in WebProject]]]] does not exist
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:574)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:617)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:328)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:314)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:233)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:301)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:645)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:521)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:753)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:671)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:663)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2023-08-03 14:46:07.726
+!MESSAGE JWTAuthorizationFilter [in [Working copy] JWTAuthenticationFilter.java [in com.airport.jwt [in src/main/java [in WebProject]]]] does not exist
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:46:17.457
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:46:45.675
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:47:23.122
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:47:34.965
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:53:45.600
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:54:55.123
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:56:14.423
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:56:27.736
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:57:34.176
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:57:51.134
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 14:59:28.395
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:33:18.929
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:33:27.362
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:33:32.748
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:33:38.112
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:41:03.902
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:41:22.920
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:41:27.265
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:41:43.323
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:42:11.294
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 15:42:11.716
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:42:19.988
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 15:43:09.670
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 15:47:16.198
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-03 16:04:42.788
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:09:38.689
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:09:48.824
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:09:54.175
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:10:03.695
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:10:17.334
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:10:31.674
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:10:45.983
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:10:53.217
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:12:34.471
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:19:13.127
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:19:27.134
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:19:40.107
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:47:08.681
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:47:15.593
+!MESSAGE Classpath changed for project: WebProject
+!SESSION 2023-08-03 16:57:03.641 -----------------------------------------------
+eclipse.buildId=4.19.0.202306150758
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2023-08-03 16:57:04.774
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.jface 2 0 2023-08-03 16:57:12.783
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-03 16:57:12.783
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-03 16:57:12.783
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.rap.tools.launch.RAPLaunchShortcut.run"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.wst.server.launchShortcut.run"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-03 16:57:12.783
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.wst.server.launchShortcut.debug"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-03 16:57:16.335
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\01DevelopKits\sts-4.18.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\javaw.exe
+-cp
+C:\01DevelopKits\sts-4.18.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes;C:\01DevelopKits\sts-4.18.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\01DevelopKits\sts-4.18.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/Users/user/Desktop/풀스텍/WebServiceDevelop/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1691049436335
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:57:16.335
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-03 16:57:16.350
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 19048
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-08-03 16:57:16.507
+!MESSAGE org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+!STACK 0
+java.lang.ClassNotFoundException: org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:541)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:536)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:416)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:622)
+	at org.eclipse.lsp4e.LanguageServersRegistry$ExtensionLanguageServerDefinition.getServerInterface(LanguageServersRegistry.java:196)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$1(LanguageServerWrapper.java:291)
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-08-03 16:57:18.548
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:57:18.654
+!MESSAGE Boot project ADDED: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:57:18.655
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:57:18.659
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:58:40.082
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:58:41.510
+!MESSAGE Classpath changed for project: WebProject
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-03 16:58:58.962
+!MESSAGE Classpath changed for project: WebProject
