@@ -95,6 +95,39 @@ header nav ul li h1{
 }
 
 .map {
-    width: 70%;
+    width: 100%;
+    height: 100vh;
+    flex-grow: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
     height: 100vh;
 }
+  
+.search {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.searchInput {
+    width: 1000px; /* or any desired width */
+}
+
+.mapbt{
+    width:auto;
+    background-color: green;
+}
+  

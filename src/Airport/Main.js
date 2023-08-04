@@ -5,13 +5,11 @@ import Picture from './Picture';
 import Top10Airport from './Top10Airport';
 import RateCal from './RateCal';
 import style from './Airport.module.css';
-
-
 import Searchtool from './Searchtool';
 
 
 const Main = () =>{
-    const [searchValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState('');    
     const handleSearchChange = (e) => {
         setSearchValue(e.target.value);
     };
@@ -20,7 +18,7 @@ const Main = () =>{
         e.preventDefault();
         window.location.href = `/airportinfo?search=${encodeURIComponent(searchValue)}`;
     };
-
+    
     return(
         <>
         <main>

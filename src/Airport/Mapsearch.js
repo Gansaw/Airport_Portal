@@ -1,45 +1,72 @@
-import React from 'react';
-import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import React, { useState, useCallback, useRef } from 'react';
+import { GoogleMap, LoadScript, Marker, InfoWindow, Autocomplete } from '@react-google-maps/api';
 import style from './Airport.module.css';
 
 const Mapsearch = () => {
-  const [selectedPlace, setSelectedPlace] = React.useState(null);
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [center, setCenter] = useState({ lat: 37.5400456, lng: 126.9921017 });
+  const autoCompleteRef = useRef(null);
+
+  const onLoad = useCallback((autoComplete) => {
+    autoCompleteRef.current = autoComplete;
+  }, []);
+
+  const onPlaceChanged = () => {
+    if (autoCompleteRef.current != null) {
+      const place = autoCompleteRef.current.getPlace();
   
-  const malls = [
-    { label: "C", name: "코엑스몰", lat: 37.5115557, lng: 127.0595261 },
-    { label: "G", name: "고투몰", lat: 37.5062379, lng: 127.0050378 },
-    { label: "D", name: "동대문시장", lat: 37.566596, lng: 127.007702 },
-    { label: "I", name: "IFC몰", lat: 37.5251644, lng: 126.9255491 },
-    { label: "L", name: "롯데월드타워몰", lat: 37.5125585, lng: 127.1025353 },
-    { label: "M", name: "명동지하상가", lat: 37.563692, lng: 126.9822107 },
-    { label: "T", name: "타임스퀘어", lat: 37.5173108, lng: 126.9033793 },
-  ];
+      if (place.geometry) {
+        const lat = place.geometry.location.lat();
+        const lng = place.geometry.location.lng();
+        setCenter({lat, lng});
+        setSelectedPlace({name: place.name, lat, lng});
+      } else {
+        console.log("No location data available for the selected place.");
+      }
+    }
+  };
 
   return (
     <div className={style.map}>
       <LoadScript
         googleMapsApiKey="AIzaSyDv5r3BUbGGp9O1J36N1mz8RKHYiTaMTXw"
+        libraries={['places']}
       >
+        <div className={style.searchContainer}>
+          <button type="button" className={style.mapbt} onClick={() => window.location.href = '/'}>메인화면으로 가기</button>
+          <div className={style.search}>
+            <Autocomplete
+              onLoad={onLoad}
+              onPlaceChanged={onPlaceChanged}
+            >
+              <div className={style.searchInput}>
+              <input
+                type="text"
+                placeholder="공항이름이나 공항코드를 입력하세요."
+              />
+              </div>
+            </Autocomplete>
+          </div>
+        </div>
         <GoogleMap
           mapContainerStyle={{ width: '100%', height: '100%' }}
-          center={{ lat: 37.5400456, lng: 126.9921017 }}
+          center={center}
           zoom={10}
         >
-          {malls.map(mall => (
+          {selectedPlace && (
             <Marker 
-              key={mall.name}
-              position={{ lat: mall.lat, lng: mall.lng }}
-              label={mall.label}
-              onClick={() => setSelectedPlace(mall)}
+              position={center}
+              onClick={() => setSelectedPlace(null)}
             />
-          ))}
+          )}
           {selectedPlace && (
             <InfoWindow
-              position={{ lat: selectedPlace.lat, lng: selectedPlace.lng }}
+              position={center}
               onCloseClick={() => setSelectedPlace(null)}
             >
               <div>
-                <h2>{selectedPlace.name}</h2>
+                <h6>{selectedPlace.name}</h6>
+                <p>{selectedPlace.address}</p>
               </div>
             </InfoWindow>
           )}

@@ -9,7 +9,7 @@ const Ratecal = () => {
   const [result, setResult] = useState(null);
 
   useEffect(() => {
-    const url = "http://localhost:8080/rates"; // Assuming this is the correct endpoint for currency exchange rates
+    const url = "http://localhost:8080/rates";
 
     fetch(url)
       .then((response) => {
@@ -91,10 +91,8 @@ const Ratecal = () => {
 
         <button onClick={handleCalculate}>환전하기</button>
 
-        {result !== null && (
-          <p>
-            환전 결과: {result}
-          </p>
+        {result !== null && (          
+          <p>환전 결과: {result}</p>
         )}
       </div>
     </div>
