@@ -16,12 +16,11 @@ const Picture = () =>{
     return(
         <>
             <div className="carousel-container w-[400px] lg:hidden">
-                공항사진
                 <Carousel
                     showArrows={false}
                     autoPlay={true}
                     infiniteLoop={true}
-                    showThumbs={true}
+                    showThumbs={false}
                     selectedItem={ImgSlideData[currentIndex]}
                     onChange={handleChange}
                     className="w-full h-full">

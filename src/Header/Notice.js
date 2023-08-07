@@ -1,4 +1,4 @@
-import style from './Airport.module.css';
+import style from '../Airport/Airport.module.css';
 const Notice = () => {
 
     return (

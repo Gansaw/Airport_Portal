@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import airportlogo from '../img/airportlogo.png';
-import style from './Airport.module.css';
+import style from '../Airport/Airport.module.css';
 import DarkModeToggle from './DarkModeToggle';
 
 

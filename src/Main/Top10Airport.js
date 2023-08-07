@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import style from './Airport.module.css';
+import style from '../Airport/Airport.module.css';
 
 const Top10Airport = () => {
   const [data, setData] = useState([]);
@@ -26,7 +26,7 @@ const Top10Airport = () => {
   // }, [data])
 
   return (
-    <div className={style.nb}>
+    <div className={style.topdiv}>
       <h4>Top10 Airport</h4>
       <table>
         <thead>

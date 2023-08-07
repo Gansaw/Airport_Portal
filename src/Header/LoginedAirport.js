@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../Authorization';
 import LoginedHeader from './LoginedHeader';
-import Main from './Main';
-import './Footer.css';
+import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
 
 const LoginedAirport = () => {
   const { isLoggedIn } = useContext(AuthContext); 
@@ -18,12 +18,7 @@ const LoginedAirport = () => {
     <>
       <LoginedHeader />
       <Main />
-      <footer>
-        <div className='info'>
-          K-digital 3기 Mini Project<br />
-          copyright 2023, 최호진, 손병희
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

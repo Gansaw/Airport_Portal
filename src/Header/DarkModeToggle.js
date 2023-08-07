@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './darkmode.css';
 import {BsFillMoonFill} from 'react-icons/bs';
 import {BsFillSunFill} from 'react-icons/bs';
+
 const DarkModeToggle = () => {
     const [isDarkMode, setDarkMode] = useState(false);
 

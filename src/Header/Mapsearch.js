@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow, Autocomplete } from '@react-google-maps/api';
-import style from './Airport.module.css';
+import style from '../Airport/Airport.module.css';
 
 const Mapsearch = () => {
   const [selectedPlace, setSelectedPlace] = useState(null);

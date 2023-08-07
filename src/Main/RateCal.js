@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import style from './Airport.module.css';
+import style from '../Airport/Airport.module.css';
 
 const Ratecal = () => {
   const [data, setData] = useState([]);
@@ -50,7 +50,7 @@ const Ratecal = () => {
   };
 
   return (
-    <div className={style.nb}>
+    <div className={style.ratediv}>
       <div>
         <h3>환율 계산기</h3>
         <label htmlFor="amount">환전할 금액:</label>
