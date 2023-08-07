@@ -9,7 +9,7 @@ const Ratecal = () => {
   const [result, setResult] = useState(null);
 
   useEffect(() => {
-    const url = "http://localhost:8080/rates";
+    const url = "http://10.125.121.186:8080/rates";
 
     fetch(url)
       .then((response) => {

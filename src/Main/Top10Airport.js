@@ -5,7 +5,7 @@ const Top10Airport = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:8080/top10s";
+    const url = "http://10.125.121.186:8080/top10s";
 
     fetch(url)
       .then((response) => {
