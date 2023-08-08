@@ -26,3 +26,19 @@
 1691049538685	Delete element
 1691049551968	Delete elements
 1691049563050	Delete element
+1691108249946	Delete element
+1691109468915	Delete element
+1691109604574	Rename type 'MemberUserDetailsServiceImpl'
+1691109675564	Move compilation unit
+1691109688118	Move compilation unit
+1691109965156	Rename type 'Member'
+1691110011319	Rename type 'User'
+1691110950470	Infer generic type arguments
+1691113918771	Encapsulate field 'jwtUtil'
+1691114727590	Move compilation unit
+1691114797795	Delete element
+1691114802795	Delete element
+1691114860747	Delete element
+1691117062929	Encapsulate field 'jwtUtil'
+1691118890433	Delete element
+1691120880767	Encapsulate field 'jwtUtil'

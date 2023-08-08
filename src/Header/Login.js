@@ -11,7 +11,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // 입력값 검증
+    // 아이디 또는 비밀번호 미입력
     if (!username || !password) {
       alert('아이디와 비밀번호를 입력해주세요.');
       return;
@@ -27,14 +27,20 @@ const Login = () => {
       });
 
       if (response.ok) {
+        // 응답이 JWT 토큰을 포함하는 경우
+        const token = await response.text();
+
+        // 토큰을 쿠키로 저장
+        document.cookie = `token=${encodeURIComponent(token)}; path=/;`;
+
         alert('로그인 성공! 환영합니다!');
         setIsLoggedIn(true);
-        navi('/dashboard');
+        navi('/');
       } else {
         alert('아이디 또는 비밀번호가 일치하지 않습니다.');
       }
     } catch (error) {
-    //   console.error('Error: ', error);
+      console.error('Error: ', error);
       alert('알 수 없는 오류로 로그인에 실패하였습니다. 나중에 다시 시도해주세요.');
     }
   };
@@ -42,6 +48,7 @@ const Login = () => {
   const handleSignup = () => {
     navi('/signup'); 
   };
+  
 
   return (
     <div>

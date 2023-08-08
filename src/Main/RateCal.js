@@ -89,7 +89,7 @@ const Ratecal = () => {
           ))}
         </select>
 
-        <button onClick={handleCalculate}>환전하기</button>
+        <button className='ratebt' onClick={handleCalculate}>환전하기</button>
 
         {result !== null && (          
           <p>환전 결과: {result}</p>

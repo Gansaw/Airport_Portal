@@ -1,0 +1,8 @@
+package com.airport.domain;
+
+public class LoginResponse {
+	private final String jwt;
+	
+	public 
+
+}

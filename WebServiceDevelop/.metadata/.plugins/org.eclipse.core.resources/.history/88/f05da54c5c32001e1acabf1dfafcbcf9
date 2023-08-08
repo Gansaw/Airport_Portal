@@ -1,0 +1,6 @@
+package com.airport.jwt;
+
+public class CreateToken {
+
+
+}

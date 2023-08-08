@@ -27,7 +27,7 @@ const Top10Airport = () => {
 
   return (
     <div className={style.topdiv}>
-      <h4>Top10 Airport</h4>
+      <h3>Top10 Airport</h3>
       <table>
         <thead>
           <tr>

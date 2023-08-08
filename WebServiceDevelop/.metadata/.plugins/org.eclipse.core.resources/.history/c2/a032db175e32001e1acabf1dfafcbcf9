@@ -1,0 +1,19 @@
+package com.airport.jwt;
+
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.stereotype.Component;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j	
+@Component
+public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter{
+	private final JwtUtil jwtUtil;
+	
+	public JwtAuthenticationFiter(JwtUtil jwtUtil) {
+		this.jwtUtil = jwtUtil;
+		setFilterProcessesUrl("/user/login");
+		
+	}
+
+}

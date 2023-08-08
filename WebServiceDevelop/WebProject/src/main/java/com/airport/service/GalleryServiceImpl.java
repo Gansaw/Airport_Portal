@@ -41,7 +41,7 @@ public class GalleryServiceImpl implements GalleryService {
 		Gallery findgallery = galleryRepo.findById(gallery.getId()).get();
 		findgallery.setTitle(gallery.getTitle());
 		findgallery.setContent(gallery.getContent());
-		findgallery.setImageloc(gallery.getImageloc());
+		findgallery.setImage(gallery.getImage());
 		galleryRepo.save(findgallery);
 	}
 

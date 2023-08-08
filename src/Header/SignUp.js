@@ -1,40 +1,83 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [nickname, setNickname] = useState('');
-  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');  
   const [agreementChecked, setAgreementChecked] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [usernameError, setUsernameError] = useState('');
+  const [nicknameError, setNicknameError] = useState('');
+
+
+  const navi = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  };
+    if (!agreementChecked) {
+      alert("이용약관에 동의해주세요.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const member = {
+      username,
+      password,      
+      role: '회원',
+      enabled: true,
+    };
+
+    axios.post('http://10.125.121.186:8080/signup', member, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        console.log("success", response);
+        navi('/welcome');
+      })
+      .catch((error) => {
+        console.log("fail", error.response);
+      
+        if (error.response.status === 400) {
+          const errorMessage = error.response.data.message; // Access the error message from 'message' property
+          if (errorMessage.includes("중복된 아이디")) {
+            setUsernameError(errorMessage);
+            setNicknameError(''); // Clear the nickname error message
+          } else if (errorMessage.includes("중복된 닉네임")) {
+            setNicknameError(errorMessage);
+            setUsernameError(''); // Clear the username error message
+          }
+        }
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  }
 
   return (
-    <div>    
+    <div>
       <h1>회원가입</h1>
       <form onSubmit={handleSubmit}>
         <div className="grid">
           <label htmlFor="username">
             아이디
-            <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
-            <br />            
           </label>
+          <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required /><br />
           <label htmlFor="password">
             비밀번호
-            <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-            <br />
           </label>
-          <label htmlFor="nickname">
-            닉네임
-            <input type="text" id="nickname" name="nickname" value={nickname} onChange={(e) => setNickname(e.target.value)} required />
-            <br />
-          </label>
-          <label htmlFor="email">이메일</label>
-          <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="예시: abc@abc.com" required />
+          <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <br />        
           <br />
-          <br />
+          
+          <div className="error-message">
+            {usernameError && <p>{usernameError}</p>}
+            {nicknameError && <p>{nicknameError}</p>}
+          </div>
 
           <small>필독 : 아래의 글을 확인 후 회원가입을 진행하세요.</small>
           <br />
@@ -53,7 +96,7 @@ const SignUp = () => {
             위 내용에 동의합니다.
           </label>
 
-          <button type="submit">회원가입</button>
+          <button type="submit" disabled={isSubmitting}>회원가입</button>
           <button type="button" onClick={() => window.location.href = '/'}>메인화면</button>
         </div>
       </form>

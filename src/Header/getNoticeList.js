@@ -1,11 +1,11 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 
 const getNoticeList = ({ noticeList, nickname }) => {
 
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:8080/notices";
+        const url = "http://10.125.121.186:8080/notices";
 
         fetch(url)
             .then((response) => {
@@ -26,7 +26,7 @@ const getNoticeList = ({ noticeList, nickname }) => {
     };
 
     const handleTitleClick = (id) => {
-        const url = `http://localhost:8080/getNotice?id=${id}`;
+        const url = `http://10.125.121.186:8080/notices?/${id}`;
         fetch(url)
             .then((response) => {
                 if (!response.ok) {
@@ -40,15 +40,8 @@ const getNoticeList = ({ noticeList, nickname }) => {
             .catch((error) => console.error("Fetch Error", error));
     };
 
-
     return (
         <div>
-            <h1>게시글 목록</h1>
-            <h3>
-                <h2>{nickname}님 게시판 입장을 환영합니다.</h2>
-            </h3>
-            <a href="/logout">로그아웃</a>
-            <hr />
             <table>
                 <tr>
                     <th>번호</th>

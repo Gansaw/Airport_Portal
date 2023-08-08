@@ -1,0 +1,5 @@
+package com.airport.auth;
+
+public class UserDetailsImpl {
+
+}

@@ -7,7 +7,7 @@ const Navigation = () => {
       <ul>
         <li>
           <a href="./" className="contrast" onClick={(event) => event.preventDefault()}>
-            <strong>사이트정보</strong>
+            <h3><strong>사이트정보</strong></h3>
           </a>
         </li>
         {/* Additional links go here */}

@@ -1,35 +1,62 @@
-import style from '../Airport/Airport.module.css';
+// Notice.js
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 const Notice = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const url = "http://10.125.121.186:8080/notices";
+
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Response Error');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setData(data);
+            })
+            .catch((error) => console.error("Fetch Error", error));
+    }, []);
+
+    const formatTimestamp = (timestamp) => {
+        const date = new Date(timestamp);
+        return date.toLocaleString();
+    };
 
     return (
-
-        
-            <div className={style.nb}>
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">번호</th>
-                            <th scope="col">제목</th>
-                            <th scope="col">글쓴이</th>
-                            <th scope="col">날짜</th>
-                            <th scope="col">조회수</th>
+        <div>
+            <h3>공지사항</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">번호</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">글쓴이</th>
+                        <th scope="col">날짜</th>
+                        <th scope="col">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item) => (
+                        <tr key={item.id}>
+                            <td>{item.id} 상세</td>
+                            <td>
+                            <Link to={`/getNotice/${item.id}`} style={{ cursor: 'pointer' }}>
+                                    {item.title}
+                                </Link>
+                            </td>
+                            <td>{item.writer}</td>
+                            <td>{formatTimestamp(item.date)}</td>
+                            <td>{item.view}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>번호1</td>
-                            <td>제목1</td>
-                            <td>글쓴이1</td>
-                            <td>날짜1</td>
-                            <td>조회수1</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h5>글쓰기</h5> 
-            </div>
-        
-
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
-}
+};
 
 export default Notice;

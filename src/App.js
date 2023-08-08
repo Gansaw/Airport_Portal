@@ -15,7 +15,7 @@ import LoginedAirport from './Header/LoginedAirport';
 function App() {
   
   return (    //라턴안에는 태그 한개만 존재 자식은 상관없음
-   
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Airport />}></Route>
@@ -29,6 +29,7 @@ function App() {
           <Route path='/dashboard' element={<LoginedAirport />}></Route>
         </Routes> 
       </BrowserRouter>
+    </AuthProvider>
     
   
     

@@ -1,11 +1,13 @@
 package com.airport.domain;
 
+import java.sql.Blob;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,13 +21,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name="gallery")
 public class Gallery {
 	@Id
 	private Long id;
 	private String writer;
 	private String title;
 	private String content;
-	private String imageloc;
+	private Blob image;
 	private Date date;
 	private Long view;
 

@@ -1,6 +1,7 @@
 article {
     border: 1px solid cornflowerblue; /* 예시: 경계선 추가 */
     padding: 1rem; /* 내부 패딩 추가 */
+    
 }
 .carousel-container {
     width: 400px; /* Set the width of the container */
@@ -25,7 +26,7 @@ article {
     color: white;
     border-color: blue;
     background-color: cornflowerblue;   
-    border-radius: 30%;
+    border-radius: 20%;
     margin-right: 10px;
 }
 
@@ -110,6 +111,11 @@ header nav ul li h1{
 
 .mapbt{
     width:auto;
-    background-color: green;
+    background-color: cornflowerblue;
+    border-color: blue;
+    
 }
-  
+
+h3{
+    color:cornflowerblue
+}

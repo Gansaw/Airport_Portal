@@ -41,7 +41,7 @@ public class NoticeController {
 
 	
 	@PostMapping("/insertNotice")
-	public String insertNotice(@ModelAttribute("회원") Member member, Notice notice) {
+	public String insertNotice(@ModelAttribute("관리자") Member member, Notice notice) {
 		if (member.getUsername()!="admin")
 			return "관리자만 사용할 수 있는 기능입니다.";	
 		
@@ -49,7 +49,7 @@ public class NoticeController {
 	}
 	
 	@PutMapping("/updateNotice")
-	public String updateNotice(@ModelAttribute("회원") Member member, Notice notice) {
+	public String updateNotice(@ModelAttribute("관리자") Member member, Notice notice) {
 		if (member.getUsername()!="admin")
 			return "관리자만 사용할 수 있는 기능입니다.";	
 		
