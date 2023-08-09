@@ -19,14 +19,12 @@ article {
     color: white;
     border-color: blue;
     background-color: cornflowerblue;   
-    border-radius: 20%;
 }
 
 .bt2{
     color: white;
     border-color: blue;
     background-color: cornflowerblue;   
-    border-radius: 20%;
     margin-right: 10px;
 }
 
@@ -106,9 +104,17 @@ header nav ul li h1{
 }
   
 .searchInput {
-    width: 1000px; /* or any desired width */
-}
-
+    display: flex;
+    justify-content: space-between; /* 필요에 따라 조정하세요. */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 1000px;
+  }
+  
+  .searchInput > div {
+    flex: 1; /* 각 <div> 요소에 동일한 공간 배분 */
+    padding: 0 10px; /* 필요에 따라 조정하세요. 각 요소 사이의 간격 */
+  }
+  
 .mapbt{
     width:auto;
     background-color: cornflowerblue;

@@ -1,5 +1,5 @@
 import React from "react";
-
+import style from '../Airport/Airport.module.css'
 // The Navigation Component
 const Navigation = () => {
   return (
@@ -26,7 +26,7 @@ const Header = () => {
         <h2>세계 공항의 정보를 모아둔 포털입니다. 다양한 공항정보를 만나볼 수 있습니다.</h2>
       </hgroup>
       <p>
-        <button type="button" onClick={() => window.location.href = '/'}>
+        <button type="button" className={style.bt1} onClick={() => window.location.href = '/'}>
           사이트 둘러보기
         </button>
       </p>
@@ -57,7 +57,7 @@ const MainContent = () => {
                 <h2>가입하기</h2>
                 <h6>가입하여 많은 정보와 프로모션 혜택을 얻어보세요</h6>
             </hgroup>
-            <button type="button" onClick={() => window.location.href = '/signup'}>
+            <button type="button" className={style.bt1} onClick={() => window.location.href = '/signup'}>
                 회원가입 하러가기
             </button>
         </article>

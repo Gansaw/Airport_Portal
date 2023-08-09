@@ -15,7 +15,7 @@ const Main = () =>{
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.location.href = `/airportinfo?search=${encodeURIComponent(searchValue)}`;
+        window.location.href = `/mapresearch?search=${encodeURIComponent(searchValue)}`;
     };
     
     return(

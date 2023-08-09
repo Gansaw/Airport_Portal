@@ -2,11 +2,13 @@ import React, { useState, useCallback, useRef } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow, Autocomplete } from '@react-google-maps/api';
 import style from '../Airport/Airport.module.css';
 
+
 const Mapsearch = () => {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [center, setCenter] = useState({ lat: 37.5400456, lng: 126.9921017 });
   const autoCompleteRef = useRef(null);
-
+  const [searchTerm, setSearchTerm] = useState('');
+  
   const onLoad = useCallback((autoComplete) => {
     autoCompleteRef.current = autoComplete;
   }, []);
@@ -25,6 +27,15 @@ const Mapsearch = () => {
       }
     }
   };
+  const activeButton = () => {
+    alert(`${searchTerm} 입력 완료`);
+  }
+
+  const activeEnter = (e) => {
+    if(e.key === "Enter") {
+      activeButton();
+    }
+  }
 
   return (
     <div className={style.map}>
@@ -40,10 +51,18 @@ const Mapsearch = () => {
               onPlaceChanged={onPlaceChanged}
             >
               <div className={style.searchInput}>
-              <input
-                type="text"
-                placeholder="공항이름이나 공항코드를 입력하세요."
-              />
+                <div>
+                <input
+                  type="search"
+                  placeholder="공항이름이나 공항코드를 입력하세요."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={(e) => activeEnter(e)}
+                />
+                </div>
+                <div>
+                  <button className={style.mapbt} onClick={activeEnter}>검색</button>
+                </div>
               </div>
             </Autocomplete>
           </div>
