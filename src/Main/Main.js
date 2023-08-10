@@ -15,7 +15,7 @@ const Main = () =>{
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.location.href = `/mapresearch?search=${encodeURIComponent(searchValue)}`;
+        window.location.href = `/mapsearch?search=${encodeURIComponent(searchValue)}`;
     };
     
     return(
