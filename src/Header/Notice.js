@@ -1,10 +1,11 @@
 // Notice.js
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 const Notice = () => {
     const [data, setData] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const url = "http://10.125.121.186:8080/notices";
@@ -25,6 +26,11 @@ const Notice = () => {
     const formatTimestamp = (timestamp) => {
         const date = new Date(timestamp);
         return date.toLocaleString();
+    };
+
+    
+    const handleWriteClick = () => {
+        navigate('/insertNotice');
     };
 
     return (
@@ -57,6 +63,7 @@ const Notice = () => {
                     ))}
                 </tbody>
             </table>
+            <button onClick={handleWriteClick}>글쓰기</button>
         </div>
     );
 };

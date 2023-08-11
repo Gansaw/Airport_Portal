@@ -13,5 +13,5 @@ frontend
   + 0807 백엔드 작업 - securityConfig 및 Jwt2(Authorize 제외 구현 완료)
   + 0808 프론트 보조 - Notice 및 Gallery 화면 구현 완료
   + 0809-0810 작업x(제4회 부산해커톤 대회)
-  + 0811 프론트 포조 - getNoticeList, getGalleryList 삭제, insertNotice, insertGallery 구현
+  + 0811 프론트 포조 - getNoticeList, getGalleryList 삭제, insertNotice, insertGallery 구현. 사이트정보에 Header 추가하여 자연스러운 화면 구성
   + 0812 백엔드 작업 - 로그인 구현 검토

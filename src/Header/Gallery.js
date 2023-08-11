@@ -1,6 +1,6 @@
-// Notice.js
+// Gallery.js
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 const Gallery = () => {
@@ -22,21 +22,24 @@ const Gallery = () => {
             .catch((error) => console.error("Fetch Error", error));
     }, []);
 
+    const navigate = useNavigate();
+
+    const handleWriteClick = () => {
+        navigate('/insertGallery');
+    };
+
     return (
         <div>
             <Header />
             <h3>갤러리</h3>
-            <table>
-                <tbody>
-                    {data.map((item) => (
-                        <tr key={item.id}>                            
-                            <td>
-                                <Link to={`/gallerys/${item.content}`} style={{ cursor: 'pointer' }}>{item.title}</Link>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <div className="container">
+                {data.map((item) => (
+                    <Link key={item.id} to={`/gallerys/${item.id}`} className="link">
+                        <img src={item.image} alt={item.title} className="image" />
+                    </Link>
+                ))}
+            </div>   
+            <button onClick={handleWriteClick}>글쓰기</button>         
         </div>
     );
 };
