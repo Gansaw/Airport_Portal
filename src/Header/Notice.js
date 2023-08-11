@@ -1,6 +1,7 @@
 // Notice.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 const Notice = () => {
     const [data, setData] = useState([]);
@@ -28,6 +29,7 @@ const Notice = () => {
 
     return (
         <div>
+            <Header />
             <h3>공지사항</h3>
             <table>
                 <thead>

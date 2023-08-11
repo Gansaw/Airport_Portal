@@ -8,9 +8,11 @@ import SignUp from './Header/SignUp';
 import Siteinfo from './Header/Siteinfo';
 import Mapsearch from './Header/Mapsearch';
 import AirportInfo from './Header/AirportInfo';
+import Notice from './Header/Notice';
 import Gallery from './Header/Gallery';
 import Welcome from './Header/Welcome';
 import LoginedAirport from './Header/LoginedAirport';
+
 
 function App() {
   
@@ -23,6 +25,7 @@ function App() {
           <Route path='/mapsearch' element={<Mapsearch />}></Route>
           <Route path='/airportInfo' element={<AirportInfo />}></Route>
           <Route path='/gallery' element={<Gallery />}></Route>
+          <Route path='/notice' element={<Notice />}></Route>          
           <Route path='/login' element={<Login />}></Route>
           <Route path='/signup' element={<SignUp />}></Route>
           <Route path='/welcome' element={<Welcome />}></Route>

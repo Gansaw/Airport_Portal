@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
 
-const InsertNotice = () => {
+const InsertGallery = () => {
     const [title, setTitle] = useState('');
     const [writer, setWriter] = useState('');
     const [content, setContent] = useState('');
@@ -31,13 +31,14 @@ const InsertNotice = () => {
         formData.append('writer', writer);
         formData.append('content', content);
         formData.append('file', file);
+
         
     };
 
     return (
         <div>
             <Header />
-            <h3>공지사항 등록</h3>
+            <h3>갤러리 등록</h3>
             <form onSubmit={handleSubmit}>
                 <table>
                     <tr>
@@ -75,4 +76,4 @@ const InsertNotice = () => {
     );
 };
 
-export default InsertNotice;
+export default InsertGallery;
