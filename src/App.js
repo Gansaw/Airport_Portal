@@ -20,13 +20,13 @@ function App() {
         <Routes>
           <Route path='/' element={<Airport />}></Route>
           <Route path='/siteinfo' element={<Siteinfo />}></Route>
-          <Route path='/mapsearch' element={<Mapsearch />}></Route>
           <Route path='/airportInfo' element={<AirportInfo />}></Route>
           <Route path='/gallery' element={<Gallery />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/signup' element={<SignUp />}></Route>
           <Route path='/welcome' element={<Welcome />}></Route>
           <Route path='/dashboard' element={<LoginedAirport />}></Route>
+          <Route path="/mapsearch" element={<Mapsearch key={window.location.pathname + window.location.search} />} />
         </Routes> 
       </BrowserRouter>
     </AuthProvider>

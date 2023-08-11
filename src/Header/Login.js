@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Authorization';
+import './Login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -51,23 +52,35 @@ const Login = () => {
   
 
   return (
-    <div>
-      <h1>로그인</h1>
+    <>
+    <h1>로그인</h1>
+    <div className='logindiv'>
       <form onSubmit={handleLogin}>
-        <div className="grid">
+        <div className="flex">
           <label htmlFor="username">
             아이디
-            <input type="text" id="username" name="username" onChange={(e) => setUsername(e.target.value)} />
+            <input type="text" id="username" name="username" placeholder='아이디를 입력하세요*' onChange={(e) => setUsername(e.target.value)} />
           </label>
           <label htmlFor="password">
             비밀번호
-            <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" id="password" name="password" placeholder='비밀번호를 입력하세요*'onChange={(e) => setPassword(e.target.value)} />
           </label>
         </div>
-        <button type="submit">로그인</button>
-        <button type="button" onClick={handleSignup}>회원가입</button>
+        <div className='checkbox'>
+          <input type="checkbox" id="flexCheckDefault" name="flexCheck" />
+          <label htmlFor="flexCheckDefault">Remember password</label>
+        </div>
+        <a href='#'>비밀번호를 잊어버리셨나요?</a>
+        
+        <button type="submit" className='bt1'>로그인</button>
+
+        <h6>아이디가 없으신가요?</h6>
+        <button type="button" className='bt1' onClick={handleSignup}>회원가입</button>
+        
       </form>
+      
     </div>
+    </>
   );
 };
 

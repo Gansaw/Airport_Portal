@@ -3,6 +3,7 @@ import { GoogleMap, LoadScript, Marker, InfoWindow, Autocomplete } from '@react-
 import style from '../Airport/Airport.module.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+
 const Mapsearch = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -10,26 +11,32 @@ const Mapsearch = () => {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [center, setCenter] = useState({ lat: 37.5400456, lng: 126.9921017 });
   const autoCompleteRef = useRef(null);
-  const [searchTerm, setSearchTerm] = useState(searchQuery);
+  const [searchTerm, setSearchTerm] = useState();
   const [searchResults, setSearchResults] = useState([]);
-  const [mapInstance, setMapInstance] = useState(null);
   
+  console.log(searchQuery)
 
   
   useEffect(() => {
+    
+    console.log(searchTerm)
     if (searchTerm && window.google) {
       const service = new window.google.maps.places.AutocompleteService();
       service.getQueryPredictions({ input: searchTerm }, (predictions, status) => {
         if (status === window.google.maps.places.PlacesServiceStatus.OK) {
           setSearchResults(predictions);
+          
         }
       });
     }
   }, [searchTerm]);
+
   useEffect(() => {
+    setSearchTerm(searchQuery);
     if (searchQuery && window.google) {
         const geocoder = new window.google.maps.Geocoder();
         geocoder.geocode({ 'address': searchQuery }, (results, status) => {
+          console.log('sta',status)
             if (status === 'OK') {
               // 지도의 중심을 검색된 위치로 업데이트
               setCenter(results[0].geometry.location.toJSON());
@@ -50,6 +57,8 @@ const Mapsearch = () => {
 
   const onLoad = useCallback((autoComplete) => {
     autoCompleteRef.current = autoComplete;
+    console.log('auto',autoCompleteRef.current)
+    //onPlaceChanged();
   }, []);
 
   const onPlaceChanged = () => {
@@ -88,7 +97,10 @@ const Mapsearch = () => {
   };
   
   const navigate = useNavigate();
+
   const handleSearch = () => {
+
+    console.log(searchResults, searchQuery)
     if (searchResults && searchResults.length > 0) {
       const firstResult = searchResults[0];
       // 여기서는 PlacesService를 사용하여 첫 번째 결과에 대한 자세한 정보를 가져와야 합니다.
@@ -104,38 +116,8 @@ const Mapsearch = () => {
       });
     }
   };
-  const handleMapClick = (event) => {
-    const geocoder = new window.google.maps.Geocoder();
-  
-    geocoder.geocode({ 'location': event.latLng }, async (results, status) => {
-      if (status === 'OK') {
-        if (results[0]) {
-          const country = results[0].address_components.find(component => component.types.includes("country")).long_name;
-          
-          try {
-            const response = await fetch(`/api/airports/${country}`);
-            const countryAirports = await response.json();
-            addAirportMarkers(countryAirports);
-          } catch (error) {
-            console.error("Failed to fetch airports", error);
-          }
-        }
-      }
-    })
-  };
-  const addAirportMarkers = (countryAirports) => {
-    countryAirports.forEach(airport => {
-      new window.google.maps.Marker({
-        position: new window.google.maps.LatLng(airport.lat, airport.lng),
-        map: mapInstance,
-        title: airport.name,
-      });
-    });
-  };
-  const handleMapLoad = (map) => {
-    setMapInstance(map);
-  };
-  
+
+ 
 
   return (
     <div className={style.map}>
@@ -173,9 +155,7 @@ const Mapsearch = () => {
         <GoogleMap
           mapContainerStyle={{ width: '100%', height: '100%' }}
           center={center}
-          zoom={10}
-          onClick={handleMapClick}
-          onLoad={handleMapLoad}
+          zoom={12}
         >
           {selectedPlace && (
             <Marker 
