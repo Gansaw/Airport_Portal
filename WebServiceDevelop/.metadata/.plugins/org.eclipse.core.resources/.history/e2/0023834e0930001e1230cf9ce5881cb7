@@ -1,5 +1,0 @@
-package com.airport.persistence;
-
-public interface AirportRepo {
-
-}

@@ -1,4 +1,3 @@
-// Notice.js
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
@@ -28,7 +27,6 @@ const Notice = () => {
         return date.toLocaleString();
     };
 
-    
     const handleWriteClick = () => {
         navigate('/insertNotice');
     };
@@ -50,9 +48,9 @@ const Notice = () => {
                 <tbody>
                     {data.map((item) => (
                         <tr key={item.id}>
-                            <td>{item.id} 상세</td>
-                            <td>
-                            <Link to={`/getNotice/${item.id}`} style={{ cursor: 'pointer' }}>
+                            <td>{item.id}</td>
+                            <td>                                
+                                <Link to={`/getNotice/${item.id}`} style={{ cursor: 'pointer' }}>
                                     {item.title}
                                 </Link>
                             </td>

@@ -1,5 +1,4 @@
 package com.airport.domain;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -19,17 +18,15 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name="member")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Member {	
-	@Id
-	private String username;	
-	private String password;
-	private String nickname;
-	private String role;	
-	private String email;
-	private boolean enabled;	
-	
+@Table(name = "member")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+public class Member {
+    @Id
+    private String username;
+    private String password;    
+    private String role;
+    private boolean enabled;
+
     public String getRole() {
         return role;
     }

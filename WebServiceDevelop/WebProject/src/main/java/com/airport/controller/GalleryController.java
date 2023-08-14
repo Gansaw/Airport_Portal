@@ -5,8 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,15 +25,15 @@ public class GalleryController {
 	
 	@Autowired
 	private GalleryRepo galleryRepo;
+
 	
-	@GetMapping("/getGalleryList")
-	public String getGalleryList(@ModelAttribute("회원") Member member, Model model, Gallery gallery) {		
-		model.addAttribute("galleryList", galleryService.getGalleryList());
-		return "getGalleryList";
+	@RequestMapping("/gallerys")
+	public Iterable<Gallery> getGallerys(){
+		return galleryRepo.findAll();
 	}
-	
+		
 	@GetMapping("/getGallery")
-	public String getGallery(@ModelAttribute("회원") Member member, Model model, Long id) {
+	public String getGallery(@ModelAttribute("USER") Member member, Model model, Long id) {
 		Gallery gallery = galleryService.getGallery(Gallery.builder().id(id).build());
 		model.addAttribute("gallery", gallery);
 		return "getGallery";
@@ -39,27 +41,27 @@ public class GalleryController {
 	}
 	
 	@PostMapping("/insertGallery")
-	public String insertGallery(@ModelAttribute("회원") Member member, Gallery gallery) {		
-		return "insertGallery";
+	public String insertGallery(@ModelAttribute("USER") Member member, @RequestBody Gallery gallery) {
+	    galleryService.insertGallery(gallery);
+	    return "Success";
 	}
 	
-	@PutMapping("/updateGallery")
-	public String updateGallery(@ModelAttribute("회원") Member member, Gallery gallery) {		
+	@PutMapping("/updateGallery/{id}")
+	public String updateGallery(@ModelAttribute("USER") Member member, @PathVariable Long id, @RequestBody Gallery gallery) {
+		gallery.setId(id);
 		galleryService.updateGallery(gallery);
-		return "getGalleryList";
+		return "Success";
 		
 	}
 	
-	@DeleteMapping("/deleteGallery")
-	public String deleteGallery(@ModelAttribute("회원") Member member, Gallery gallery) {		
-		galleryService.deleteGallery(gallery);
-		return "getGalleryList";
+	@DeleteMapping("/deleteGallery/{id}")
+	public String deleteGallery(@ModelAttribute("USER") Member member, Gallery gallery, @PathVariable Long id) {
+		Gallery deleteGallery = Gallery.builder().id(id).build();
+		galleryService.deleteGallery(deleteGallery);
+		return "Success";
 		
 	}
 	
-	@RequestMapping("/gallerys")
-	public Iterable<Gallery> getGallerys(){
-		return galleryRepo.findAll();
-	}
+
 
 }

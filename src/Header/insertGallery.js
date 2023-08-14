@@ -5,7 +5,7 @@ const InsertGallery = () => {
     const [title, setTitle] = useState('');
     const [writer, setWriter] = useState('');
     const [content, setContent] = useState('');
-    const [file, setFile] = useState(null);
+    const [imageUrl, setImageUrl] = useState('');
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
@@ -19,33 +19,38 @@ const InsertGallery = () => {
         setContent(e.target.value);
     };
 
-    const handleFileChange = (e) => {
-        setFile(e.target.files[0]);
+    const handleImageUrlChange = (e) => {
+        setImageUrl(e.target.value);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const formData = new FormData();
-        formData.append('title', title);
-        formData.append('writer', writer);
-        formData.append('content', content);
-        formData.append('file', file);
+        const data = {
+            title: title,
+            writer: writer,
+            content: content,
+            imageUrl: imageUrl,
+        };
 
         try {
             const response = await fetch("http://10.125.121.186:8080/insertGallery", {
                 method: 'POST',
-                body: formData,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
             });
 
             if (!response.ok) {
                 throw new Error('Upload Error');
             }
 
+            // Clear form fields after successful submission
             setTitle('');
             setWriter('');
             setContent('');
-            setFile(null);
+            setImageUrl('');
         } catch (error) {
             console.error("Upload Error", error);
         }
@@ -77,9 +82,9 @@ const InsertGallery = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>첨부파일</td>
+                            <td>이미지 URL</td>
                             <td>
-                                <input type="file" name="file" onChange={handleFileChange} />
+                                <input type="text" name="imageUrl" value={imageUrl} onChange={handleImageUrlChange} />
                             </td>
                         </tr>
                         <tr>

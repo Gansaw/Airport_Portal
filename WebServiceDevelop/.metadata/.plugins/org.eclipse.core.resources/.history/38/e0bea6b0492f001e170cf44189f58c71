@@ -1,6 +1,0 @@
-package com.airport.login;
-
-@Service
-public class LoginValidation {
-
-}

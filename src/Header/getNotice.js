@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const GetNotice = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  const navi = useNavigate();
+
+  const handleUpdateClick = () => {
+    navi(`/updateNotice/${id}`);
+  };
+
+  const handleDeleteClick = () => {
+    navi(`/deleteNotice/${id}`);
+  };
+
+  const handleListClick = () => {
+    navi(`/notice`);
+  };
 
   useEffect(() => {
     const url = `http://10.125.121.186:8080/notices/${id}`;
@@ -14,12 +27,12 @@ const GetNotice = () => {
           throw new Error('Response Error');
         }
         return response.json();
-      })
+      })  
       .then((noticeData) => {
         setData(noticeData);
       })
       .catch((error) => {
-        console.error("Fetch Error", error);        
+        console.error("Fetch Error", error);
       });
   }, [id]);
 
@@ -28,46 +41,51 @@ const GetNotice = () => {
     return date.toLocaleString();
   };
 
+  if (data === null) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="grid">
-      <div className="title">
+    <div>
+      <div>
         <h1>게시글 상세</h1>
       </div>
       <form action="/updateNotice" method="post">
         <input name="id" type="hidden" value={data.id} />
         <table>
-          <tr>
-                <td>제목</td>
-            <td><input name="title" type="text" defaultValue={data.title} /></td>
-          </tr>
-          <tr>
-            <td>글쓴이</td>
-            <td><input name="writer" type="text" defaultValue={data.writer} /></td>
-          </tr>
-          <tr>
-            <td>내용</td>
-            <td><textarea name="content" defaultValue={data.content} cols="40" rows="10"></textarea></td>
-          </tr>
-          <tr>
-            <td>날짜</td>
-            <td>{formatTimestamp(data.date)}</td>
-          </tr>
-          <tr>
-            <td>조회수</td>
-            <td>{data.view}</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="submit" value="게시물 수정" />
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>제목</td>
+              <td>{data.title}</td>
+            </tr>
+            <tr>
+              <td>글쓴이</td>
+              <td>{data.writer}</td>
+            </tr>
+            <tr>
+              <td>내용</td>
+              <td>{data.content}</td>
+            </tr>
+            <tr>
+              <td>날짜</td>
+              <td>{formatTimestamp(data.date)}</td>
+            </tr>
+            <tr>
+              <td>조회수</td>
+              <td>{data.view}</td>
+            </tr>
+            <tr>
+              <td>
+                <button type='button' onClick={handleUpdateClick}>게시물 수정</button>
+                <button type='button' onClick={handleDeleteClick}>게시물 삭제</button>
+                <button type='button' onClick={handleListClick}>게시물 목록</button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </form>
-      <a href="/insertNotice">게시물 등록</a>&nbsp;&nbsp;&nbsp;
-      {sessionStorage.getItem('member').role === 'ROLE_ADMIN' && (
-        <a href={`/deleteNotice?id=${data.id}`}>게시물 삭제</a>
-      )}&nbsp;&nbsp;&nbsp;
-      <a href="/getNoticeList">게시물 목록</a>
+
+
     </div>
   );
 };

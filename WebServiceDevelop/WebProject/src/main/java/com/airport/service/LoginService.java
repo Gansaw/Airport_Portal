@@ -43,10 +43,6 @@ public class LoginService {
 	public boolean existsByUsername(String username) {
 		return memberRepo.existsByUsername(username);
 	}
-	
-	public boolean existsByNickname(String nickname) {
-		return memberRepo.existsByNickname(nickname);
-	}
 
 	public void save(Member member) {
 	    String encodedPassword = encoder.encode(member.getPassword());

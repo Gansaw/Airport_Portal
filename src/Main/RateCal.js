@@ -4,7 +4,7 @@ import style from '../Airport/Airport.module.css';
 const Ratecal = () => {
   const [data, setData] = useState([]);
   const [amount, setAmount] = useState("");
-  const [fromCurrency, setFromCurrency] = useState("KRW");
+  const [fromCurrency, setFromCurrency] = useState("KRW"); // 변경된 기본값
   const [toCurrency, setToCurrency] = useState("USD");
   const [result, setResult] = useState(null);
 

@@ -24,9 +24,9 @@ public class UserDetailsImpl implements UserDetails {
 
 	    Collection<GrantedAuthority> authorities = new ArrayList<>();
 
-	    if ("회원".equals(role)) {
+	    if ("ROLE_USER".equals(role)) {
 	        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-	    } else if ("관리자".equals(role)) {
+	    } else if ("ROLE_ADMIN".equals(role)) {
 	        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 	    }
 

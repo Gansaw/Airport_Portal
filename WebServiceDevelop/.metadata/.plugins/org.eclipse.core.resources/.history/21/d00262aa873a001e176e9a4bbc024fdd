@@ -1,0 +1,18 @@
+// Gallery.java
+// ... (이전 코드 생략)
+
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name="gallery")
+public class Gallery {
+    @Id
+    private Long id;
+    private String writer;
+    private String title;
+    private String content;
+    private String imageUrl; // 이미지 URL 저장
+    private Date date;
+    private Long view;
+
+    // Getter, Setter, 등등...
+}

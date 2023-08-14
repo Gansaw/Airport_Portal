@@ -26,7 +26,7 @@ public class Notice {
 	private Long id;
 	private String title;
 	private String writer;
-	private String content;
+	private String content;	
 	private Date date;	
 	private Long view;
 

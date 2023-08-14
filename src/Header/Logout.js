@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Authorization';
 
 const Logout = () => {
-    const navigate = useNavigate();
+    const navi = useNavigate();
     const { logout } = useContext(AuthContext);
   
     const handleLogout = () => {    
@@ -12,7 +12,7 @@ const Logout = () => {
       // 로그아웃을 위하여 쿠키 제거
       const pastDate = new Date(0).toUTCString();
       document.cookie = `token=; path=/; expires=${pastDate}; HttpOnly`;  
-      navigate('/');
+      navi('/');
     };
   
     return (

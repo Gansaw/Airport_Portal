@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 const Gallery = () => {
-    const [data, setData] = useState([]);
+    const [galleryList, setGalleryList] = useState([]);
 
     useEffect(() => {
         const url = "http://10.125.121.186:8080/gallerys";
@@ -17,7 +17,7 @@ const Gallery = () => {
                 return response.json();
             })
             .then((data) => {
-                setData(data);
+                setGalleryList(data);
             })
             .catch((error) => console.error("Fetch Error", error));
     }, []);
@@ -33,9 +33,9 @@ const Gallery = () => {
             <Header />
             <h3>갤러리</h3>
             <div className="container">
-                {data.map((item) => (
-                    <Link key={item.id} to={`/gallerys/${item.id}`} className="link">
-                        <img src={item.image} alt={item.title} className="image" />
+                {galleryList.map((gallery) => (
+                    <Link key={gallery.id} to={`/gallerys/${gallery.id}`} className="link">
+                        <img src={gallery.imageUrl} alt={gallery.title} className="image" />
                     </Link>
                 ))}
             </div>   

@@ -1,0 +1,42 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import com.airport.domain.Notice;
+import com.airport.service.NoticeService;
+
+@RestController
+@RequestMapping("/")
+public class NoticeController {
+	
+	@Autowired
+	private NoticeService noticeService;
+	
+	@GetMapping("/notices")
+	public Iterable<Notice> getNotices() {
+		return noticeService.notice();
+	}
+	
+	@GetMapping("/getNotice")
+	public Notice getNotice(@RequestParam Long id) {
+		return noticeService.getNotice(Notice.builder().id(id).build());
+	}
+	
+	@PostMapping("/insertNotice")
+	public String insertNotice(@RequestBody Notice notice) {
+		noticeService.insertNotice(notice);
+		return "Success";
+	}
+	
+	@PutMapping("/updateNotice")
+	public String updateNotice(@RequestBody Notice notice) {
+		noticeService.updateNotice(notice);
+		return "Success";
+	}
+	
+	@DeleteMapping("/deleteNotice")
+	public String deleteNotice(@RequestBody Notice notice) {
+		noticeService.deleteNotice(notice);
+		return "Success";
+	}
+}

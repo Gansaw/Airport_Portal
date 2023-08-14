@@ -1,6 +1,5 @@
 import React from "react";
 import style from '../Airport/Airport.module.css'
-
 // The Navigation Component
 const Navigation = () => {
   return (

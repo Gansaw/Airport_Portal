@@ -1,7 +1,0 @@
-package com.airport.persistence;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface AirportRepo extends JpaRepository<T, ID> {
-
-}

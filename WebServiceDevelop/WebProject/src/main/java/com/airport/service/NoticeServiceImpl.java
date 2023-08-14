@@ -16,7 +16,7 @@ public class NoticeServiceImpl implements NoticeService {
 	public NoticeRepo noticeRepo;
 
 	@Override
-	public List<Notice> getNoticeList() {
+	public List<Notice> notice() {
 		return noticeRepo.findAll();
 	}
 	
@@ -41,8 +41,7 @@ public class NoticeServiceImpl implements NoticeService {
 		Notice findnotice = noticeRepo.findById(notice.getId()).get();
 		findnotice.setTitle(notice.getTitle());
 		findnotice.setContent(notice.getContent());
-		noticeRepo.save(findnotice);
-		
+		noticeRepo.save(findnotice);		
 	}
 
 	@Override
