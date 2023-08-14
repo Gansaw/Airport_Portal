@@ -15,5 +15,5 @@ frontend
   + 0809-0810 작업x(제4회 부산해커톤 대회)
   + 0811 프론트 포조 - getNoticeList, getGalleryList 삭제, insertNotice, insertGallery 구현. 사이트정보에 Header 추가하여 자연스러운 화면 구성
   + 0812 백엔드 작업 - 로그인 구현 검토
-  + 0814 백엔드 작업 - Notice 및 Gallery 부분 수정 => 공지사항 최종 구현 완료, 갤러리는 구현 중 <br/>
+  + 0814 백엔드 작업 - Notice 및 Gallery 부분 수정 => 공지사항 최종 구현 완료, 갤러리는 구현 중(imageUrl을 이용하여 이미지를 출력할 예정) <br/>
                       로그인을 아직 구현을 못함 (물어보려고 했는데 다 휴가가서 사람이 없었음...)
