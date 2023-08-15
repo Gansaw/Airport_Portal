@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 const InsertGallery = () => {
@@ -42,19 +43,19 @@ const InsertGallery = () => {
                 body: JSON.stringify(data),
             });
 
-            if (!response.ok) {
-                throw new Error('Upload Error');
+            if (response.ok) {
+                console.log('갤러리에 성공적으로 등록되었습니다.');
+                alert("갤러리가 등록되었습니다.")
+                navi('/gallery');
+            } else {
+                console.error('갤러리 등록에 실패했습니다.');
             }
-
-            // Clear form fields after successful submission
-            setTitle('');
-            setWriter('');
-            setContent('');
-            setImageUrl('');
         } catch (error) {
-            console.error("Upload Error", error);
+            console.error('오류가 발생했습니다:', error);
         }
-    };
+    }
+
+    const navi = useNavigate();
 
     return (
         <div>
@@ -65,32 +66,22 @@ const InsertGallery = () => {
                     <tbody>
                         <tr>
                             <td>제목</td>
-                            <td>
-                                <input type="text" name="title" value={title} onChange={handleTitleChange} />
-                            </td>
+                            <td><input type="text" name="title" value={title} onChange={handleTitleChange} /></td>
                         </tr>
                         <tr>
                             <td>작성자</td>
-                            <td>
-                                <input type="text" name="writer" value={writer} onChange={handleWriterChange} />
-                            </td>
+                            <td><input type="text" name="writer" value={writer} onChange={handleWriterChange} /></td>
                         </tr>
                         <tr>
                             <td>내용</td>
-                            <td>
-                                <textarea name="content" value={content} onChange={handleContentChange} cols="40" rows="10"></textarea>
-                            </td>
+                            <td><textarea name="content" value={content} onChange={handleContentChange} cols="40" rows="10"></textarea></td>
                         </tr>
                         <tr>
                             <td>이미지 URL</td>
-                            <td>
-                                <input type="text" name="imageUrl" value={imageUrl} onChange={handleImageUrlChange} />
-                            </td>
+                            <td><input type="text" name="imageUrl" value={imageUrl} onChange={handleImageUrlChange} /></td>
                         </tr>
                         <tr>
-                            <td>
-                                <input type="submit" value="새글 등록" />
-                            </td>
+                            <td><input type="submit" value="새글 등록" /></td>
                         </tr>
                     </tbody>
                 </table>

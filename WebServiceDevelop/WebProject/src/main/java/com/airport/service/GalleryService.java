@@ -6,10 +6,10 @@ import com.airport.domain.Gallery;
 
 public interface GalleryService {
 
-	List<Gallery> getGalleryList();
+	List<Gallery> gallery();
 	Gallery getGallery(Gallery gallery);
 	void insertGallery(Gallery gallery);
 	void updateGallery(Gallery gallery);
-	void deleteGallery(Gallery gallery);
+	void deleteGallery(Gallery gallery);	
 	
 }

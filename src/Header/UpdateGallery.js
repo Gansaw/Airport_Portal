@@ -9,7 +9,7 @@ const UpdateGallery = () => {
     useEffect(() => {
         const fetchGalleryItem = async () => {
             try {
-                const response = await fetch(`http://10.125.121.186:8080/gallery/${id}`);
+                const response = await fetch(`http://10.125.121.186:8080/gallerys/${id}`);
                 if (!response.ok) {
                     throw new Error('Response Error');
                 }

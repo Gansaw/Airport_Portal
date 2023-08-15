@@ -41,6 +41,11 @@ const GetGallery = () => {
     return date.toLocaleString();
   };
 
+  
+  if (data === null) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <div>
@@ -49,19 +54,19 @@ const GetGallery = () => {
       <table>
         <tbody>
           <tr>
-            <td>사진 제목</td>
+            <td>제목</td>
             <td>{data.title}</td>
           </tr>
           <tr>
-            <td>작성자</td>
+            <td>글쓴이</td>
             <td>{data.writer}</td>
           </tr>
           <tr>
-            <td>설명</td>
+            <td>내용</td>
             <td>{data.content}</td>
           </tr>
           <tr>
-            <td>작성일</td>
+            <td>날짜</td>
             <td>{formatTimestamp(data.date)}</td>
           </tr>
           <tr>
@@ -70,15 +75,9 @@ const GetGallery = () => {
             </tr>
           <tr>
             <td>
-              <button type="button" onClick={handleUpdateClick}>
-                수정
-              </button>
-              <button type="button" onClick={handleDeleteClick}>
-                삭제
-              </button>
-              <button type="button" onClick={handleListClick}>
-                목록으로
-              </button>
+              <button type="button" onClick={handleUpdateClick}>갤러리 수정</button>
+              <button type="button" onClick={handleDeleteClick}>갤러리 삭제</button>
+              <button type="button" onClick={handleListClick}>갤러리 목록</button>
             </td>
           </tr>
         </tbody>

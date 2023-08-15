@@ -24,8 +24,8 @@ import lombok.Setter;
 public class Gallery {
 	@Id
     private Long id;
-    private String writer;
-    private String title;
+	private String title;
+	private String writer;    
     private String content;
     private String imageUrl;
     private Date date;

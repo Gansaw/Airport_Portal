@@ -14,7 +14,10 @@ import InsertNotice from './Header/InsertNotice'
 import UpdateNotice from './Header/UpdateNotice'
 import DeleteNotice from './Header/DeleteNotice';
 import Gallery from './Header/Gallery';
+import GetGallery from './Header/GetGallery';
 import InsertGallery from './Header/InsertGallery'
+import UpdateGallery from './Header/UpdateGallery'
+import DeleteGallery from './Header/DeleteGallery';
 import Welcome from './Header/Welcome';
 import UserAirport from './Airport/UserAirport'
 import AdminAirport from './Airport/AdminAirport'
@@ -23,7 +26,7 @@ import AdminAirport from './Airport/AdminAirport'
 function App() {
   
   return (    //라턴안에는 태그 한개만 존재 자식은 상관없음
-    <AuthProvider>
+    <AuthProvider>  
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Airport />}></Route>
@@ -37,7 +40,10 @@ function App() {
           <Route path='/updateNotice/:id' element={<UpdateNotice />}></Route>
           <Route path='/deleteNotice/:id' element={<DeleteNotice />}></Route>
           <Route path='/gallery' element={<Gallery />}></Route>
+          <Route path='/getGallery/:id' element={<GetGallery />}></Route>
           <Route path='/insertGallery' element={<InsertGallery />}></Route>
+          <Route path='/updateGallery/:id' element={<UpdateGallery />}></Route>
+          <Route path='/deleteGallery/:id' element={<DeleteGallery />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/signup' element={<SignUp />}></Route>
           <Route path='/welcome' element={<Welcome />}></Route>          
