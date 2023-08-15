@@ -41,10 +41,10 @@ const GetGallery = () => {
     return date.toLocaleString();
   };
 
-  
   if (data === null) {
     return <div>Loading...</div>;
   }
+
 
   return (
     <div>
