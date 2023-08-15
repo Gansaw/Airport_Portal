@@ -15,7 +15,6 @@ import com.airport.domain.Notice;
 import com.airport.service.NoticeService;
 
 @RestController
-@RequestMapping("/")
 public class NoticeController {
 	
 	@Autowired

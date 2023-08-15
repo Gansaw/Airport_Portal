@@ -15,7 +15,6 @@ import com.airport.domain.Gallery;
 import com.airport.service.GalleryService;
 
 @RestController
-@RequestMapping("/")
 public class GalleryController {
 	
 	@Autowired
