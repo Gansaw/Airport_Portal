@@ -96,7 +96,7 @@ const Mapsearch = () => {
     }
   };
   
-  const navigate = useNavigate();
+  const navi = useNavigate();
 
   const handleSearch = () => {
 
@@ -111,7 +111,7 @@ const Mapsearch = () => {
           const lng = place.geometry.location.lng();
           setCenter({ lat, lng });
           setSelectedPlace({ name: place.name, lat, lng });
-          navigate(`/mapsearch?search=${firstResult.description}`);
+          navi(`/mapsearch?search=${firstResult.description}`);
         }
       });
     }
@@ -126,7 +126,7 @@ const Mapsearch = () => {
         libraries={['places']}
       >
         <div className={style.searchContainer}>
-          <button type="button" className={style.mapbt} onClick={() => window.location.href = '/'}>메인화면으로 가기</button>
+          <button type="button" className={style.mapbt} onClick={() => navi('/')}>메인화면으로 가기</button>
           <div className={style.search}>
             <Autocomplete
               onLoad={onLoad}

@@ -1,79 +1,96 @@
 package com.airport.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.support.SessionStatus;
 
 import com.airport.domain.Member;
-import com.airport.jwt.JwtUtil;
-import com.airport.service.LoginService;
+import com.airport.persistence.MemberRepo;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @RestController
 public class LoginController {
-    
-    @Autowired
-    private LoginService loginService;
 
-    @Autowired
-    private BCryptPasswordEncoder encoder;
-    
-    @Autowired
-    private JwtUtil jwtUtil;
-    
-    @GetMapping("/login")
-    public void login() {
-        
-    }   
-    
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody Member member) {
-        String token = loginService.login(member);
-        if (token != null) {
-            return ResponseEntity.ok(token);
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인 실패");
-        }
-    }
-    
-    @GetMapping("/signup")
-    public void signup() {        
-        
-    }
-    
-    @PostMapping("/signup")
-    public ResponseEntity<String> signupProc(@RequestBody Member member) {
-        if (loginService.existsByUsername(member.getUsername()))
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("중복된 아이디입니다.");
-        
-        if (member.getRole() == null)
-            member.setRole("ROLE_USER");
+	private final AuthenticationManager authManager;
+	private final MemberRepo memberRepo;
+	private final BCryptPasswordEncoder encoder;
 
-        member.setEnabled(true);
-        // 비밀번호 암호화
-        String encodedPassword = encoder.encode(member.getPassword());
-        member.setPassword(encodedPassword);
-        loginService.save(member);       
-        return ResponseEntity.status(HttpStatus.CREATED).body("회원가입이 완료되었습니다.");
-    }
-    
-    @GetMapping("/logout")
-    public String logout(SessionStatus status) {
-        status.setComplete();
-        return "login";
-    }
+	@Value("${jwt.secretKey}")
+	private String secretKey;
 
-	public JwtUtil getJwtUtil() {
-		return jwtUtil;
+	@PostMapping("/login")
+	public ResponseEntity<?> login(@RequestBody Member member) {
+	    if (member.getUsername() == null || member.getPassword() == null) {
+	        return ResponseEntity.badRequest().body("아이디 또는 비밀번호를 입력하세요.");
+	    }
+
+	    try {
+	        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(member.getUsername(),
+	                member.getPassword());
+
+	        Authentication auth = authManager.authenticate(authenticationToken);
+
+	        String token = JWT.create().withClaim("username", member.getUsername())
+	                .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
+	                .sign(Algorithm.HMAC256(secretKey));
+
+	        // Refresh Token 생성
+	        String refreshToken = JWT.create().withClaim("username", member.getUsername())
+	                .withExpiresAt(new Date(System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000)) // 7일
+	                .sign(Algorithm.HMAC256(secretKey));
+
+	        System.out.println("token: " + token);
+
+	        return ResponseEntity.ok()
+	                .header(HttpHeaders.AUTHORIZATION, "Bearer " + token)
+	                .header("Refresh-Token", refreshToken)
+	                .build();
+	    } catch (Exception e) {
+	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Wrong Username or Password");
+	    }
 	}
 
-	public void setJwtUtil(JwtUtil jwtUtil) {
-		this.jwtUtil = jwtUtil;
+	@PostMapping("/signup")
+	public ResponseEntity<String> signup(@RequestBody Member member) {
+		String username = member.getUsername();
+
+		// username 길이 제한 (6~15)
+		if (username.length() < 5 || username.length() > 15) {
+			return ResponseEntity.status(400).body("아이디는 5자 이상, 15자 이하만 가능합니다.");
+		}
+		
+		// username 영어, 숫자만 가능
+		if (!username.matches("^[a-zA-Z0-9]*$")) {
+			return ResponseEntity.status(400).body("아이디는 영문 및 숫자만 사용 가능합니다.");
+		}
+
+		if (memberRepo.existsById(username)) {
+			return ResponseEntity.status(409).body("ID가 이미 존재합니다.");
+		}
+
+		String encodedPassword = encoder.encode(member.getPassword());
+		member.setPassword(encodedPassword);
+
+		// 기본 역할 설정
+		member.setRole("ROLE_USER");
+		member.setEnabled(true);
+
+		memberRepo.save(member);
+		return ResponseEntity.status(201).body("회원가입이 완료되었습니다.");
 	}
-    
+
 }

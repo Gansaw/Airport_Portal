@@ -1,7 +1,10 @@
 import React from "react";
 import style from '../Airport/Airport.module.css'
+import { useNavigate } from "react-router-dom";
+
 // The Navigation Component
 const Navigation = () => {
+
   return (
     <nav className="container-fluid">
       <ul>
@@ -19,6 +22,9 @@ const Navigation = () => {
 
 // The Header Component
 const Header = () => {
+
+  const navi = useNavigate();
+
   return (
     <header className="container">
       <hgroup>
@@ -26,7 +32,7 @@ const Header = () => {
         <h2>세계 공항의 정보를 모아둔 포털입니다. 다양한 공항정보를 만나볼 수 있습니다.</h2>
       </hgroup>
       <p>
-        <button type="button" className={style.bt1} onClick={() => window.location.href = '/'}>
+        <button type="button" className={style.bt1} onClick={() => navi('/')}>
           사이트 둘러보기
         </button>
       </p>

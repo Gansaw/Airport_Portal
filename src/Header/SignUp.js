@@ -42,9 +42,9 @@ const SignUp = () => {
       })
       .catch((error) => {
         console.log("fail", error.response);
-      
-        if (error.response.status === 400) {
-          const errorMessage = error.response.data.message; // Access the error message from 'message' property
+        
+        const errorMessage = error.response?.data?.message; // Safely access the error message
+        if (errorMessage) {
           if (errorMessage.includes("중복된 아이디")) {
             setUsernameError(errorMessage);
             setNicknameError(''); // Clear the nickname error message
@@ -54,9 +54,6 @@ const SignUp = () => {
           }
         }
       })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
   }
 
   return (

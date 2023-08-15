@@ -1,0 +1,64 @@
+package com.airport.jwt;
+
+import java.util.Date;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+
+import io.jsonwebtoken.io.IOException;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class JwtRefreshFilter extends OncePerRequestFilter {
+
+    private final String secretKey;
+
+    public JwtRefreshFilter(String secretKey) {
+        this.secretKey = secretKey;
+    }
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+        String srcRefreshToken = request.getHeader("Refresh-Token");
+        if (srcRefreshToken == null || !srcRefreshToken.startsWith("Bearer ")) {
+            try {
+				chain.doFilter(request, response);
+			} catch (java.io.IOException e) {
+				e.printStackTrace();
+			} catch (ServletException e) {
+				e.printStackTrace();
+			}
+            return;
+        }
+
+        String refreshToken = srcRefreshToken.replace("Bearer ", "");
+
+        try {
+            String username = JWT.require(Algorithm.HMAC256(secretKey)).build().verify(refreshToken).getClaim("username")
+                    .asString();
+
+            // Access Token 갱신
+            String newAccessToken = JWT.create().withClaim("username", username)
+                    .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
+                    .sign(Algorithm.HMAC256(secretKey));
+
+            response.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + newAccessToken);
+        } catch (Exception e) {
+            // Refresh Token이 유효하지 않은 경우에도 일단 체인을 계속 진행
+        }
+
+        try {
+			chain.doFilter(request, response);
+		} catch (java.io.IOException e) {
+			e.printStackTrace();
+		} catch (ServletException e) {
+			e.printStackTrace();
+		}
+    }
+}

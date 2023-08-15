@@ -1,4 +1,9 @@
 package com.airport.domain;
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -30,5 +35,9 @@ public class Member {
     public String getRole() {
         return role;
     }
+
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+        return AuthorityUtils.createAuthorityList(role);
+	}
 
 }

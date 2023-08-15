@@ -1,67 +1,55 @@
 package com.airport.jwt;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.util.StringUtils;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.airport.auth.UserDetailsServiceImpl;
+import com.airport.domain.Member;
+import com.airport.persistence.MemberRepo;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 
-import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RequiredArgsConstructor
-public class JwtAuthorizationFilter extends OncePerRequestFilter{
-	private final JwtUtil jwtUtil;
-	private final UserDetailsServiceImpl userDetailsService;
+public class JwtAuthorizationFilter extends OncePerRequestFilter {
+	
+	private final MemberRepo memberRepo;
+
+	private final String secretKey;
 	
 	@Override
-	protected void doFilterInternal(HttpServletRequest req, HttpServletResponse resp, FilterChain filterChain)
-			throws ServletException, IOException {
-		
-		String tokenValue = jwtUtil.getJwtFromHeader(req);
-		if (StringUtils.hasText(tokenValue)) {
-			if(!jwtUtil.validateToken(tokenValue)) {
-				log.error("Token Error!");
-				return;
-			}
-			Claims info = jwtUtil.getUserInfoFromToken(tokenValue);
-			
-			try {
-				setAuthentication(info.getSubject());
-			} catch(Exception e) {
-				log.error(e.getMessage());
-				return;
-			}
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		String srcToken = request.getHeader("Authorization");
+		if (srcToken == null || !srcToken.startsWith("Bearer ")) {
+			chain.doFilter(request, response);
+			return;
 		}
-		filterChain.doFilter(req, resp);
 
-	}	
-	   // 인증 처리
-    public void setAuthentication(String username) {
-        SecurityContext context = SecurityContextHolder.createEmptyContext();       
-        Authentication authentication = createAuthentication(username);     		
-        context.setAuthentication(authentication);
-        SecurityContextHolder.setContext(context);			
-    }
+		//누군지 해석
+		String jwtToken = srcToken.replace("Bearer ", "");
+		String username = JWT.require(Algorithm.HMAC256(secretKey)).build().verify(jwtToken).getClaim("username")
+				.asString();
+		Optional<Member> opt = memberRepo.findById(username);
+		if (!opt.isPresent()) {
+			chain.doFilter(request, response);
+			return;
+		}
 
-//    인증 객체 생성
-    private Authentication createAuthentication(String username) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-        return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());        // 3.
-    }
-	
-	
-
+		Member member = opt.get();
+		User user = new User(member.getUsername(), member.getPassword(), member.getAuthorities());
+		Authentication auth = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
+		SecurityContextHolder.getContext().setAuthentication(auth);
+		chain.doFilter(request, response);
+	}
 }
