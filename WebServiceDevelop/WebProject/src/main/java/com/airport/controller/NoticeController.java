@@ -30,23 +30,23 @@ public class NoticeController {
 		return noticeService.getNotice(Notice.builder().id(id).build());
 	}
 	
-	@PostMapping("/insertNotice")
+	@PostMapping("/admin/insertNotice")
 	public String insertNotice(@RequestBody Notice notice) {
 		noticeService.insertNotice(notice);
 		return "Success";
 	}
 	
-	@PutMapping("/updateNotice/{id}")
+	@PutMapping("/admin/updateNotice/{id}")
 	public String updateNotice(@PathVariable Long id, @RequestBody Notice notice) {
 	    notice.setId(id);
 	    noticeService.updateNotice(notice);
 	    return "Success";
 	}
 	
-	@DeleteMapping("/deleteNotice/{id}")
+	@DeleteMapping("/admin/deleteNotice/{id}")
 	public String deleteNotice(@PathVariable Long id) {
 		Notice deleteNotice = Notice.builder().id(id).build();
 		noticeService.deleteNotice(deleteNotice);
 		return "Success";
 	}
-}
+}	

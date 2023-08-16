@@ -7,11 +7,11 @@ const GetNotice = () => {
   const navi = useNavigate();
 
   const handleUpdateClick = () => {
-    navi(`/updateNotice/${id}`);
+    navi(`/admin/updateNotice/${id}`);
   };
 
   const handleDeleteClick = () => {
-    navi(`/deleteNotice/${id}`);
+    navi(`/admin/deleteNotice/${id}`);
   };
 
   const handleListClick = () => {
@@ -50,7 +50,7 @@ const GetNotice = () => {
       <div>
         <h1>게시글 상세</h1>
       </div>
-      <form action="/updateNotice" method="post">
+      <form>
         <input name="id" type="hidden" value={data.id} />
         <table>
           <tbody>

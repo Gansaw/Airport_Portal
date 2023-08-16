@@ -77,10 +77,16 @@ public class LoginController {
 		if (!username.matches("^[a-zA-Z0-9]*$")) {
 			return ResponseEntity.status(400).body("아이디는 영문 및 숫자만 사용 가능합니다.");
 		}
-
+		
+		// username이 이미 DB 안에 있는 경우
 		if (memberRepo.existsById(username)) {
-			return ResponseEntity.status(409).body("ID가 이미 존재합니다.");
+			return ResponseEntity.status(409).body("이미 존재하는 아이디입니다. 다른 아이디를 지정해주세요.");
 		}
+		
+		// username과 password가 일치하는 경우
+	    if (member.getUsername().equals(member.getPassword())) {
+	        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("아이디와 비밀번호가 일치합니다. 서로 다른 값으로 지정해주세요.");
+	    }
 
 		String encodedPassword = encoder.encode(member.getPassword());
 		member.setPassword(encodedPassword);

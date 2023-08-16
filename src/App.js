@@ -10,7 +10,7 @@ import Mapsearch from './Header/Mapsearch';
 import AirportInfo from './Header/AirportInfo';
 import Notice from './Header/Notice';
 import GetNotice from './Header/GetNotice'
-import InsertNotice from './Header/InsertNotice'
+import InsertNotice from './Header/InsertNotice';
 import UpdateNotice from './Header/UpdateNotice'
 import DeleteNotice from './Header/DeleteNotice';
 import Gallery from './Header/Gallery';
@@ -36,8 +36,8 @@ function App() {
           <Route path='/airportInfo' element={<AirportInfo />}></Route>
           <Route path='/notice' element={<Notice />}></Route>
           <Route path='/getNotice/:id' element={<GetNotice />}></Route>
-          <Route path='/insertNotice' element={<InsertNotice />}></Route>
-          <Route path='/updateNotice/:id' element={<UpdateNotice />}></Route>
+          <Route path='/admin/insertNotice' element={<InsertNotice />}></Route>
+          <Route path='/admin/updateNotice/:id' element={<UpdateNotice />}></Route>
           <Route path='/deleteNotice/:id' element={<DeleteNotice />}></Route>
           <Route path='/gallery' element={<Gallery />}></Route>
           <Route path='/getGallery/:id' element={<GetGallery />}></Route>

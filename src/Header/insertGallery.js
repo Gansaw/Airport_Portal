@@ -6,7 +6,7 @@ const InsertGallery = () => {
     const [title, setTitle] = useState('');
     const [writer, setWriter] = useState('');
     const [content, setContent] = useState('');
-    const [imageUrl, setImageUrl] = useState('');
+    const [image_url, setImage_url] = useState('');
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
@@ -21,7 +21,7 @@ const InsertGallery = () => {
     };
 
     const handleImageUrlChange = (e) => {
-        setImageUrl(e.target.value);
+        setImage_url(e.target.value);
     };
 
     const handleSubmit = async (e) => {
@@ -31,7 +31,7 @@ const InsertGallery = () => {
             title: title,
             writer: writer,
             content: content,
-            imageUrl: imageUrl,
+            image_url: image_url,
         };
 
         try {
@@ -78,7 +78,7 @@ const InsertGallery = () => {
                         </tr>
                         <tr>
                             <td>이미지 URL</td>
-                            <td><input type="text" name="imageUrl" value={imageUrl} onChange={handleImageUrlChange} /></td>
+                            <td><input type="text" name="image_url" value={image_url} onChange={handleImageUrlChange} /></td>
                         </tr>
                         <tr>
                             <td><input type="submit" value="새글 등록" /></td>

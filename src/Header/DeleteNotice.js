@@ -7,7 +7,7 @@ const DeleteNotice = () => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://10.125.121.186:8080/deleteNotice/${id}`, {
+      await fetch(`http://10.125.121.186:8080/admin/deleteNotice/${id}`, {
         method: 'DELETE',
       });
       navi('/notice'); // 삭제 후 공지 목록 페이지로 이동
