@@ -1,8 +1,10 @@
 package com.airport.domain;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -37,7 +39,15 @@ public class Member {
     }
 
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-        return AuthorityUtils.createAuthorityList(role);
+	    List<GrantedAuthority> authorities = new ArrayList<>();    
+
+	    if ("ROLE_USER".equals(role)) {
+	        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+	    } else if ("ROLE_ADMIN".equals(role)) {
+	        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+	    }	    	
+	    
+	    return authorities;
 	}
 
 }

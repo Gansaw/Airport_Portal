@@ -19,8 +19,6 @@ import InsertGallery from './Header/InsertGallery'
 import UpdateGallery from './Header/UpdateGallery'
 import DeleteGallery from './Header/DeleteGallery';
 import Welcome from './Header/Welcome';
-import UserAirport from './Airport/UserAirport'
-import AdminAirport from './Airport/AdminAirport'
 
 
 function App() {
@@ -29,15 +27,13 @@ function App() {
     <AuthProvider>  
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Airport />}></Route>
-          <Route path='/user/main' element={<UserAirport />}></Route>
-          <Route path='/admin/main' element={<AdminAirport />}></Route>
+          <Route path='/' element={<Airport />}></Route>          
           <Route path='/siteinfo' element={<Siteinfo />}></Route>
           <Route path='/airportInfo' element={<AirportInfo />}></Route>
           <Route path='/notice' element={<Notice />}></Route>
           <Route path='/getNotice/:id' element={<GetNotice />}></Route>
-          <Route path='/admin/insertNotice' element={<InsertNotice />}></Route>
-          <Route path='/admin/updateNotice/:id' element={<UpdateNotice />}></Route>
+          <Route path='/insertNotice' element={<InsertNotice />}></Route>
+          <Route path='/updateNotice/:id' element={<UpdateNotice />}></Route>
           <Route path='/deleteNotice/:id' element={<DeleteNotice />}></Route>
           <Route path='/gallery' element={<Gallery />}></Route>
           <Route path='/getGallery/:id' element={<GetGallery />}></Route>

@@ -32,7 +32,7 @@ const UpdateNotice = () => {
                 // Include other fields as needed
             };
 
-            const url = `http://10.125.121.186:8080/updateNotice/${id}`;
+            const url = `http://10.125.121.186:8080/admin/updateNotice/${id}`;
 
             const response = await fetch(url, {
                 method: 'PUT',
@@ -65,24 +65,12 @@ const UpdateNotice = () => {
                     <tbody>
                         <tr>
                             <td>제목</td>
-                            <td>
-                                <input
-                                    name="title"
-                                    type="text"
-                                    value={data.title}
-                                    onChange={(e) => setData({ ...data, title: e.target.value })}
-                                />
+                            <td><input name="title" type="text" value={data.title} onChange={(e) => setData({ ...data, title: e.target.value })}/>
                             </td>
                         </tr>
                         <tr>
                             <td>글쓴이</td>
-                            <td>
-                                <input
-                                    name="writer"
-                                    type="text"
-                                    value={data.writer}
-                                    disabled
-                                />
+                            <td><input name="writer" type="text" value={data.writer} disabled/>
                             </td>
                         </tr>
                         <tr>
@@ -107,9 +95,7 @@ const UpdateNotice = () => {
                         </tr>
                         <tr>
                             <td>
-                                <button type="button" onClick={handleUpdateClick}>
-                                    수정 완료
-                                </button>
+                                <button type="button" onClick={handleUpdateClick}>수정 완료</button>
                             </td>
                         </tr>
                     </tbody>

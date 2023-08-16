@@ -28,7 +28,7 @@ const Notice = () => {
     };
 
     const handleWriteClick = () => {
-        navigate('/admin/insertNotice');
+        navigate('/insertNotice');
     };
 
     return (

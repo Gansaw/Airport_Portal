@@ -7,11 +7,11 @@ const GetNotice = () => {
   const navi = useNavigate();
 
   const handleUpdateClick = () => {
-    navi(`/admin/updateNotice/${id}`);
+    navi(`/updateNotice/${id}`);
   };
 
   const handleDeleteClick = () => {
-    navi(`/admin/deleteNotice/${id}`);
+    navi(`/deleteNotice/${id}`);
   };
 
   const handleListClick = () => {

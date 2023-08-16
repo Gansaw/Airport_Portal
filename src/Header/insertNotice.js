@@ -54,27 +54,18 @@ const InsertNotice = () => {
                 <table>
                     <tbody>
                         <tr>
-                            <td>제목</td>
-                            <td>
-                                <input type="text" name="title" value={title} onChange={handleTitleChange} />
-                            </td>
+                            <td>제목</td><td><input type="text" name="title" value={title} onChange={handleTitleChange} /></td>
                         </tr>
                         <tr>
-                            <td>작성자</td>
-                            <td>
-                                <input type="text" name="writer" value={writer} readOnly />
-                            </td>
+                            <td>작성자</td> 
+                            <td><input type="text" name="writer" value={writer} readOnly /></td>
                         </tr>
                         <tr>
                             <td>내용</td>
-                            <td>
-                                <textarea name="content" value={content} onChange={handleContentChange} cols="40" rows="10"></textarea>
-                            </td>
+                            <td><textarea name="content" value={content} onChange={handleContentChange} cols="40" rows="10"></textarea></td>
                         </tr>
                         <tr>
-                            <td>
-                                <input type="submit" value="새글 등록" />
-                            </td>
+                            <td><input type="submit" value="새글 등록" /></td>
                         </tr>
                     </tbody>
                 </table>

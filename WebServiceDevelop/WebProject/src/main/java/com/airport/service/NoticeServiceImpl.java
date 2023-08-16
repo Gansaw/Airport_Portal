@@ -24,7 +24,7 @@ public class NoticeServiceImpl implements NoticeService {
 	public Notice getNotice(Notice notice) {
 		Notice clicktime = noticeRepo.findById(notice.getId()).get();
 		clicktime.setView(clicktime.getView() + 1);
-		noticeRepo.save(clicktime);
+		noticeRepo.save(clicktime);		
 		return clicktime;
 	}
 
@@ -32,8 +32,7 @@ public class NoticeServiceImpl implements NoticeService {
 	public void insertNotice(Notice notice) {
 		notice.setId(0L);
 		notice.setDate(new Date());
-		noticeRepo.save(notice);
-		
+		noticeRepo.save(notice);		
 	}
 
 	@Override

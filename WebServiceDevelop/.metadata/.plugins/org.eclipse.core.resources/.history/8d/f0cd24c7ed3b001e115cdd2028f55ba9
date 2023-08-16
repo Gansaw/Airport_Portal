@@ -1,0 +1,55 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.airport.domain.Notice;
+import com.airport.service.NoticeService;
+
+@RestController
+public class NoticeController {
+	
+	@Autowired
+	private NoticeService noticeService;
+	
+	@RequestMapping("/notices")
+	public Iterable<Notice> getNotices() {
+		return noticeService.notice();
+	}
+	
+	@GetMapping("/getNotice")
+	public Notice getNotice(@RequestParam Long id) {
+		return noticeService.getNotice(Notice.builder().id(id).build());
+	}
+	
+	@PostMapping("/admin/insertNotice")	
+	public String insertNotice(@RequestBody Notice notice) {
+		noticeService.insertNotice(notice);
+		return "Success";
+	}
+	
+	@PutMapping("/admin/updateNotice/{id}")
+	@Secured("ROLE_ADMIN")
+	public String updateNotice(@PathVariable Long id, @RequestBody Notice notice) {
+	    notice.setId(id);
+	    noticeService.updateNotice(notice);
+	    return "Success";
+	}
+	
+	@DeleteMapping("/admin/deleteNotice/{id}")
+	@Secured("ROLE_ADMIN")
+	public String deleteNotice(@PathVariable Long id) {
+		Notice deleteNotice = Notice.builder().id(id).build();
+		noticeService.deleteNotice(deleteNotice);
+		return "Success";
+	}
+}	

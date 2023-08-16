@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="Claim"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="claim"/>
+			<item value="expire"/>
+			<item value="exp"/>
+			<item value="role"/>
 			<item value="setfilter"/>
 			<item value="nick"/>
 			<item value="grant"/>
@@ -19,9 +23,6 @@
 			<item value="starter"/>
 			<item value="mysql"/>
 			<item value="sql"/>
-			<item value="writer"/>
-			<item value="nickname"/>
-			<item value="num"/>
 		</list>
 		<list key="replacehistory">
 		</list>

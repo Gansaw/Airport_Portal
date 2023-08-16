@@ -42,15 +42,14 @@ const Gallery = () => {
             {row.map((gallery) => (
                 <Link key={gallery.id} to={`/gallerys/${gallery.id}`} className="link">
                     <img src={gallery.image_url} alt={gallery.title} className="image"
-                        style={{ width: '300px', height: '200px', margin: '10px' }} // 이미지 크기 설정
+                        style={{ width: '300px', height: '200px', margin: '10px' }}     
                     />
                 </Link>
             ))}
         </div>
     );
 
-    // 이미지 리스트를 행과 열로 나누기
-    const chunkedGalleryList = chunkArray(galleryList, 4);
+    const chunkedGalleryList = chunkArray(galleryList, 5);    
 
     return (
         <div>

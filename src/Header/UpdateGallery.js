@@ -27,8 +27,7 @@ const UpdateGallery = () => {
             const updatedData = {
                 title: data.title,
                 description: data.description,
-                imageURL: data.imageURL, // Include imageURL field
-                // Include other fields as needed
+                image_url: data.image_url
             };
 
             const url = `http://10.125.121.186:8080/updateGallery/${id}`;
@@ -65,12 +64,7 @@ const UpdateGallery = () => {
                         <tr>
                             <td>제목</td>
                             <td>
-                                <input
-                                    name="title"
-                                    type="text"
-                                    value={data.title}
-                                    onChange={(e) => setData({ ...data, title: e.target.value })}
-                                />
+                                <input name="title" type="text" value={data.title} onChange={(e) => setData({ ...data, title: e.target.value })} />
                             </td>
                         </tr>
                         <tr>
@@ -88,24 +82,16 @@ const UpdateGallery = () => {
                         <tr>
                             <td>이미지 URL</td>
                             <td>
-                                <input
-                                    name="imageURL"
-                                    type="text"
-                                    value={data.imageURL}
-                                    onChange={(e) => setData({ ...data, imageURL: e.target.value })}
-                                />
+                                <input name="image_url" type="text" value={data.image_url} onChange={(e) => setData({ ...data, image_url: e.target.value })} />
                             </td>
                         </tr>
                         <tr>
                             <td>날짜</td>
                             <td>{formatTimestamp(data.date)}</td>
-                        </tr>
-                        {/* Include other fields as needed */}
+                        </tr>                        
                         <tr>
                             <td>
-                                <button type="button" onClick={handleUpdateClick}>
-                                    수정 완료
-                                </button>
+                                <button type="button" onClick={handleUpdateClick}>수정 완료</button>
                             </td>
                         </tr>
                     </tbody>

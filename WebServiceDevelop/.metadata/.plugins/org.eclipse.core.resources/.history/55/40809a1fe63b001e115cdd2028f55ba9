@@ -1,0 +1,17 @@
+package com.airport.jwt;
+
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.airport.service.UserDetailsImpl;
+
+public class JwtAuthenticationProvider implements AuthenticationProvider {
+	
+	@Autowired
+	private UserDetailsImpl userDetails;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
+
+}
