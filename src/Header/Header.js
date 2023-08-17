@@ -34,7 +34,7 @@ const Header = () => {
                         </>
                     )}
                     <li>
-                        <DarkModeToggle />
+                        <DarkModeToggle />  
                     </li>
                 </ul>
             </nav>

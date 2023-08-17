@@ -3,8 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 뷰포트 높이를 기준으로 전체 화면을 채웁니다 */
-    width: 100vw; /* 뷰포트 너비를 기준으로 전체 화면을 채웁니다 */
+    height: 100%; /* 뷰포트 높이를 기준으로 전체 화면을 채웁니다 */
+    width: 100%; /* 뷰포트 너비를 기준으로 전체 화면을 채웁니다 */
     background-color: #f4f4f4; /* 배경색 추가 (원하는대로 수정 가능) */
 }
 
@@ -14,7 +14,8 @@ form {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    width: 50%; /* 폼의 너비를 줄입니다. 원하는대로 조정 가능 */
+    width: 50%
+; /* 폼의 너비를 줄입니다. 원하는대로 조정 가능 */
 }
 
 .flex {
