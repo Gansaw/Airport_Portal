@@ -34,7 +34,31 @@ Before operating program, you need to accomplish the following step.
 + notice : 공지사항 테이블
 + gallery : 갤러리 테이블
 
-### 4. Project Includes
+### 4. Webpage Consists
++ header
+![header](https://github.com/Gansaw/K-Project/assets/86204430/7e8b6b16-a477-4698-9eca-b3408d492537)
++ main
+![main1](https://github.com/Gansaw/K-Project/assets/86204430/16bc8cb1-a19a-4a43-a47b-64a55b6cc311)
+![main2](https://github.com/Gansaw/K-Project/assets/86204430/38851019-5c64-4396-aa6b-1084c45214ed)
++ footer
+![footer](https://github.com/Gansaw/K-Project/assets/86204430/446affa3-a9b7-42d9-b97e-c69136fdf977)
++ siteinfo
+![siteinfo](https://github.com/Gansaw/K-Project/assets/86204430/ab5b35ce-3515-4859-b941-239c15aa3626)
++ mapapi
+![mapapi](https://github.com/Gansaw/K-Project/assets/86204430/85473936-f30f-4ba4-8c13-b6ccd7d06657)
++ airportinfo
+![airportinfo](https://github.com/Gansaw/K-Project/assets/86204430/31a3f092-485e-47a2-8205-9b6f7c073fa8)
++ notice
+![notice](https://github.com/Gansaw/K-Project/assets/86204430/b5311016-1c75-4f15-b400-cbfea0e94868)
++ gallery
+![gallery](https://github.com/Gansaw/K-Project/assets/86204430/805e5b08-270c-4ef7-a0d4-72f3820d2a9d)
++ login
+![login](https://github.com/Gansaw/K-Project/assets/86204430/7cc64423-af13-4675-bfc6-9bc942412a04)
++ signup
+![signup](https://github.com/Gansaw/K-Project/assets/86204430/5dd0d4f6-be93-494f-b0c7-93192eb6a07b)
+
+
+### 5. Project Includes
 + 웹사이트를 구현하는 프로젝트로 세계공항포털을 웹사이트로 구현하였다.
 + Twt 토큰을 이용하여 로그인 및 회원가입 기능을 구현하였다.
 + 사이트정보 : 세계공항포털 사이트에 관한 정보를 다양한 언어로 나타내고 있다.
