@@ -21,9 +21,9 @@ Before operating program, you need to accomplish the following step.
 + [Python](https://python.org/) (Web Crawling)
 
 + ### Data Usage
-+ [국토교통부 세계 공항 정보](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y)
-+ [네이버 환율 정보](https://m.stock.naver.com/marketindex/home/exchangeRate/exchange)
-+ [SKYTRAX 세계 공항 순위](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y)
++ [World Airport Info](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y) (국토교통부 세계 공항 정보)
++ [Exchange Rates](https://m.stock.naver.com/marketindex/home/exchangeRate/exchange) (네이버 환율)
++ [Top10 Airport](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y) (SKYTRAX 선정 세계 공항 순위)
 
 ### Project Includes
 + 웹사이트를 구현하는 프로젝트로 세계공항포털을 웹사이트로 구현하였다.
