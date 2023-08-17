@@ -13,8 +13,8 @@ Made by Choi HoJin, Son ByeongHui
 Before operating program, you need to accomplish the following step.
 
 ### Prerequired
-+ [Python](https://www.python.org/downloads/release/python-3109/) (3.10.9 ver)
-+ [Anaconda](https://www.anaconda.com/download) (2023.03-1 ver)
++ [React](https://www.python.org/downloads/release/python-3109/) (3.10.9 ver)
++ [Springboot](https://www.anaconda.com/download) (2023.03-1 ver)
 
 ### Python Tools (select one)
 + Jupyter notebook (recommeded)
