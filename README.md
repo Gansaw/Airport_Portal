@@ -26,13 +26,13 @@ Before operating program, you need to accomplish the following step.
 + [Top10 Airport](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y) (SKYTRAX 선정 세계 공항 순위)
 
 ### 3. Data in MySQL
+![DB ER-Diagram](https://github.com/Gansaw/K-Project/assets/86204430/d09978a2-89dd-45a1-8fa6-c35868391f43)
 + airport : 공항 테이블 (World Airport Info)
 + rate : 환율 테이블 (Exchange Rates)
 + top10 : 10위 공항 테이블 (Top10 Airport)
 + member : 회원 테이블
 + notice : 공지사항 테이블
 + gallery : 갤러리 테이블
-
 
 ### 4. Project Includes
 + 웹사이트를 구현하는 프로젝트로 세계공항포털을 웹사이트로 구현하였다.
