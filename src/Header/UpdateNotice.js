@@ -32,7 +32,7 @@ const UpdateNotice = () => {
                 // Include other fields as needed
             };
 
-            const url = `http://10.125.121.186:8080/admin/updateNotice/${id}`;
+            const url = `http://10.125.121.186:8080/updateNotice/${id}`;
 
             const response = await fetch(url, {
                 method: 'PUT',

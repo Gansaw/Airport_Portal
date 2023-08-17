@@ -9,3 +9,7 @@
 body {
     color: var(--text-color);
 }
+
+.form{
+    background-color: black;
+}

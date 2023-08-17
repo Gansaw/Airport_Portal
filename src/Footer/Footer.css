@@ -1,7 +1,11 @@
-.info {
-    background-color: #f0f0f0;
+.info {    
     text-align: center;
     padding: 10px;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: bold;       
+    
+  }
+
+  .cr{
+    margin-bottom: 2%;
   }

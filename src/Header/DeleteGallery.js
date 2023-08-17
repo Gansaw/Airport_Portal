@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import style from '../Airport/Airport.module.css'
 
 const DeleteGallery = () => {
   const { id } = useParams();
@@ -7,7 +8,7 @@ const DeleteGallery = () => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://10.125.121.186:8080/user/deleteGallery/${id}`, {
+      await fetch(`http://10.125.121.186:8080/deleteGallery/${id}`, {
         method: 'DELETE',
       });
       navi('/gallery'); // 삭제 후 갤러리 목록 페이지로 이동
@@ -20,7 +21,7 @@ const DeleteGallery = () => {
     <div>
       <h1>갤러리 삭제</h1>
       <p>정말로 이 갤러리를 삭제하시겠습니까?</p>
-      <button onClick={handleDelete}>삭제</button>
+      <button className={style.bt1} onClick={handleDelete}>삭제</button>
     </div>
   );
 };
