@@ -5,7 +5,7 @@ It is a project carried out during the mini-project during the 3rd K-Digital tra
 
 제작자 : 최호진, 손병희
 
-Made by Choi HoJin, Son ByeongHui
+Made by Choi HoJin, Son ByeongHee
 
 ## Getting Started
 정상적으로 프로그램을 동작하게 하기 위해서는 다음과 같은 과정을 거쳐야 합니다.
