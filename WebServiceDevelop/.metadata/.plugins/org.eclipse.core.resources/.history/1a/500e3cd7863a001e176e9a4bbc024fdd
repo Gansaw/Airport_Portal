@@ -1,0 +1,44 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import com.airport.domain.Notice;
+import com.airport.service.NoticeService;
+
+@RestController
+@RequestMapping("/")
+public class NoticeController {
+	
+	@Autowired
+	private NoticeService noticeService;
+	
+	@GetMapping("/notices")
+	public Iterable<Notice> getNotices() {
+		return noticeService.notice();
+	}
+	
+	@GetMapping("/getNotice")
+	public Notice getNotice(@RequestParam Long id) {
+		return noticeService.getNotice(Notice.builder().id(id).build());
+	}
+	
+	@PostMapping("/insertNotice")
+	public String insertNotice(@RequestBody Notice notice) {
+		noticeService.insertNotice(notice);
+		return "Success";
+	}
+	
+	@PutMapping("/updateNotice/{id}")
+	public String updateNotice(@PathVariable Long id, @RequestBody Notice notice) {
+	    notice.setId(id); // 사용자가 전달한 notice 객체에 id를 설정해줍니다.
+	    noticeService.updateNotice(notice);
+	    return "Success";
+	}
+	
+	@DeleteMapping("/deleteNotice/{id}")
+	public String deleteNotice(@PathVariable Long id) {
+		Notice deleteNotice = Notice.builder().id(id).build();
+		noticeService.deleteNotice(deleteNotice);
+		return "Success";
+	}
+}

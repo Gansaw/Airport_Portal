@@ -1,6 +1,5 @@
 package com.airport.domain;
 
-import java.sql.Blob;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -24,12 +23,11 @@ import lombok.Setter;
 @Table(name="gallery")
 public class Gallery {
 	@Id
-	private Long id;
-	private String writer;
+    private Long id;
 	private String title;
-	private String content;
-	private Blob image;
-	private Date date;
-	private Long view;
-
+	private String writer;    
+    private String content;
+    private String image_url;
+    private Date date;
+    private Long view;
 }

@@ -1,46 +1,77 @@
-const insertNotice = () => {
-    return(
-        <>
-        </>
-    )
-}
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
-export default insertNotice
-// <%@ page language="java" contentType="text/html; charset=UTF-8"
-//     pageEncoding="UTF-8"%>
+const InsertNotice = () => {
+    const navi = useNavigate();
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const writer = '관리자';
 
-// <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-// 								"http://www.w3.org/TR/html4/loose.dtd">
-// <html>
-// <head>
-// <meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
-// <title>새글등록</title>
-// </head>
-// <body>
-// <center>
-// 	<h3>새글 등록하기</h3>
-// 	<hr>
-// 	<form action = "insertBoard" method = "post">
-// 	<table border = "1" cellpadding = "0" cellspacing = "0">	
-// 		<tr>
-// 			<td bgcolor = "orange" width = "70">제목</td>
-// 			<td align = "left"><input type = "text" name = "title" /></td>
-// 		</tr>
-// 		<tr>
-// 			<td bgcolor = "orange">작성자</td>
-// 			<td align = "left"><input type = "text" name = "writer" size = "10" /></td>
-// 		</tr>
-// 		<tr>
-// 			<td bgcolor = "orange">내용</td>
-// 			<td align = "left"><textarea name = "content" cols = "40" rows = "10"></textarea></td>
-// 		</tr>
-// 		<tr>
-// 			<td colspan = "2" align = "center">
-// 			<input type = "submit" value = "새글 등록" /></td>
-// 		</tr>
-// 	</table>
-// 	</form>
-// 	<hr>
-// </center>
-// </body>
-// </html>
+    const handleTitleChange = (e) => {
+        setTitle(e.target.value);
+    };
+
+    const handleContentChange = (e) => {
+        setContent(e.target.value);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const data = {
+            title: title,
+            writer: writer,
+            content: content
+        };
+
+        try {
+            const response = await fetch('/insertNotice', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                console.log('공지사항이 성공적으로 등록되었습니다.');
+                alert("공지사항이 등록되었습니다.")
+                navi('/notice');
+            } else {
+                console.error('공지사항 등록에 실패했습니다.');
+            }
+        } catch (error) {
+            console.error('오류가 발생했습니다:', error);
+        }
+    };
+
+    return (
+        <div>
+            <Header />
+            <h3>공지사항 등록</h3>
+            <form onSubmit={handleSubmit}>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>제목</td><td><input type="text" name="title" value={title} onChange={handleTitleChange} /></td>
+                        </tr>
+                        <tr>
+                            <td>작성자</td> 
+                            <td><input type="text" name="writer" value={writer} readOnly /></td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                            <td><textarea name="content" value={content} onChange={handleContentChange} cols="40" rows="10"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="새글 등록" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    );
+};
+
+export default InsertNotice;

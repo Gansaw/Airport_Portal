@@ -16,10 +16,9 @@ public class GalleryServiceImpl implements GalleryService {
 	public GalleryRepo galleryRepo;
 	
 	@Override
-	public List<Gallery> getGalleryList() {
+	public List<Gallery> gallery() {
 		return galleryRepo.findAll();
-	}
-	
+	}	
 	
 	@Override
 	public Gallery getGallery(Gallery gallery) {
@@ -41,7 +40,7 @@ public class GalleryServiceImpl implements GalleryService {
 		Gallery findgallery = galleryRepo.findById(gallery.getId()).get();
 		findgallery.setTitle(gallery.getTitle());
 		findgallery.setContent(gallery.getContent());
-		findgallery.setImage(gallery.getImage());
+		findgallery.setImage_url(gallery.getImage_url());
 		galleryRepo.save(findgallery);
 	}
 

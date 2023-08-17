@@ -1,13 +1,26 @@
-import React, { createContext, useState } from 'react';
+// Authorization.js
+import { createContext, useContext, useState } from 'react';
 
-export const AuthContext = createContext();
+const Authorization = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const login = () => {
+    // 로그인 로직
+    setIsLoggedIn(true);
+  };
+
+  const logout = () => {
+    // 로그아웃 로직
+    setIsLoggedIn(false);
+  };
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+    <Authorization.Provider value={{ isLoggedIn, login, logout }}>
       {children}
-    </AuthContext.Provider>
+    </Authorization.Provider>
   );
 };
+
+export const useAuth = () => useContext(Authorization);

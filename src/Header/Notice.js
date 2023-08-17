@@ -1,9 +1,10 @@
-// Notice.js
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const Notice = () => {
     const [data, setData] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const url = "http://10.125.121.186:8080/notices";
@@ -26,8 +27,13 @@ const Notice = () => {
         return date.toLocaleString();
     };
 
+    const handleWriteClick = () => {
+        navigate('/insertNotice');
+    };
+
     return (
         <div>
+            <Header />
             <h3>공지사항</h3>
             <table>
                 <thead>
@@ -42,9 +48,9 @@ const Notice = () => {
                 <tbody>
                     {data.map((item) => (
                         <tr key={item.id}>
-                            <td>{item.id} 상세</td>
-                            <td>
-                            <Link to={`/getNotice/${item.id}`} style={{ cursor: 'pointer' }}>
+                            <td>{item.id}</td>
+                            <td>                                
+                                <Link to={`/getNotice/${item.id}`} style={{ cursor: 'pointer' }}>
                                     {item.title}
                                 </Link>
                             </td>
@@ -55,6 +61,7 @@ const Notice = () => {
                     ))}
                 </tbody>
             </table>
+            <button onClick={handleWriteClick}>글쓰기</button>
         </div>
     );
 };

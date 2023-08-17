@@ -1,0 +1,63 @@
+package com.airport.controller;
+
+import java.io.IOException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.airport.domain.Member;
+import com.airport.domain.Notice;
+import com.airport.persistence.NoticeRepo;
+import com.airport.service.NoticeService;
+
+@RestController
+public class NoticeController {
+
+	@Autowired
+	public NoticeService noticeService;
+
+	@Autowired
+	private NoticeRepo noticeRepo;
+	
+
+	@PostMapping("/insertNotice")
+	public String insertNotice(@ModelAttribute("ADMIN") Member member, @RequestParam("title") String title,
+			@RequestParam("writer") String writer, @RequestParam("content") String content,
+			@RequestParam("file") MultipartFile[] files) throws IllegalStateException, IOException {
+
+		Notice notice = new Notice();
+		notice.setTitle(title);
+		notice.setWriter(writer);
+		notice.setContent(content);
+
+		if (!"admin".equals(member.getUsername())) {
+			return "관리자만 사용할 수 있는 기능입니다.";
+		}
+
+		noticeRepo.save(notice);
+		return "Success";
+	}
+
+	@DeleteMapping("/deleteNotice")
+	public String deleteNotice(@ModelAttribute("USER") Member member, @RequestBody Notice notice) {
+		if (!"admin".equals(member.getUsername())) {
+			return "관리자만 사용할 수 있는 기능입니다.";
+		}
+
+		noticeService.deleteNotice(notice);
+		return "Success";
+	}
+
+	@GetMapping("/notices")
+	public Iterable<Notice> getNotices() {
+		return noticeRepo.findAll();
+	}
+
+}

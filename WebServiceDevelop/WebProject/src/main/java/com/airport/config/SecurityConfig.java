@@ -1,5 +1,6 @@
 package com.airport.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,43 +13,32 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.airport.auth.UserDetailsServiceImpl;
-import com.airport.jwt.JwtAuthenticationFilter;
 import com.airport.jwt.JwtAuthorizationFilter;
-import com.airport.jwt.JwtUtil;
+import com.airport.persistence.MemberRepo;
 
 import lombok.RequiredArgsConstructor;
 
-@EnableWebSecurity
-@Configuration
 @RequiredArgsConstructor
+@Configuration
+@EnableWebSecurity
 public class SecurityConfig {
 
-	private final JwtUtil jwtUtil;
-	private final UserDetailsServiceImpl userDetailsService;
-	private final AuthenticationConfiguration authenticationConfiguration;
+	private final MemberRepo memberRepo;
 
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+	@Value("${jwt.secretKey}")
+	private String secretKey;
+	
+    @Bean
+	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-
-	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-		return configuration.getAuthenticationManager();
+    
+    @Bean
+	public AuthenticationManager getAuthenticationManager(AuthenticationConfiguration authenticationConfiguration)
+			throws Exception {
+		return authenticationConfiguration.getAuthenticationManager();
 	}
-
-	@Bean
-	public JwtAuthenticationFilter jwtAuthenticationFilter() throws Exception {
-		JwtAuthenticationFilter filter = new JwtAuthenticationFilter(jwtUtil);
-		filter.setAuthenticationManager(authenticationManager(authenticationConfiguration));
-		return filter;
-	}
-
-	public JwtAuthorizationFilter jwtAuthorizationFilter() {
-		return new JwtAuthorizationFilter(jwtUtil, userDetailsService);
-	}
-
+	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.csrf(csrf -> csrf.disable());
@@ -56,16 +46,14 @@ public class SecurityConfig {
 		http.sessionManagement(
 				(sessionManagement) -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 		http.authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-		        .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
-		        .requestMatchers(new AntPathRequestMatcher("/user/**")).hasRole("USER")
-		        .requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN")
-		        .anyRequest().authenticated()
-		);
-
-		http.addFilterBefore(jwtAuthorizationFilter(), JwtAuthenticationFilter.class);
-		http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+				.requestMatchers(new AntPathRequestMatcher("/user/**")).hasAnyRole("USER","ADMIN")				
+				.requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN")
+				.anyRequest().permitAll());
+		http.formLogin(frmLogin -> frmLogin.disable());
+		http.httpBasic(httpbasic -> httpbasic.disable());
+		http.addFilterBefore(new JwtAuthorizationFilter(memberRepo, secretKey),
+				UsernamePasswordAuthenticationFilter.class);
 
 		return http.build();
 	}
-
 }
