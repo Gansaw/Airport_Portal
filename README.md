@@ -13,10 +13,18 @@ Made by Choi HoJin, Son ByeongHui
 Before operating program, you need to accomplish the following step.
 
 ### Prerequired
-+ [React](https://react.dev/) (npm install react)
++ [React](https://react.dev/) (Front-End)
++ [VS Code](https://code.visualstudio.com/) (React Workspace)
++ [Springboot](https://spring.io/tools) (Back-End)
++ [Eclipse](https://www.eclipse.org/downloads/) (SpringBoot Workspace)
++ [MySQL](https://www.mysql.com/) (Database)
+
+### Project Includes
++ 웹사이트를 구현하는 프로젝트로 세계공항포털을 웹사이트로 구현하였다.
 + [VS Code](https://code.visualstudio.com/) (window version)
 + [Springboot](https://spring.io/tools) (sts4 eclipse version)
 + [Eclipse](https://www.eclipse.org/downloads/) (2023-06 version)
+
 
 ### License
 이 프로젝트는 MIT 라이선스가 적용되고 있습니다. 세부사항은 LICENSE.md를 참고하세요.
