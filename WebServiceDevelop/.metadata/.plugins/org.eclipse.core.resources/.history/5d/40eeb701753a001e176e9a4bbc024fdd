@@ -1,0 +1,30 @@
+package com.airport.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.reactive.CorsConfigurationSource;
+import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer {
+
+	@Bean
+    public CorsConfigurationSource withCorsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedOrigin("http://localhost:3000"); // 허용된 출처 설정, 보안을 고려하여 더 제한적으로 설정할 수 있음
+        configuration.addAllowedMethod("*"); // 허용된 HTTP 메서드 설정
+        configuration.addAllowedHeader("Content-Type"); // 허용된 헤더 설정
+        configuration.addAllowedHeader("Authorization"); // 허용된 헤더 설정
+        configuration.addAllowedHeader("Host"); // 허용된 헤더 설정
+        configuration.setAllowCredentials(true); // 교차 출처 요청에 쿠키/인증 정보 포함을 허용
+        configuration.addExposedHeader("Authorization"); //헤더에 (Authorization) 포함
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration); // 모든 경로에 구성 적용
+        return source;
+    }
+}

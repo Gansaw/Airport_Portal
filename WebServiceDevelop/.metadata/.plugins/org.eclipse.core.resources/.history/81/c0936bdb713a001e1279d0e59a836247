@@ -1,0 +1,51 @@
+package com.airport.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import com.airport.domain.Member;
+import com.airport.domain.Notice;
+import com.airport.persistence.NoticeRepo;
+import com.airport.service.NoticeService;
+
+@RestController
+public class NoticeController {
+
+    @Autowired
+    private NoticeService noticeService;
+
+    @Autowired
+    private NoticeRepo noticeRepo;
+
+    @PostMapping("/insertNotice")
+    public ResponseEntity<String> insertNotice(@ModelAttribute("ADMIN") Member member, @ModelAttribute Notice notice, @RequestPart("file") MultipartFile file) {
+        if (!"admin".equals(member.getUsername())) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("관리자만 사용할 수 있는 기능입니다.");
+        }
+        noticeRepo.save(notice);
+        return ResponseEntity.ok("Success");
+    }
+
+    @DeleteMapping("/deleteNotice/{id}")
+    public ResponseEntity<String> deleteNotice(@ModelAttribute("ADMIN") Member member, @PathVariable Long id) {
+        if (!"admin".equals(member.getUsername())) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("관리자만 사용할 수 있는 기능입니다.");
+        }
+
+        Notice notice = noticeRepo.findById(id).orElse(null);
+        if (notice == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당하는 공지사항을 찾을 수 없습니다.");
+        }
+
+        noticeService.deleteNotice(notice);
+        return ResponseEntity.ok("Success");
+    }
+
+    @GetMapping("/notices")
+    public ResponseEntity<Iterable<Notice>> getNotices() {
+        Iterable<Notice> notices = noticeRepo.findAll();
+        return ResponseEntity.ok(notices);
+    }
+}

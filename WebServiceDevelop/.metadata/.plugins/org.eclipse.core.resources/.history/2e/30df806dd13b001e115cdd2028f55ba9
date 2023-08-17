@@ -1,0 +1,102 @@
+package com.airport.controller;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.airport.domain.Member;
+import com.airport.persistence.MemberRepo;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@RestController
+public class LoginController {
+
+	private final AuthenticationManager authManager;
+	private final MemberRepo memberRepo;
+	private final BCryptPasswordEncoder encoder;
+
+	@Value("${jwt.secretKey}")
+	private String secretKey;
+
+	@PostMapping("/login")
+	public ResponseEntity<?> login(@RequestBody Member member) {
+	    if (member.getUsername() == null || member.getPassword() == null) {
+	        return ResponseEntity.badRequest().body("아이디 또는 비밀번호를 입력하세요.");
+	    }
+
+	    try {
+	        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(member.getUsername(),
+	                member.getPassword());
+
+	        Authentication auth = authManager.authenticate(authenticationToken);
+
+	        String token = JWT.create().withClaim("username", member.getUsername())
+	                .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
+	                .sign(Algorithm.HMAC256(secretKey));
+
+	        // Refresh Token 생성
+	        String refreshToken = JWT.create().withClaim("username", member.getUsername())
+	                .withExpiresAt(new Date(System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000)) // 7일
+	                .sign(Algorithm.HMAC256(secretKey));
+
+	        System.out.println("token: " + token);
+
+	        return ResponseEntity.ok()
+	                .header(HttpHeaders.AUTHORIZATION, "Bearer " + token)
+	                .header("Refresh-Token", refreshToken)
+	                .build();
+	    } catch (Exception e) {
+	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Wrong Username or Password");
+	    }
+	}
+
+	@PostMapping("/signup")
+	public ResponseEntity<String> signup(@RequestBody Member member) {
+		String username = member.getUsername();
+
+		// username 길이 제한 (6~15)
+		if (username.length() < 5 || username.length() > 15) {
+			return ResponseEntity.status(400).body("아이디는 5자 이상, 15자 이하만 가능합니다.");
+		}
+		
+		// username과 password가 일치하는 경우
+	    if (member.getUsername().equals(member.getPassword())) {
+	        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("아이디와 비밀번호가 일치합니다. 서로 다른 값으로 지정해주세요.");
+	    }
+		
+		// username이 이미 DB 안에 있는 경우
+		if (memberRepo.existsById(username)) {
+			return ResponseEntity.status(409).body("이미 존재하는 아이디입니다. 다른 아이디를 지정해주세요.");
+		}
+	    
+		// username 영어와 숫자 조합만 가능
+		if (!username.matches("^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]*$")) {
+		    return ResponseEntity.status(400).body("아이디는 영문과 숫자의 조합만 사용 가능합니다.");
+		}
+		
+		String encodedPassword = encoder.encode(member.getPassword());
+		member.setPassword(encodedPassword);
+
+		// 기본 역할 설정
+		member.setRole("ROLE_USER");
+		member.setEnabled(true);
+
+		memberRepo.save(member);
+		return ResponseEntity.status(201).body("회원가입이 완료되었습니다.");
+	}
+
+}

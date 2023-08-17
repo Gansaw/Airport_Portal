@@ -1,5 +1,6 @@
 package com.airport.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,33 +16,36 @@ public class NoticeServiceImpl implements NoticeService {
 	public NoticeRepo noticeRepo;
 
 	@Override
-	public List<Notice> getNoticeList() {
+	public List<Notice> notice() {
 		return noticeRepo.findAll();
 	}
 	
 	@Override
 	public Notice getNotice(Notice notice) {
-		return noticeRepo.findById(notice.getNum()).get();
+		Notice clicktime = noticeRepo.findById(notice.getId()).get();
+		clicktime.setView(clicktime.getView() + 1);
+		noticeRepo.save(clicktime);		
+		return clicktime;
 	}
 
 	@Override
 	public void insertNotice(Notice notice) {
-		noticeRepo.save(notice);
-		
+		notice.setId(0L);
+		notice.setDate(new Date());
+		noticeRepo.save(notice);		
 	}
 
 	@Override
 	public void updateNotice(Notice notice) {
-		Notice findnotice = noticeRepo.findById(notice.getNum()).get();
+		Notice findnotice = noticeRepo.findById(notice.getId()).get();
 		findnotice.setTitle(notice.getTitle());
 		findnotice.setContent(notice.getContent());
-		noticeRepo.save(findnotice);
-		
+		noticeRepo.save(findnotice);		
 	}
 
 	@Override
 	public void deleteNotice(Notice notice) {
-		
+		noticeRepo.deleteById(notice.getId());
 	}
 
 

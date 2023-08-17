@@ -1,0 +1,29 @@
+package com.airport.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer {
+
+	@Bean
+    public CorsConfigurationSource withCorsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedOrigin("http://localhost:3000");
+        configuration.addAllowedMethod("*");
+        configuration.addAllowedHeader("Content-Type"); 
+        configuration.addAllowedHeader("Authorization"); 
+        configuration.addAllowedHeader("Host"); 
+        configuration.setAllowCredentials(true); 
+        configuration.addExposedHeader("Authorization"); 
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration); 
+        return source;
+    }
+}

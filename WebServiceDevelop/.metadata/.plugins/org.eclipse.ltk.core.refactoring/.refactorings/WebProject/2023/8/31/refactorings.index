@@ -1,0 +1,44 @@
+1690851829649	Delete elements
+1690852142050	Delete element
+1690852182314	Rename type 'BoardController'
+1690852358148	Rename type 'MainController'
+1690852452356	Rename type 'MainController'
+1690852701146	Rename type 'DBController'
+1690852800569	Delete element
+1690852802869	Delete element
+1690853273942	Copy compilation unit
+1690853280360	Copy compilation unit
+1690853409338	Copy compilation unit
+1690853420340	Copy compilation unit
+1690854231536	Copy compilation unit
+1690854323176	Rename type 'MemberService'
+1690856529309	Delete element
+1690856608267	Delete element
+1690872517260	Copy compilation unit
+1690872546262	Copy compilation unit
+1690970314201	Delete element
+1690970602250	Delete element
+1691034745870	Rename type 'JwtTokenProvider'
+1691035406084	Delete element
+1691035563438	Copy compilation unit
+1691038900014	Delete elements
+1691040004748	Delete element
+1691049538685	Delete element
+1691049551968	Delete elements
+1691049563050	Delete element
+1691108249946	Delete element
+1691109468915	Delete element
+1691109604574	Rename type 'MemberUserDetailsServiceImpl'
+1691109675564	Move compilation unit
+1691109688118	Move compilation unit
+1691109965156	Rename type 'Member'
+1691110011319	Rename type 'User'
+1691110950470	Infer generic type arguments
+1691113918771	Encapsulate field 'jwtUtil'
+1691114727590	Move compilation unit
+1691114797795	Delete element
+1691114802795	Delete element
+1691114860747	Delete element
+1691117062929	Encapsulate field 'jwtUtil'
+1691118890433	Delete element
+1691120880767	Encapsulate field 'jwtUtil'

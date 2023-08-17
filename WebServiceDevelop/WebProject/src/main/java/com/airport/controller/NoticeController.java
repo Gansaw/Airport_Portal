@@ -1,70 +1,52 @@
 package com.airport.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.airport.domain.Notice;
-import com.airport.domain.User;
 import com.airport.service.NoticeService;
 
-@Controller
+@RestController
 public class NoticeController {
 	
 	@Autowired
-	public NoticeService noticeService;
+	private NoticeService noticeService;
 	
-	@GetMapping("/getNoticeList")
-	public String getNoticeList(@ModelAttribute("user") User user, Model model, Notice notice) {
-		if (user.getId()==null)
-			return "redirect:login";
-		
-		model.addAttribute("noticeList", noticeService.getNoticeList());
-		return "getNoticeList";
+	@RequestMapping("/notices")
+	public Iterable<Notice> getNotices() {
+		return noticeService.notice();
 	}
 	
 	@GetMapping("/getNotice")
-	public String getNotice(@ModelAttribute("user") User user, Model model, Long num) {
-		if (user.getId()==null)
-			return "redirect:login";
-		
-		Notice notice = noticeService.getNotice(Notice.builder().num(num).build());
-		model.addAttribute("notice", notice);
-		return "getNotice";
-
+	public Notice getNotice(@RequestParam Long id) {
+		return noticeService.getNotice(Notice.builder().id(id).build());
 	}
 	
 	@PostMapping("/insertNotice")
-	public String insertNotice(@ModelAttribute("user") User user, Notice notice) {
-		if (user.getId()==null)
-			return "redirect:login";
-		
-		return "insertNotice";
+	public String insertNotice(@RequestBody Notice notice) {
+		noticeService.insertNotice(notice);
+		return "Success";
 	}
 	
-	@PutMapping("/updateNotice")
-	public String updateNotice(@ModelAttribute("user") User user, Notice notice) {
-		if (user.getId()==null)
-			return "redirect:login";
-		
-		noticeService.updateNotice(notice);
-		return "redirect:getNoticeList";
-		
+	@PutMapping("/updateNotice/{id}")	
+	public String updateNotice(@PathVariable Long id, @RequestBody Notice notice) {
+	    notice.setId(id);
+	    noticeService.updateNotice(notice);
+	    return "Success";
 	}
 	
-	@DeleteMapping("/deleteNotice")
-	public String deleteNotice(@ModelAttribute("user") User user, Notice notice) {
-		if (user.getId()==null)
-			return "redirect:login";
-		
-		noticeService.deleteNotice(notice);
-		return "redirect:getNoticeList";
-		
+	@DeleteMapping("/deleteNotice/{id}")
+	public String deleteNotice(@PathVariable Long id) {
+		Notice deleteNotice = Notice.builder().id(id).build();
+		noticeService.deleteNotice(deleteNotice);
+		return "Success";
 	}
-
-}
+}	

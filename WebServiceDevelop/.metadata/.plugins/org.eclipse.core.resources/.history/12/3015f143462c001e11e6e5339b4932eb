@@ -1,0 +1,9 @@
+package com.airport.service;
+
+import java.util.Map;
+
+public interface GalleryService {
+
+	
+	
+}

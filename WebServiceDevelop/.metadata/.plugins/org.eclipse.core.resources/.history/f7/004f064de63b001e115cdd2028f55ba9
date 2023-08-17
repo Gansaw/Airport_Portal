@@ -1,0 +1,48 @@
+package com.airport.jwt;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.airport.domain.Member;
+import com.airport.service.UserDetailsImpl;
+
+public class JwtAuthenticationProvider implements AuthenticationProvider {
+	
+	@Autowired
+	private UserDetailsImpl userDetails;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
+	@Override
+	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+		String username = (String) authentication.getPrincipal();
+		String password = (String) authentication.getCredentials();
+
+		Member member = (Member) userDetails.loadUserByUsername(username);
+		
+		if (!passwordEncoder.matches(password, member.getPassword())) {
+			throw new BadCredentialsException(username);
+		}
+
+		List<GrantedAuthority> roles = (List<GrantedAuthority>) member.getAuthorities();
+		UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(username, password, roles);
+
+		return result;
+	}
+
+	@Override
+	public boolean supports(Class<?> authentication) {
+		return true;
+	}
+	
+
+}

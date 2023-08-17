@@ -6,7 +6,7 @@ import com.airport.domain.Notice;
 
 public interface NoticeService {
 	
-	List<Notice> getNoticeList();
+	List<Notice> notice();	
 	Notice getNotice(Notice notice);
 	void insertNotice(Notice notice);
 	void updateNotice(Notice notice);

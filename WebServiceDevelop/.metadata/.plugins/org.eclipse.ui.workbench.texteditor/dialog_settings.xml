@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="sql"/>
+		<item key="selection" value="Claim"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="claim"/>
+			<item value="expire"/>
+			<item value="exp"/>
+			<item value="role"/>
+			<item value="setfilter"/>
+			<item value="nick"/>
+			<item value="grant"/>
+			<item value="getJ"/>
+			<item value="get"/>
+			<item value="secret"/>
+			<item value="security"/>
+			<item value="starter-sec"/>
+			<item value="starter"/>
+			<item value="mysql"/>
 			<item value="sql"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="807"/>
+		<item key="DIALOG_X_ORIGIN" value="645"/>
 		<item key="DIALOG_Y_ORIGIN" value="264"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
