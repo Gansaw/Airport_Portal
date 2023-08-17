@@ -29,8 +29,9 @@ Before operating program, you need to accomplish the following step.
 + airport : 공항 테이블 (World Airport Info)
 + rate : 환율 테이블 (Exchange Rates)
 + top10 : 10위 공항 테이블 (Top10 Airport)
-+ Member : 회원 테이블
-+ Notice : 공지사항 테이블
++ member : 회원 테이블
++ notice : 공지사항 테이블
++ gallery : 갤러리 테이블
 
 
 ### 4. Project Includes
