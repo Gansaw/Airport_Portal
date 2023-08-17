@@ -17,7 +17,7 @@ const Searchtool = () => {
     };
 
     return (
-         <form onSubmit={handleSubmit} method='get'>
+         <form className={style.form} onSubmit={handleSubmit} method='get'>
                     <fieldset className={style.fieldset}>
                         <div className={style.searchdiv1}>
                             <input
