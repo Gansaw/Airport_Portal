@@ -27,12 +27,12 @@ const Top10Airport = () => {
 
   return (
     <div className={style.topdiv}>
-      <h3>Top10 Airport (2023)</h3>
+      <h3>공항 순위 (2023)</h3>
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Airport</th>
+            <th>순위</th>
+            <th>공항명</th>
           </tr>
         </thead>
         <tbody>
