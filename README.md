@@ -14,11 +14,11 @@ Before operating program, you need to accomplish the following step.
 
 ### 1. Prerequired
 + [React](https://react.dev/) (Front-End)
-+ [VS Code](https://code.visualstudio.com/) (React Workspace)
 + [Springboot](https://spring.io/tools) (Back-End)
-+ [Eclipse](https://www.eclipse.org/downloads/) (SpringBoot Workspace)
-+ [MySQL](https://www.mysql.com/) (Database)
++ [MySQL](https://www.mysql.com/) (Database)  
 + [Python](https://python.org/) (Web Crawling)
++ [VS Code](https://code.visualstudio.com/) (React & Python Workspace)
++ [Eclipse](https://www.eclipse.org/downloads/) (SpringBoot Workspace)
 
 ### 2. Data Usage
 + [World Airport Info](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y) (국토교통부 세계 공항 정보)
