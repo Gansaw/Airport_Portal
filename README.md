@@ -1,12 +1,8 @@
 # Mini-Project
-K-Digital 3기 훈련 과정 중 미니프로젝트를 진행하면서 수행한 프로젝트물입니다.
-It is a project carried out during the mini-project during the 3rd K-Digital training course.
-제작자 : 최호진, 손병희
-Made by Choi HoJin, Son ByeongHui
-
-
-
-This is a place where Choi Ho-jin, a 3rd-term K-Digital trainee at Pusan National University, uploads his work while studying Python.
+K-Digital 3기 훈련 과정 중 미니프로젝트를 진행하면서 수행한 프로젝트물입니다. <br/>
+It is a project carried out during the mini-project during the 3rd K-Digital training course. <br/>
+제작자 : 최호진, 손병희 <br/>
+Made by Choi HoJin, Son ByeongHui <br/>
 
 ## Getting Started
 정상적으로 프로그램을 동작하게 하기 위해서는 다음과 같은 과정을 거쳐야 합니다.
