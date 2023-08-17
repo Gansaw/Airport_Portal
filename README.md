@@ -1,15 +1,11 @@
 # Mini-Project
 K-Digital 3기 훈련 과정 중 미니프로젝트를 진행하면서 수행한 프로젝트물입니다.
 
-
 It is a project carried out during the mini-project during the 3rd K-Digital training course.
-
 
 제작자 : 최호진, 손병희
 
-
 Made by Choi HoJin, Son ByeongHui
-
 
 ## Getting Started
 정상적으로 프로그램을 동작하게 하기 위해서는 다음과 같은 과정을 거쳐야 합니다.
