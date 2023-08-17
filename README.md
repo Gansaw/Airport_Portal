@@ -18,6 +18,12 @@ Before operating program, you need to accomplish the following step.
 + [Springboot](https://spring.io/tools) (Back-End)
 + [Eclipse](https://www.eclipse.org/downloads/) (SpringBoot Workspace)
 + [MySQL](https://www.mysql.com/) (Database)
++ [Python](https://python.org/) (Web Crawling)
+
++ ### Data Usage
++ [국토교통부 세계 공항 정보](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y)
++ [환율 정보](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y)
++ [국토교통부 세계 공항 정보](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y)
 
 ### Project Includes
 + 웹사이트를 구현하는 프로젝트로 세계공항포털을 웹사이트로 구현하였다.
