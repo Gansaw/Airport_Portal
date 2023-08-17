@@ -37,8 +37,9 @@ Before operating program, you need to accomplish the following step.
 ### 4. Webpage Consists
 + header
 ![header](https://github.com/Gansaw/K-Project/assets/86204430/7e8b6b16-a477-4698-9eca-b3408d492537)
-+ main
++ main1 (exchange rates)
 ![main1](https://github.com/Gansaw/K-Project/assets/86204430/16bc8cb1-a19a-4a43-a47b-64a55b6cc311)
++ main2 (top10 airport)
 ![main2](https://github.com/Gansaw/K-Project/assets/86204430/38851019-5c64-4396-aa6b-1084c45214ed)
 + footer
 ![footer](https://github.com/Gansaw/K-Project/assets/86204430/446affa3-a9b7-42d9-b97e-c69136fdf977)
