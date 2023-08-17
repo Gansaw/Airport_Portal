@@ -13,9 +13,7 @@ const Navigation = () => {
             <h3><strong>사이트정보</strong></h3>
           </a>
         </li>
-        {/* Additional links go here */}
       </ul>
-      {/* Rest of the navigation items */}
     </nav>
   );
 };
@@ -40,7 +38,6 @@ const Header = () => {
   );
 };
 
-// The Main Content Component
 const MainContent = () => {
   return (
     <main className="container">
@@ -57,7 +54,7 @@ const MainContent = () => {
           Diese Website bietet Informationen über Flughäfen auf der ganzen Welt, mit Fotos von Menschen und Karten. Melden Sie sich an, um die Website zu erkunden und die Welt zu entdecken.
         </section>
         <aside>
-        <div class="container">
+        <div className="container">
         <article>
             <hgroup>
                 <h2>가입하기</h2>
