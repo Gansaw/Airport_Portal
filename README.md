@@ -22,8 +22,9 @@ Before operating program, you need to accomplish the following step.
 ### Project Includes
 + 웹사이트를 구현하는 프로젝트로 세계공항포털을 웹사이트로 구현하였다.
 + [VS Code](https://code.visualstudio.com/) (window version)
-+ [Springboot](https://spring.io/tools) (sts4 eclipse version)
-+ [Eclipse](https://www.eclipse.org/downloads/) (2023-06 version)
+
+### Website Features
++ 웹사이트를 구현하는 프로젝트로 세계공항포털을 웹사이트로 구현하였다.
 
 
 ### License
