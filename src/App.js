@@ -18,7 +18,6 @@ import GetGallery from './Header/GetGallery';
 import InsertGallery from './Header/InsertGallery'
 import UpdateGallery from './Header/UpdateGallery'
 import DeleteGallery from './Header/DeleteGallery';
-import Welcome from './Header/Welcome';
 
 
 function App() {
@@ -41,8 +40,7 @@ function App() {
           <Route path='/updateGallery/:id' element={<UpdateGallery />}></Route>
           <Route path='/deleteGallery/:id' element={<DeleteGallery />}></Route>
           <Route path='/login' element={<Login />}></Route>
-          <Route path='/signup' element={<SignUp />}></Route>
-          <Route path='/welcome' element={<Welcome />}></Route>          
+          <Route path='/signup' element={<SignUp />}></Route>          
           <Route path="/mapsearch" element={<Mapsearch key={window.location.pathname + window.location.search} />} />
         </Routes> 
       </BrowserRouter>

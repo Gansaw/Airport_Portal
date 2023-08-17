@@ -38,7 +38,8 @@ const SignUp = () => {
     })
       .then((response) => {
         console.log("success", response);
-        navi('/welcome');
+        alert('회원가입이 완료되었습니다.')
+        navi('/');
       })
       .catch((error) => {
         console.log("fail", error.response);
