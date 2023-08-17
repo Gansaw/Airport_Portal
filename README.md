@@ -12,7 +12,7 @@ Made by Choi HoJin, Son ByeongHee
 
 Before operating program, you need to accomplish the following step.
 
-### Prerequired
+### 1. Prerequired
 + [React](https://react.dev/) (Front-End)
 + [VS Code](https://code.visualstudio.com/) (React Workspace)
 + [Springboot](https://spring.io/tools) (Back-End)
@@ -20,15 +20,15 @@ Before operating program, you need to accomplish the following step.
 + [MySQL](https://www.mysql.com/) (Database)
 + [Python](https://python.org/) (Web Crawling)
 
-### Data Usage
+### 2. Data Usage
 + [World Airport Info](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y) (국토교통부 세계 공항 정보)
 + [Exchange Rates](https://m.stock.naver.com/marketindex/home/exchangeRate/exchange) (네이버 환율)
 + [Top10 Airport](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y) (SKYTRAX 선정 세계 공항 순위)
 
-### Data in MySQL
+### 3. Data in MySQL
 + dddd
 
-### Project Includes
+### 4. Project Includes
 + 웹사이트를 구현하는 프로젝트로 세계공항포털을 웹사이트로 구현하였다.
 + Twt 토큰을 이용하여 로그인 및 회원가입 기능을 구현하였다.
 + 사이트정보 : 세계공항포털 사이트에 관한 정보를 다양한 언어로 나타내고 있다.
