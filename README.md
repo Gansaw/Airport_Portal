@@ -26,7 +26,7 @@ Before operating program, you need to accomplish the following step.
 + [Top10 Airport](https://www.data.go.kr/data/3051587/fileData.do?recommendDataYn=Y) (SKYTRAX 선정 세계 공항 순위)
 
 ### 3. Data in MySQL
-![DB ER-Diagram](https://github.com/Gansaw/K-Project/assets/86204430/d09978a2-89dd-45a1-8fa6-c35868391f43)
+![DB ER-Diagram](https://github.com/Gansaw/K-Project/assets/86204430/11319c6d-0fe8-4dd0-bac7-409f1f0b05ee)
 + airport : 공항 테이블 (World Airport Info)
 + rate : 환율 테이블 (Exchange Rates)
 + top10 : 10위 공항 테이블 (Top10 Airport)
