@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import style from '../Airport/Airport.module.css'
 
 const GetNotice = () => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const GetNotice = () => {
           throw new Error('Response Error');
         }
         return response.json();
-      })  
+      })
       .then((noticeData) => {
         setData(noticeData);
       })
@@ -74,15 +75,11 @@ const GetNotice = () => {
               <td>조회수</td>
               <td>{data.view}</td>
             </tr>
-            <tr>
-              <td>
-                <button type='button' onClick={handleUpdateClick}>게시물 수정</button>
-                <button type='button' onClick={handleDeleteClick}>게시물 삭제</button>
-                <button type='button' onClick={handleListClick}>게시물 목록</button>
-              </td>
-            </tr>
           </tbody>
         </table>
+          <button className={style.bt1} type='button' onClick={handleUpdateClick}>게시물 수정</button>
+          <button className={style.bt1} type='button' onClick={handleDeleteClick}>게시물 삭제</button>
+          <button className={style.bt1} type='button' onClick={handleListClick}>게시물 목록</button>
       </form>
 
 

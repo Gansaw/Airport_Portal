@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
+import style from '../Airport/Airport.module.css'
 
 const Gallery = () => {
     const [galleryList, setGalleryList] = useState([]);
@@ -42,14 +43,13 @@ const Gallery = () => {
             {row.map((gallery) => (
                 <Link key={gallery.id} to={`/gallerys/${gallery.id}`} className="link">
                     <img src={gallery.image_url} alt={gallery.title} className="image"
-                        style={{ width: '300px', height: '200px', margin: '10px' }}     
-                    />
+                        style={{ width: '300px', height: '200px', margin: '10px' }} />
                 </Link>
             ))}
         </div>
     );
 
-    const chunkedGalleryList = chunkArray(galleryList, 5);    
+    const chunkedGalleryList = chunkArray(galleryList, 3);    
 
     return (
         <div>
@@ -60,7 +60,7 @@ const Gallery = () => {
                     <div key={index}>{renderRow(row)}</div>
                 ))}
             </div>
-            <button onClick={handleWriteClick}>글쓰기</button>
+            <button className={style.bt1} onClick={handleWriteClick}>글쓰기</button>
         </div>
     );
 };

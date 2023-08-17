@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
+import style from '../Airport/Airport.module.css'
 
 const Notice = () => {
     const [data, setData] = useState([]);
@@ -61,7 +62,7 @@ const Notice = () => {
                     ))}
                 </tbody>
             </table>
-            <button onClick={handleWriteClick}>글쓰기</button>
+            <button className = {style.bt1} onClick={handleWriteClick}>글쓰기</button>
         </div>
     );
 };

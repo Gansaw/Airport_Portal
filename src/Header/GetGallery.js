@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import style from '../Airport/Airport.module.css'
 
 const GetGallery = () => {
   const { id } = useParams();
@@ -75,9 +76,9 @@ const GetGallery = () => {
             </tr>
           <tr>
             <td>
-              <button type="button" onClick={handleUpdateClick}>갤러리 수정</button>
-              <button type="button" onClick={handleDeleteClick}>갤러리 삭제</button>
-              <button type="button" onClick={handleListClick}>갤러리 목록</button>
+              <button className={style.bt1} type="button" onClick={handleUpdateClick}>갤러리 수정</button>
+              <button className={style.bt1} type="button" onClick={handleDeleteClick}>갤러리 삭제</button>
+              <button className={style.bt1} type="button" onClick={handleListClick}>갤러리 목록</button>
             </td>
           </tr>
         </tbody>

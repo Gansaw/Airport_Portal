@@ -14,6 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -71,11 +72,11 @@ public class LoginController {
 
 	@PostMapping("/signup")
 	public ResponseEntity<String> signup(@RequestBody Member member) {
-		String username = member.getUsername();
+		String username = member.getUsername();		
 
-		// username 길이 제한 (6~15)
-		if (username.length() < 5 || username.length() > 15) {
-			return ResponseEntity.status(400).body("아이디는 5자 이상, 15자 이하만 가능합니다.");
+		// username 길이 제한 (6~10)
+		if (username.length() < 5 || username.length() > 10) {
+			return ResponseEntity.status(409).body("아이디는 5자 이상, 10자 이하만 가능합니다.");
 		}
 		
 		// username과 password가 일치하는 경우
@@ -88,10 +89,10 @@ public class LoginController {
 			return ResponseEntity.status(409).body("이미 존재하는 아이디입니다. 다른 아이디를 지정해주세요.");
 		}
 	    
-		// username 영어와 숫자 조합만 가능
+		// username은 영어와 숫자 조합만 가능
 		if (!username.matches("^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]*$")) {
-		    return ResponseEntity.status(400).body("아이디는 영문과 숫자의 조합으로 이루어져야 합니다.");
-		}
+		    return ResponseEntity.status(409).body("아이디는 영문과 숫자의 조합으로 이루어져야 합니다.");
+		}		
 		
 		String encodedPassword = encoder.encode(member.getPassword());
 		member.setPassword(encodedPassword);

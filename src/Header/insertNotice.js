@@ -19,6 +19,12 @@ const InsertNotice = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // 제목, 내용 공백은 허용하지 않음
+        if (title.trim() === '' || content.trim() === '') {
+            alert('제목과 내용은 필수 입력 사항입니다.');
+            return;
+        }
+
         const data = {
             title: title,
             writer: writer,

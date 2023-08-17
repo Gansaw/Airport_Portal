@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import style from '../Airport/Airport.module.css'
 
 const DeleteNotice = () => {
   const { id } = useParams();
@@ -7,7 +8,7 @@ const DeleteNotice = () => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://10.125.121.186:8080/admin/deleteNotice/${id}`, {
+      await fetch(`http://10.125.121.186:8080/deleteNotice/${id}`, {
         method: 'DELETE',
       });
       navi('/notice'); // 삭제 후 공지 목록 페이지로 이동
@@ -20,7 +21,7 @@ const DeleteNotice = () => {
     <div>
       <h1>게시물 삭제</h1>
       <p>정말로 이 게시물을 삭제하시겠습니까?</p>
-      <button onClick={handleDelete}>삭제</button>
+      <button className={style.bt1} onClick={handleDelete}>삭제</button>
     </div>
   );
 };

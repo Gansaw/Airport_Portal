@@ -28,6 +28,14 @@ article {
     margin-left: 10px;
 }
 
+.form{
+    /* background-color: aqua; */
+    width: 100vw;
+    border-style: none;
+    box-shadow: none;
+    padding-top: 3%;    
+}
+
 
 .rt {
     display: flex;
