@@ -34,6 +34,12 @@ const InsertGallery = () => {
             image_url: image_url,
         };
 
+                // 제목, 내용 공백은 허용하지 않음
+                if (title.trim() === '' || content.trim() === '' || image_url.trim() === '') {
+                    alert('제목, 내용, 이미지주소는 필수 입력 사항입니다.');
+                    return;
+                }
+
         try {
             const response = await fetch("http://10.125.121.186:8080/insertGallery", {
                 method: 'POST',
