@@ -8,10 +8,10 @@ const Logout = () => {
     const { logout } = useContext(AuthContext);
   
     const handleLogout = () => {    
-      logout();  
-      // 로그아웃을 위하여 쿠키 제거
+      logout();        
       const pastDate = new Date(0).toUTCString();
       document.cookie = `token=; path=/; expires=${pastDate}; HttpOnly`;  
+      alert('로그아웃되었습니다.')
       navi('/');
     };
   
