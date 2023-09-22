@@ -1,4 +1,4 @@
-# Mini-Project
+# Airport Portal
 K-Digital 3기 훈련 과정 중 미니프로젝트를 진행하면서 수행한 프로젝트물입니다.
 
 It is a project carried out during the mini-project during the 3rd K-Digital training course.
